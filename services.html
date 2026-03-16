@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriServe Consulting - Regulatory Services</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .pricing-card {
+            background: white;
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .pricing-card.featured {
+            border-color: #FFD700;
+            transform: scale(1.05);
+        }
+        
+        .pricing-card h3 {
+            color: #1A4D2E;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            color: #1A4D2E;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .price small {
+            font-size: 1rem;
+            color: #666;
+            font-weight: normal;
+        }
+        
+        .features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .features li:before {
+            content: "✓";
+            color: #1A4D2E;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .dossiers-container {
+            background: #F5F5F5;
+            padding: 60px 0;
+        }
+        
+        .dossiers-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            list-style: none;
+            margin-top: 30px;
+        }
+        
+        .dossiers-list li {
+            padding: 12px 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-left: 4px solid #FFD700;
+        }
+        
+        .dossiers-list li:before {
+            content: "📄";
+            margin-right: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-card.featured {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="Screenshot 2026-03-10 100855.png" alt="AgriServe Consulting Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html" class="active">Our Services</a></li>
+                <li><a href="index.html#team">Our Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>COMPANY SERVICE OFFERINGS</h1>
+            <p>Expert regulatory advisory and support for the South African Plant Science Industry</p>
+        </div>
+    </section>
+
+    <!-- Main Services -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <img src="logo.png" alt="AgriServe Logo" class="section-logo">
+                <h2>OUR CORE SERVICES</h2>
+            </div>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>📋 Product Registration</h3>
+                    <p>Complete management of new registrations, label extensions, re-instatements, and parallel registrations for agricultural remedies and household products.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🏷️ Product Label & SDS Compilation</h3>
+                    <p>Crafting accurate and compliant product labels and Safety Data Sheets (SDS) ensuring regulatory adherence and product safety.</p>
+                </div>
+                <div class="service-card">
+                    <h3>📚 Regulatory Policy Training</h3>
+                    <p>Customized training programs designed to educate your team on the latest regulatory policies and compliance requirements.</p>
+                </div>
+                <div class="service-card">
+                    <h3>⚖️ GHS Compliance</h3>
+                    <p>Full GHS services including SDS, labels, classification, rationales, and application forms (LIST I & LIST III).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dossiers Serviced -->
+    <section class="dossiers-container">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <img src="logo.png" alt="AgriServe Logo" class="section-logo">
+                <h2 style="color: #1A4D2E;">DOSSIERS SERVICED</h2>
+            </div>
+            <ul class="dossiers-list">
+                <li>New Registration - Agric and Household</li>
+                <li>Label Extension - Crop Product</li>
+                <li>Label Extension submissions - public health/household product</li>
+                <li>Re-instatement (both crop + household)</li>
+                <li>Daughter and Parallel registration (both)</li>
+                <li>Minor label changes / minor additions like pack sizes etc.</li>
+                <li>Renewals</li>
+                <li>GHS - SDS</li>
+                <li>GHS - Label</li>
+                <li>GHS - Classification + Rationale</li>
+                <li>GHS - APPLICATION FORM, LIST I + LIST III</li>
+                <li>Import Permit</li>
+                <li>GHS TOTAL SERVICES (INC. services)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Pricing Models -->
+    <section class="pricing-table" style="padding: 60px 0;">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <img src="logo.png" alt="AgriServe Logo" class="section-logo">
+                <h2>ENGAGEMENT MODELS</h2>
+            </div>
+            
+            <!-- Retainer Contracts -->
+            <h3 style="margin: 60px 0 20px; color: #1A4D2E; text-align: center;">1. RETAINER CONTRACTS</h3>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">Ideal for clients who require ongoing regulatory support and strategic guidance. Fixed monthly fee with priority access to our expertise.</p>
+            
+            <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
+                <div class="pricing-card">
+                    <h3>Tier I Package</h3>
+                    <div class="price">R40,000 <small>/month</small></div>
+                    <ul class="features">
+                        <li>Periodic compliance reviews</li>
+                        <li>General advisory services</li>
+                        <li>Limited regulatory filings</li>
+                        <li>Email support</li>
+                        <li>Basic regulatory oversight</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-primary">Enquire Now</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <h3>Tier II Package</h3>
+                    <div class="price">R55,000 <small>/month</small></div>
+                    <ul class="features">
+                        <li>All Tier I services</li>
+                        <li>All regulatory submissions</li>
+                        <li>Staff training sessions</li>
+                        <li>Policy development support</li>
+                        <li>Priority response</li>
+                        <li>Dedicated consultant</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-primary">Enquire Now</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Tier III Package</h3>
+                    <div class="price">R75,000 <small>/month</small></div>
+                    <ul class="features">
+                        <li>All Tier II services</li>
+                        <li>Comprehensive regulatory oversight</li>
+                        <li>Real-time compliance monitoring</li>
+                        <li>Strategic regulatory planning</li>
+                        <li>Representation in regulatory discussions</li>
+                        <li>24/7 priority support</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-primary">Enquire Now</a>
+                </div>
+            </div>
+
+            <!-- Ad Hoc Services -->
+            <div style="margin-top: 80px;">
+                <h3 style="margin: 40px 0 20px; color: #1A4D2E; text-align: center;">2. AD HOC PROJECT-BASED BILLING</h3>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">For clients who need regulatory support on a case-by-case basis. Flexible engagement with transparent pricing.</p>
+                
+                <div class="service-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="service-card">
+                        <h4>Hourly Rate</h4>
+                        <p class="price" style="font-size: 1.8rem;">R1,500 <small>/hour</small></p>
+                        <p>For consultations, quick advisory services, and specific regulatory questions</p>
+                    </div>
+                    <div class="service-card">
+                        <h4>Fixed Fee</h4>
+                        <p class="price" style="font-size: 1.8rem;">Quote Based</p>
+                        <p>For well-defined projects such as regulatory submissions, licensing applications, or policy drafting</p>
+                    </div>
+                    <div class="service-card">
+                        <h4>Milestone-Based</h4>
+                        <p class="price" style="font-size: 1.8rem;">Structured</p>
+                        <p>Payments structured around key project deliverables for larger regulatory projects</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Important Note -->
+            <div style="background: #F5F5F5; padding: 30px; border-radius: 10px; margin-top: 60px; text-align: center; border-left: 4px solid #FFD700;">
+                <p style="font-size: 1.1rem;"><strong>Note:</strong> Our minimum retainer fee starts at R40,000 irrespective of the desired Tier. Ad hoc Billing will be subject to the scoping of required services.</p>
+                <p style="margin-top: 15px;">Our team will provide a detailed project proposal outlining scope, timelines, and costs before commencing any work, ensuring full transparency in pricing.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countries Serviced -->
+    <section class="authorities" style="background: #1A4D2E; color: white;">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <img src="logo.png" alt="AgriServe Logo" class="section-logo">
+                <h2 style="color: white;">COUNTRIES SERVICED</h2>
+            </div>
+            <div class="authorities-grid">
+                <div class="authority-item" style="background: rgba(255,255,255,0.1); color: white;">South Africa</div>
+                <div class="authority-item" style="background: rgba(255,255,255,0.1); color: white;">SADC Region</div>
+            </div>
+            <p style="text-align: center; margin-top: 30px;">Regulatory support across all SADC member states</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <img src="logo.png" alt="AgriServe Logo" class="section-logo">
+                <h2>REQUEST A CONSULTATION</h2>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Let's Discuss Your Needs</h3>
+                    <p><strong>Email:</strong> info@agri-serve.co.za</p>
+                    <p><strong>Location:</strong> Pretoria, Gauteng, South Africa</p>
+                    <p><strong>Minimum retainer:</strong> R40,000/month</p>
+                    <p><strong>Response time:</strong> Within 24 hours</p>
+                    <p><strong>Founded:</strong> 2021</p>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Company">
+                    </div>
+                    <div class="form-group">
+                        <select>
+                            <option>Select Service Interest</option>
+                            <option>Tier I Retainer (R40,000/month)</option>
+                            <option>Tier II Retainer (R55,000/month)</option>
+                            <option>Tier III Retainer (R75,000/month)</option>
+                            <option>Ad Hoc Project</option>
+                            <option>Product Registration</option>
+                            <option>Label/SDS Compilation</option>
+                            <option>Regulatory Training</option>
+                            <option>GHS Compliance</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Tell us about your regulatory needs" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Request Consultation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 AgriServe Consulting. All rights reserved.</p>
+            <p>Regulatory compliance specialists since 2021</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">info@agri-serve.co.za | Pretoria, Gauteng</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

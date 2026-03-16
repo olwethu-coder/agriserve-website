@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriServe Consulting - Product Compliance Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar - Using SCREENSHOT logo -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="Screenshot 2026-03-10 100855.png" alt="AgriServe Consulting Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Product Checker</a></li>
+                <li><a href="services.html">Our Services</a></li>
+                <li><a href="index.html#team">Our Team</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Agricultural Remedies Database</h1>
+            <p>Verify registered products under Act 36 of 1947 (Fertilizers, Farm Feeds, Agricultural Remedies and Stock Remedies Act)</p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="product-filters" style="padding: 40px 0; background: #F5F5F5;">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active">All Products</button>
+                <button class="filter-btn">Insecticide</button>
+                <button class="filter-btn">Herbicide</button>
+                <button class="filter-btn">Fungicide</button>
+                <button class="filter-btn">Rodenticide</button>
+                <button class="filter-btn">Household</button>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" id="productSearch" placeholder="Search by L-number, product name, or manufacturer...">
+                <button onclick="searchProduct()" class="btn btn-primary">Verify Product</button>
+            </div>
+            <div id="searchResult" class="search-result">
+                <!-- Search results appear here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Product List -->
+    <section class="product-list" style="padding: 60px 0;">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <img src="logo.png" alt="AgriServe Logo" class="section-logo">
+                <h2 style="color: #1A4D2E;">Registered Agricultural Remedies</h2>
+            </div>
+            <p style="margin-bottom: 20px;">Showing sample database of registered products. Contact AgriServe for complete verification.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>L-Number</th>
+                        <th>Category</th>
+                        <th>Manufacturer</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="productTableBody">
+                    <!-- Filled by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Verification Note -->
+    <section class="quick-check" style="padding: 60px 0;">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <img src="logo.png" alt="AgriServe Logo" class="section-logo">
+                <h3 style="color: white; font-size: 1.8rem; margin-bottom: 20px;">Need Official Verification?</h3>
+            </div>
+            <p style="margin-bottom: 30px; font-size: 1.1rem;">For complete and up-to-date verification of any agricultural remedy, contact AgriServe Consulting for a full compliance audit.</p>
+            <a href="index.html#contact" class="btn btn-primary">Request Verification</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 AgriServe Consulting. All rights reserved.</p>
+            <p>Data based on official Department of Agriculture, Land Reform & Rural Development registers</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">info@agri-serve.co.za | Pretoria, Gauteng</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
