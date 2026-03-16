@@ -802,9 +802,4 @@ footer {
     .flag-container::after {
         width: 50px;
     }
-
-/* TEMPORARY TEST - Add at the end of your CSS */
-body {
-    background-image: linear-gradient(135deg, red 45%, blue 45%, blue 55%, green 55%) !important;
-}
 }
