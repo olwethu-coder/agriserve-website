@@ -104,7 +104,7 @@ section {
 
 /* Navigation Bar */
 .navbar {
-    background: #1A4D2E;
+    background: G#fffcdb 0%;
     color: white;
     padding: 0.3rem 0;
     position: sticky;
@@ -689,7 +689,7 @@ footer {
 
 /* Page Header */
 .page-header {
-    background: linear-gradient(135deg, G#fffcdb 0%, #2a6e3a 100%);
+    background: linear-gradient(135deg, G#fffcdb 0%, G#fffcdb 0%);
     color: white;
     padding: 80px 0;
     text-align: center;
