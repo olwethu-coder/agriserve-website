@@ -7,12 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
+    <!-- Navigation Bar - Updated with scroll behavior -->
+    <nav class="navbar" id="mainNavbar">
         <div class="container">
-            <div class="logo">
-                <img src="Screenshot 2026-03-10 100855.png" alt="AgriServe Consulting Logo">
+            <!-- Logo Container with Full and Condensed Versions -->
+            <div class="logo-container">
+                <!-- Full Logo (visible by default) -->
+                <div class="logo-full">
+                    <img src="Screenshot 2026-03-10 100855.png" alt="AgriServe Consulting Logo">
+                </div>
+                <!-- Condensed Logo (visible on scroll) -->
+                <div class="logo-condensed">
+                    <span class="logo-text">AgriServe</span>
+                </div>
             </div>
+            
+            <!-- Navigation Links -->
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="services.html">Our Services</a></li>
@@ -319,7 +329,7 @@
             </div>
             
             <p style="margin-top: 40px; font-size: 0.95rem; color: #666;">
-                <span style="color: #1A4D2E; font-weight: 600;">SADC</span> - Southern African Development Community
+                <span style="color: #093400; font-weight: 600;">SADC</span> - Southern African Development Community
             </p>
         </div>
     </section>

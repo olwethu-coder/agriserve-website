@@ -21,26 +21,26 @@
         }
         
         .pricing-card.featured {
-            border-color: #FFD700;
+            border-color: #C55A11;
             transform: scale(1.05);
         }
         
         .pricing-card h3 {
-            color: #1A4D2E;
+            color: #093400;
             font-size: 1.5rem;
             margin-bottom: 20px;
         }
         
         .price {
             font-size: 2.5rem;
-            color: #1A4D2E;
+            color: #093400;
             font-weight: bold;
             margin-bottom: 20px;
         }
         
         .price small {
             font-size: 1rem;
-            color: #666;
+            color: #586E20;
             font-weight: normal;
         }
         
@@ -52,18 +52,18 @@
         
         .features li {
             padding: 10px 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #B4C7D9;
         }
         
         .features li:before {
             content: "✓";
-            color: #1A4D2E;
+            color: #8DC63F;
             font-weight: bold;
             margin-right: 10px;
         }
         
         .dossiers-container {
-            background: #F5F5F5;
+            background: #F3DECF;
             padding: 60px 0;
         }
         
@@ -80,7 +80,7 @@
             background: white;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            border-left: 4px solid #FFD700;
+            border-left: 4px solid #C55A11;
         }
         
         .dossiers-list li:before {
@@ -96,12 +96,22 @@
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
+    <!-- Navigation Bar - Updated with scroll behavior -->
+    <nav class="navbar" id="mainNavbar">
         <div class="container">
-            <div class="logo">
-                <img src="Screenshot 2026-03-10 100855.png" alt="AgriServe Consulting Logo">
+            <!-- Logo Container with Full and Condensed Versions -->
+            <div class="logo-container">
+                <!-- Full Logo (visible by default) -->
+                <div class="logo-full">
+                    <img src="Screenshot 2026-03-10 100855.png" alt="AgriServe Consulting Logo">
+                </div>
+                <!-- Condensed Logo (visible on scroll) -->
+                <div class="logo-condensed">
+                    <span class="logo-text">AgriServe</span>
+                </div>
             </div>
+            
+            <!-- Navigation Links -->
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html" class="active">Our Services</a></li>
@@ -152,7 +162,7 @@
         <div class="container">
             <div class="section-title-wrapper">
                 <img src="logo.png" alt="AgriServe Logo" class="section-logo">
-                <h2 style="color: #1A4D2E;">DOSSIERS SERVICED</h2>
+                <h2 style="color: #093400;">DOSSIERS SERVICED</h2>
             </div>
             <ul class="dossiers-list">
                 <li>New Registration - Agric and Household</li>
@@ -181,7 +191,7 @@
             </div>
             
             <!-- Retainer Contracts -->
-            <h3 style="margin: 60px 0 20px; color: #1A4D2E; text-align: center;">1. RETAINER CONTRACTS</h3>
+            <h3 style="margin: 60px 0 20px; color: #093400; text-align: center;">1. RETAINER CONTRACTS</h3>
             <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">Ideal for clients who require ongoing regulatory support and strategic guidance. Fixed monthly fee with priority access to our expertise.</p>
             
             <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
@@ -229,7 +239,7 @@
 
             <!-- Ad Hoc Services -->
             <div style="margin-top: 80px;">
-                <h3 style="margin: 40px 0 20px; color: #1A4D2E; text-align: center;">2. AD HOC PROJECT-BASED BILLING</h3>
+                <h3 style="margin: 40px 0 20px; color: #093400; text-align: center;">2. AD HOC PROJECT-BASED BILLING</h3>
                 <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">For clients who need regulatory support on a case-by-case basis. Flexible engagement with transparent pricing.</p>
                 
                 <div class="service-grid" style="grid-template-columns: repeat(3, 1fr);">
@@ -252,7 +262,7 @@
             </div>
 
             <!-- Important Note -->
-            <div style="background: #F5F5F5; padding: 30px; border-radius: 10px; margin-top: 60px; text-align: center; border-left: 4px solid #FFD700;">
+            <div style="background: #F3DECF; padding: 30px; border-radius: 10px; margin-top: 60px; text-align: center; border-left: 4px solid #C55A11;">
                 <p style="font-size: 1.1rem;"><strong>Note:</strong> Our minimum retainer fee starts at R40,000 irrespective of the desired Tier. Ad hoc Billing will be subject to the scoping of required services.</p>
                 <p style="margin-top: 15px;">Our team will provide a detailed project proposal outlining scope, timelines, and costs before commencing any work, ensuring full transparency in pricing.</p>
             </div>
@@ -260,7 +270,7 @@
     </section>
 
     <!-- Countries Serviced -->
-    <section class="authorities" style="background: #1A4D2E; color: white;">
+    <section class="authorities" style="background: #093400; color: white;">
         <div class="container">
             <div class="section-title-wrapper">
                 <img src="logo.png" alt="AgriServe Logo" class="section-logo">
