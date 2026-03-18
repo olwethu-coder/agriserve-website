@@ -133,7 +133,7 @@ body {
     opacity: 1;
 }
 
-/* ===== ANIMATION 5: Gradient Border Animation (For All Buttons) ===== */
+/* ===== ANIMATION 5: Gradient Border Animation ===== */
 @keyframes borderGlow {
     0% {
         border-color: #C55A11;
@@ -157,7 +157,7 @@ body {
     }
 }
 
-/* Apply to authority items (existing) */
+/* Apply to authority items */
 .authority-item {
     animation: borderGlow 8s infinite;
 }
@@ -165,33 +165,31 @@ body {
 /* Apply to navbar links */
 .nav-links a {
     animation: borderGlow 8s infinite;
-    border: 2px solid transparent; /* Base border */
-    border-radius: 30px; /* Rounded corners like authority items */
-    padding: 0.6rem 1.2rem; /* Slightly more padding for better look */
+    border: 2px solid transparent;
+    border-radius: 30px;
+    padding: 0.6rem 1.2rem;
     margin: 0 2px;
     transition: all 0.3s ease;
 }
 
-/* Override for active state to keep it visible */
 .nav-links a.active {
     background-color: #C55A11;
     color: white;
     border-color: #C55A11;
-    animation: borderGlow 4s infinite; /* Faster animation for active */
+    animation: borderGlow 4s infinite;
 }
 
-/* Hover state */
 .nav-links a:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* Apply to the Request Consultation button (btn-secondary) */
+/* Apply to buttons */
 .btn-secondary {
     animation: borderGlow 6s infinite;
     border-width: 2px;
     border-style: solid;
-    border-color: #8DC63F; /* Starting color */
+    border-color: #8DC63F;
     background-color: transparent;
     color: white;
     transition: all 0.3s ease;
@@ -201,13 +199,12 @@ body {
     background-color: #8DC63F;
     color: #093400;
     transform: translateY(-3px) scale(1.05);
-    animation: none; /* Stop animation on hover */
+    animation: none;
     border-color: #8DC63F;
 }
 
-/* Apply to primary button as well for consistency */
 .btn-primary {
-    animation: borderGlow 6s infinite;
+    animation: pulse 2s infinite, borderGlow 6s infinite;
     border: 2px solid transparent;
 }
 
@@ -286,9 +283,6 @@ body {
     50% { border-color: transparent; }
 }
 
-/* ===== ANIMATION 9: Glow Effect on Active Nav Link (Now handled by borderGlow) ===== */
-/* Removed duplicate glow animation */
-
 /* ===== ANIMATION 10: Particle Background Effect ===== */
 @keyframes particleFloat {
     0% {
@@ -363,7 +357,7 @@ body {
 .team-card:nth-child(5) { animation-delay: 0.5s; }
 .team-card:nth-child(6) { animation-delay: 0.6s; }
 
-/* ===== Navbar Styles ===== */
+/* ===== Navbar Styles with Wider Logo ===== */
 .navbar {
     background: #093400;
     color: white;
@@ -380,7 +374,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 80px;
+    min-height: 90px; /* Increased to accommodate wider logo */
 }
 
 .navbar.scrolled {
@@ -391,28 +385,33 @@ body {
 }
 
 .navbar.scrolled .container {
-    min-height: 70px;
+    min-height: 80px; /* Slightly smaller when scrolled but still roomy */
 }
 
+/* Logo Container - Wider horizontal layout */
 .logo-container {
     display: flex;
     align-items: center;
-    height: 70px;
+    height: 80px; /* Increased height */
     position: relative;
+    max-width: 400px; /* Allow more width */
 }
 
+/* Full logo - wider horizontally */
 .logo-full {
     display: block;
     transition: opacity 0.3s ease;
+    width: 100%;
 }
 
 .logo-full img {
-    height: 65px;
+    height: 75px; /* Increased from 65px */
     width: auto;
-    max-width: 280px;
+    max-width: 350px; /* Increased from 280px - MUCH WIDER */
     object-fit: contain;
 }
 
+/* Condensed logo - also wider */
 .logo-condensed {
     display: none;
     transition: opacity 0.3s ease;
@@ -420,9 +419,9 @@ body {
 
 .logo-condensed .logo-text {
     color: white;
-    font-size: 2rem;
+    font-size: 2.4rem; /* Increased from 2rem */
     font-weight: 700;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px; /* Slightly increased for better readability */
     white-space: nowrap;
 }
 
@@ -434,7 +433,7 @@ body {
     display: block;
 }
 
-/* Navigation links with animated borders */
+/* Navigation links */
 .nav-links {
     display: flex;
     list-style: none;
@@ -472,7 +471,7 @@ body {
     background-color: #C55A11;
     color: white;
     border-color: #C55A11;
-    animation: borderGlow 4s infinite; /* Faster animation for active */
+    animation: borderGlow 4s infinite;
 }
 
 /* Section Title with Logo */
@@ -547,7 +546,7 @@ body {
     color: #093400;
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 10px 20px rgba(197, 90, 17, 0.2);
-    animation: none; /* Stop animations on hover */
+    animation: none;
     border-color: #8DC63F;
 }
 
@@ -562,7 +561,7 @@ body {
     background-color: #8DC63F;
     color: #093400;
     transform: translateY(-3px) scale(1.05);
-    animation: none; /* Stop animation on hover */
+    animation: none;
     border-color: #8DC63F;
 }
 
@@ -1197,16 +1196,17 @@ section:not(:last-child)::after {
     }
     
     .logo-container {
-        height: 60px;
+        height: 70px;
+        max-width: 100%;
     }
     
     .logo-full img {
-        height: 55px;
-        max-width: 220px;
+        height: 60px;
+        max-width: 280px; /* Slightly smaller on mobile but still wide */
     }
     
     .logo-condensed .logo-text {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
     
     .nav-links {
