@@ -133,7 +133,7 @@ body {
     opacity: 1;
 }
 
-/* ===== ANIMATION 5: Gradient Border Animation ===== */
+/* ===== ANIMATION 5: Gradient Border Animation (For All Buttons) ===== */
 @keyframes borderGlow {
     0% {
         border-color: #C55A11;
@@ -157,8 +157,62 @@ body {
     }
 }
 
+/* Apply to authority items (existing) */
 .authority-item {
     animation: borderGlow 8s infinite;
+}
+
+/* Apply to navbar links */
+.nav-links a {
+    animation: borderGlow 8s infinite;
+    border: 2px solid transparent; /* Base border */
+    border-radius: 30px; /* Rounded corners like authority items */
+    padding: 0.6rem 1.2rem; /* Slightly more padding for better look */
+    margin: 0 2px;
+    transition: all 0.3s ease;
+}
+
+/* Override for active state to keep it visible */
+.nav-links a.active {
+    background-color: #C55A11;
+    color: white;
+    border-color: #C55A11;
+    animation: borderGlow 4s infinite; /* Faster animation for active */
+}
+
+/* Hover state */
+.nav-links a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Apply to the Request Consultation button (btn-secondary) */
+.btn-secondary {
+    animation: borderGlow 6s infinite;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #8DC63F; /* Starting color */
+    background-color: transparent;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #8DC63F;
+    color: #093400;
+    transform: translateY(-3px) scale(1.05);
+    animation: none; /* Stop animation on hover */
+    border-color: #8DC63F;
+}
+
+/* Apply to primary button as well for consistency */
+.btn-primary {
+    animation: borderGlow 6s infinite;
+    border: 2px solid transparent;
+}
+
+.btn-primary:hover {
+    animation: none;
 }
 
 /* ===== ANIMATION 6: Ripple Effect on Click ===== */
@@ -232,16 +286,8 @@ body {
     50% { border-color: transparent; }
 }
 
-/* ===== ANIMATION 9: Glow Effect on Active Nav Link ===== */
-@keyframes glow {
-    0% { box-shadow: 0 0 5px #8DC63F; }
-    50% { box-shadow: 0 0 20px #C55A11, 0 0 30px #8DC63F; }
-    100% { box-shadow: 0 0 5px #8DC63F; }
-}
-
-.nav-links a.active {
-    animation: glow 2s infinite;
-}
+/* ===== ANIMATION 9: Glow Effect on Active Nav Link (Now handled by borderGlow) ===== */
+/* Removed duplicate glow animation */
 
 /* ===== ANIMATION 10: Particle Background Effect ===== */
 @keyframes particleFloat {
@@ -388,10 +434,11 @@ body {
     display: block;
 }
 
+/* Navigation links with animated borders */
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 1.5rem;
+    gap: 0.8rem;
     margin: 0;
     padding: 0;
     transition: all 0.3s ease;
@@ -400,29 +447,32 @@ body {
 .nav-links a {
     color: white;
     text-decoration: none;
-    padding: 0.6rem 1rem;
-    border-radius: 5px;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
     transition: all 0.3s;
     font-weight: 500;
     font-size: 1.1rem;
     white-space: nowrap;
+    border: 2px solid transparent;
+    animation: borderGlow 8s infinite;
 }
 
 .navbar.scrolled .nav-links a {
-    padding: 0.4rem 0.8rem;
+    padding: 0.4rem 1rem;
     font-size: 1rem;
 }
 
 .nav-links a:hover {
-    background-color: #8DC63F;
-    color: #093400;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    background-color: rgba(141, 198, 63, 0.2);
 }
 
 .nav-links a.active {
     background-color: #C55A11;
     color: white;
-    animation: glow 2s infinite;
+    border-color: #C55A11;
+    animation: borderGlow 4s infinite; /* Faster animation for active */
 }
 
 /* Section Title with Logo */
@@ -479,7 +529,6 @@ body {
     border-radius: 50px;
     font-weight: 600;
     cursor: pointer;
-    border: none;
     transition: all 0.3s;
     margin: 5px;
     position: relative;
@@ -489,7 +538,8 @@ body {
 .btn-primary {
     background-color: #C55A11;
     color: white;
-    animation: pulse 2s infinite;
+    animation: pulse 2s infinite, borderGlow 6s infinite;
+    border: 2px solid transparent;
 }
 
 .btn-primary:hover {
@@ -497,19 +547,23 @@ body {
     color: #093400;
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 10px 20px rgba(197, 90, 17, 0.2);
-    animation: none;
+    animation: none; /* Stop animations on hover */
+    border-color: #8DC63F;
 }
 
 .btn-secondary {
     background-color: transparent;
     color: white;
     border: 2px solid #8DC63F;
+    animation: borderGlow 6s infinite;
 }
 
 .btn-secondary:hover {
     background-color: #8DC63F;
     color: #093400;
     transform: translateY(-3px) scale(1.05);
+    animation: none; /* Stop animation on hover */
+    border-color: #8DC63F;
 }
 
 .btn::after {
@@ -530,7 +584,7 @@ body {
     animation: ripple 1s ease-out;
 }
 
-/* Hero Section - FIXED with proper layout */
+/* Hero Section */
 .hero {
     background: linear-gradient(rgba(9, 52, 0, 0.85), rgba(88, 110, 32, 0.85)), url('https://images.pexels.com/photos/1022922/pexels-photo-1022922.jpeg');
     background-size: cover;
@@ -1158,16 +1212,17 @@ section:not(:last-child)::after {
     .nav-links {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.5rem;
+        gap: 0.3rem;
     }
     
     .nav-links a {
-        font-size: 1rem;
+        font-size: 0.9rem;
         padding: 0.4rem 0.8rem;
+        margin: 2px;
     }
     
     .navbar.scrolled .nav-links a {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         padding: 0.3rem 0.6rem;
     }
     
