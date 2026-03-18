@@ -8,76 +8,38 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333333;
+    color: #093400; /* Dark green for text */
     position: relative;
-    background-color: #f9f9f9; /* Slightly off-white to help visibility */
+    background-color: #F3DECF; /* Soft beige background */
     
-    /* VISIBLE Tree Branch Pattern - Stronger colors */
+    /* Subtle Tree Branch Pattern - adjusted colors */
     background-image: 
-        /* Main thick branch - more visible */
-        linear-gradient(135deg, transparent 45%, #8B5A2B 45%, #8B5A2B 55%, transparent 55%),
-        linear-gradient(125deg, transparent 44%, #8B5A2B 44%, #8B5A2B 54%, transparent 54%),
-        linear-gradient(115deg, transparent 46%, #8B5A2B 46%, #8B5A2B 56%, transparent 56%),
+        /* Main branch - using olive green */
+        linear-gradient(135deg, transparent 45%, #586E20 45%, #586E20 55%, transparent 55%),
+        linear-gradient(125deg, transparent 47%, #586E20 47%, #586E20 49%, transparent 49%),
         
-        /* Smaller branches */
-        linear-gradient(140deg, transparent 47%, #A67B5B 47%, #A67B5B 52%, transparent 52%),
-        linear-gradient(120deg, transparent 48%, #A67B5B 48%, #A67B5B 53%, transparent 53%),
-        
-        /* Leaves - more opaque and vibrant */
-        radial-gradient(circle at 15% 25%, #2E7D32 12px, transparent 12px),
-        radial-gradient(circle at 22% 20%, #2E7D32 10px, transparent 10px),
-        radial-gradient(circle at 28% 18%, #2E7D32 14px, transparent 14px),
-        radial-gradient(circle at 35% 15%, #2E7D32 11px, transparent 11px),
-        radial-gradient(circle at 42% 12%, #2E7D32 13px, transparent 13px),
-        radial-gradient(circle at 48% 10%, #2E7D32 12px, transparent 12px),
-        
-        /* More leaves on another branch */
-        radial-gradient(circle at 55% 30%, #2E7D32 12px, transparent 12px),
-        radial-gradient(circle at 62% 27%, #2E7D32 10px, transparent 10px),
-        radial-gradient(circle at 68% 25%, #2E7D32 14px, transparent 14px),
-        radial-gradient(circle at 75% 23%, #2E7D32 11px, transparent 11px),
-        radial-gradient(circle at 82% 21%, #2E7D32 13px, transparent 13px),
-        
-        /* Lighter green leaves for variation */
-        radial-gradient(circle at 18% 30%, #4CAF50 8px, transparent 8px),
-        radial-gradient(circle at 25% 26%, #4CAF50 9px, transparent 9px),
-        radial-gradient(circle at 32% 22%, #4CAF50 10px, transparent 10px),
-        radial-gradient(circle at 38% 19%, #4CAF50 8px, transparent 8px),
-        radial-gradient(circle at 45% 16%, #4CAF50 11px, transparent 11px),
-        
-        /* Leaves at bottom */
-        radial-gradient(circle at 20% 75%, #2E7D32 12px, transparent 12px),
-        radial-gradient(circle at 30% 80%, #2E7D32 14px, transparent 14px),
-        radial-gradient(circle at 40% 85%, #2E7D32 10px, transparent 10px),
-        radial-gradient(circle at 50% 82%, #2E7D32 13px, transparent 13px),
-        radial-gradient(circle at 60% 88%, #2E7D32 11px, transparent 11px),
-        radial-gradient(circle at 70% 84%, #2E7D32 12px, transparent 12px),
-        
-        /* Additional small branches */
-        linear-gradient(130deg, transparent 48%, #C19A6B 48%, #C19A6B 52%, transparent 52%),
-        linear-gradient(110deg, transparent 47%, #C19A6B 47%, #C19A6B 51%, transparent 51%);
+        /* Leaves - using light green variations */
+        radial-gradient(circle at 20% 30%, rgba(141, 198, 63, 0.15) 15px, transparent 15px),
+        radial-gradient(circle at 30% 25%, rgba(159, 215, 204, 0.12) 12px, transparent 12px),
+        radial-gradient(circle at 40% 20%, rgba(186, 239, 113, 0.1) 18px, transparent 18px),
+        radial-gradient(circle at 50% 15%, rgba(141, 198, 63, 0.08) 14px, transparent 14px),
+        radial-gradient(circle at 70% 30%, rgba(159, 215, 204, 0.12) 16px, transparent 16px),
+        radial-gradient(circle at 80% 25%, rgba(186, 239, 113, 0.1) 13px, transparent 13px),
+        radial-gradient(circle at 90% 20%, rgba(141, 198, 63, 0.15) 15px, transparent 15px);
     
     background-size: 
-        400px 400px, 350px 350px, 300px 300px,
-        250px 250px, 200px 200px,
-        24px 24px, 20px 20px, 28px 28px, 22px 22px, 26px 26px, 24px 24px,
-        24px 24px, 20px 20px, 28px 28px, 22px 22px, 26px 26px,
-        16px 16px, 18px 18px, 20px 20px, 16px 16px, 22px 22px,
-        24px 24px, 28px 28px, 20px 20px, 26px 26px, 22px 22px, 24px 24px,
-        180px 180px, 160px 160px;
+        300px 300px, 250px 250px,
+        30px 30px, 24px 24px, 36px 36px, 28px 28px,
+        32px 32px, 26px 26px, 30px 30px;
     
     background-repeat: no-repeat;
     background-position: 
-        10% 15%, 15% 20%, 12% 18%,
-        8% 25%, 18% 22%,
-        15% 25%, 22% 20%, 28% 18%, 35% 15%, 42% 12%, 48% 10%,
-        55% 30%, 62% 27%, 68% 25%, 75% 23%, 82% 21%,
-        18% 30%, 25% 26%, 32% 22%, 38% 19%, 45% 16%,
-        20% 75%, 30% 80%, 40% 85%, 50% 82%, 60% 88%, 70% 84%,
-        5% 30%, 12% 40%;
+        10% 20%, 20% 15%,
+        15% 25%, 25% 20%, 35% 15%, 45% 10%,
+        65% 25%, 75% 20%, 85% 15%;
 }
 
-/* Much lighter overlay so tree shows through */
+/* Light overlay for readability */
 body::before {
     content: '';
     position: fixed;
@@ -85,15 +47,9 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.75); /* More transparent */
+    background: rgba(243, 222, 207, 0.85); /* Soft beige overlay */
     pointer-events: none;
     z-index: -1;
-}
-
-/* Ensure all content sections have proper positioning */
-section {
-    position: relative;
-    z-index: 1;
 }
 
 .container {
@@ -104,13 +60,14 @@ section {
 
 /* Navigation Bar */
 .navbar {
-    background: #586E20 100%;
+    background: #093400; /* Dark green */
     color: white;
     padding: 0.3rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-bottom: 3px solid #C55A11; /* Orange accent */
 }
 
 .navbar .container {
@@ -148,10 +105,15 @@ section {
     white-space: nowrap;
 }
 
-.nav-links a:hover, .nav-links a.active {
-    background-color: #FFD700;
-    color: #1A4D2E;
+.nav-links a:hover {
+    background-color: #8DC63F; /* Light green */
+    color: #093400; /* Dark green text */
     transform: translateY(-2px);
+}
+
+.nav-links a.active {
+    background-color: #C55A11; /* Orange for active */
+    color: white;
 }
 
 /* Section Title with Logo */
@@ -169,7 +131,7 @@ section {
     border-radius: 50%;
     background: white;
     padding: 12px;
-    border: 3px solid #FFD700;
+    border: 3px solid #C55A11; /* Orange border */
     box-shadow: 0 5px 20px rgba(0,0,0,0.15);
 }
 
@@ -178,11 +140,11 @@ section {
 .authorities .section-logo,
 .countries-section .section-logo {
     background: white;
-    border-color: #FFD700;
+    border-color: #C55A11; /* Orange border */
 }
 
 .section-title-wrapper h2 {
-    color: #1A4D2E;
+    color: #093400; /* Dark green */
     font-size: 2.5rem;
     position: relative;
     margin-bottom: 15px;
@@ -193,7 +155,7 @@ section {
     display: block;
     width: 80px;
     height: 4px;
-    background: #FFD700;
+    background: #8DC63F; /* Light green underline */
     margin: 15px auto 0;
 }
 
@@ -211,12 +173,13 @@ section {
 }
 
 .btn-primary {
-    background-color: #FFD700;
-    color: #1A4D2E;
+    background-color: #C55A11; /* Orange for primary */
+    color: white;
 }
 
 .btn-primary:hover {
-    background-color: #e6c200;
+    background-color: #8DC63F; /* Light green on hover */
+    color: #093400; /* Dark green text */
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
@@ -224,18 +187,18 @@ section {
 .btn-secondary {
     background-color: transparent;
     color: white;
-    border: 2px solid #FFD700;
+    border: 2px solid #8DC63F; /* Light green border */
 }
 
 .btn-secondary:hover {
-    background-color: #FFD700;
-    color: #1A4D2E;
+    background-color: #8DC63F;
+    color: #093400;
     transform: translateY(-2px);
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(26, 77, 46, 0.8), rgba(26, 77, 46, 0.8)), url('https://images.pexels.com/photos/1022922/pexels-photo-1022922.jpeg');
+    background: linear-gradient(rgba(9, 52, 0, 0.85), rgba(88, 110, 32, 0.85)), url('https://images.pexels.com/photos/1022922/pexels-photo-1022922.jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -243,6 +206,7 @@ section {
     text-align: center;
     padding: 150px 0;
     position: relative;
+    border-bottom: 4px solid #C55A11; /* Orange border */
 }
 
 .hero h1 {
@@ -278,34 +242,35 @@ section {
 
 .about-text {
     font-size: 1.1rem;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.9);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     backdrop-filter: blur(5px);
+    border-left: 5px solid #8DC63F; /* Light green accent */
 }
 
 .highlight {
-    background: #1A4D2E;
+    background: #093400; /* Dark green */
     color: white;
     padding: 20px;
     border-radius: 10px;
     margin-top: 20px;
     font-weight: 500;
-    border-left: 5px solid #FFD700;
+    border-left: 5px solid #C55A11; /* Orange accent */
 }
 
 .about-mission {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.9);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    border-left: 5px solid #FFD700;
+    border-left: 5px solid #C55A11; /* Orange accent */
     backdrop-filter: blur(5px);
 }
 
 .about-mission h3 {
-    color: #1A4D2E;
+    color: #093400; /* Dark green */
     margin-bottom: 15px;
 }
 
@@ -324,18 +289,20 @@ section {
 .feature-card {
     text-align: center;
     padding: 40px 30px;
-    background: rgba(245, 245, 245, 0.85);
+    background: rgba(180, 199, 217, 0.15); /* Blue-gray with transparency */
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     transition: transform 0.3s;
     border-bottom: 4px solid transparent;
     backdrop-filter: blur(5px);
+    border: 1px solid #B4C7D9; /* Blue-gray border */
 }
 
 .feature-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border-bottom: 4px solid #FFD700;
+    border-bottom: 4px solid #C55A11; /* Orange on hover */
+    background: rgba(141, 198, 63, 0.1); /* Light green tint */
 }
 
 .feature-icon {
@@ -344,7 +311,7 @@ section {
 }
 
 .feature-card h3 {
-    color: #1A4D2E;
+    color: #093400; /* Dark green */
     margin-bottom: 15px;
 }
 
@@ -363,23 +330,24 @@ section {
 
 .service-card {
     padding: 40px 25px;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     text-align: center;
     transition: all 0.3s;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    border-top: 4px solid transparent;
+    border-top: 4px solid #586E20; /* Olive green */
     backdrop-filter: blur(5px);
 }
 
 .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    border-top: 4px solid #FFD700;
+    border-top: 4px solid #C55A11; /* Orange on hover */
+    background: rgba(159, 215, 204, 0.2); /* Mint tint */
 }
 
 .service-card h3 {
-    color: #1A4D2E;
+    color: #093400; /* Dark green */
     margin: 20px 0 15px;
     font-size: 1.3rem;
 }
@@ -397,7 +365,7 @@ section {
 }
 
 .team-card {
-    background: rgba(245, 245, 245, 0.85);
+    background: rgba(243, 222, 207, 0.7); /* Soft beige */
     border-radius: 10px;
     padding: 30px;
     text-align: center;
@@ -405,56 +373,54 @@ section {
     transition: transform 0.3s;
     border-bottom: 4px solid transparent;
     backdrop-filter: blur(5px);
+    border: 1px solid #9FD7CC; /* Mint border */
 }
 
 .team-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border-bottom: 4px solid #FFD700;
+    border-bottom: 4px solid #8DC63F; /* Light green */
 }
 
 .team-photo {
     font-size: 4rem;
     margin-bottom: 20px;
-    background: #1A4D2E;
+    background: #586E20; /* Olive green */
     color: white;
     width: 100px;
     height: 100px;
     line-height: 100px;
     border-radius: 50%;
     margin: 0 auto 20px;
-    border: 3px solid #FFD700;
+    border: 3px solid #C55A11; /* Orange border */
 }
 
 .team-card h3 {
-    color: #1A4D2E;
+    color: #093400; /* Dark green */
     margin-bottom: 5px;
 }
 
 .team-title {
-    color: #FFD700;
+    color: #C55A11; /* Orange */
     font-weight: 600;
     margin-bottom: 10px;
 }
 
 .team-qual {
-    color: #666;
+    color: #586E20; /* Olive green */
     font-style: italic;
     margin-bottom: 15px;
-}
-
-.team-bio {
-    font-size: 0.95rem;
-    line-height: 1.6;
 }
 
 /* Authorities Section */
 .authorities {
     padding: 60px 0;
-    background: #1A4D2E;
+    background: #093400; /* Dark green */
     color: white;
     position: relative;
     z-index: 1;
+    border-top: 4px solid #C55A11; /* Orange border */
+    border-bottom: 4px solid #C55A11; /* Orange border */
 }
 
 .authorities .section-title-wrapper h2 {
@@ -473,9 +439,10 @@ section {
     font-size: 1.5rem;
     font-weight: bold;
     padding: 15px 30px;
-    background: rgba(255,255,255,0.1);
+    background: rgba(141, 198, 63, 0.2); /* Light green with transparency */
     border-radius: 50px;
-    border: 2px solid #FFD700;
+    border: 2px solid #8DC63F; /* Light green border */
+    color: white;
 }
 
 .categories-serviced {
@@ -485,7 +452,7 @@ section {
 .categories-serviced h3 {
     margin-bottom: 20px;
     font-size: 1.5rem;
-    color: #FFD700;
+    color: #8DC63F; /* Light green */
 }
 
 .category-tags {
@@ -497,8 +464,8 @@ section {
 
 .category-tag {
     padding: 10px 25px;
-    background: #FFD700;
-    color: #1A4D2E;
+    background: #8DC63F; /* Light green */
+    color: #093400; /* Dark green text */
     border-radius: 50px;
     font-weight: 600;
 }
@@ -513,7 +480,7 @@ section {
 
 .countries-section p {
     margin-bottom: 40px;
-    color: #666;
+    color: #586E20; /* Olive green */
     font-size: 1.1rem;
 }
 
@@ -536,7 +503,6 @@ section {
     animation-play-state: paused;
 }
 
-/* Individual Flag Items */
 .flag-item {
     display: flex;
     flex-direction: column;
@@ -556,41 +522,37 @@ section {
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    border: 2px solid #FFD700;
+    border: 2px solid #C55A11; /* Orange border */
     transition: all 0.3s ease;
 }
 
 .flag-item:hover .flag {
     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    border-color: #1A4D2E;
+    border-color: #8DC63F; /* Light green on hover */
 }
 
 .country-name {
     margin-top: 10px;
     font-weight: 600;
-    color: #1A4D2E;
+    color: #093400; /* Dark green */
     font-size: 0.95rem;
     text-align: center;
 }
 
-/* Animation for horizontal rotation */
+/* Animation */
 @keyframes scrollFlags {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-50% - 25px));
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 25px)); }
 }
 
 /* South Africa Special Styling */
 .flag-item.south-africa .flag {
-    border: 3px solid #FFD700;
+    border: 3px solid #C55A11; /* Orange */
     transform: scale(1.05);
 }
 
 .flag-item.south-africa .country-name {
-    color: #1A4D2E;
+    color: #093400; /* Dark green */
     font-weight: 700;
     font-size: 1rem;
 }
@@ -609,12 +571,12 @@ section {
 
 .flag-container::before {
     left: 0;
-    background: linear-gradient(to right, #f5f5f5, transparent);
+    background: linear-gradient(to right, #F3DECF, transparent); /* Soft beige */
 }
 
 .flag-container::after {
     right: 0;
-    background: linear-gradient(to left, #f5f5f5, transparent);
+    background: linear-gradient(to left, #F3DECF, transparent); /* Soft beige */
 }
 
 /* Contact Section */
@@ -627,15 +589,16 @@ section {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 50px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     backdrop-filter: blur(5px);
+    border: 1px solid #B4C7D9; /* Blue-gray border */
 }
 
 .contact-info {
-    background: #1A4D2E;
+    background: #093400; /* Dark green */
     color: white;
     padding: 40px;
 }
@@ -643,7 +606,7 @@ section {
 .contact-info h3 {
     font-size: 1.8rem;
     margin-bottom: 30px;
-    color: #FFD700;
+    color: #8DC63F; /* Light green */
 }
 
 .contact-info p {
@@ -664,10 +627,10 @@ section {
 .form-group select {
     width: 100%;
     padding: 12px 15px;
-    border: 1px solid #ddd;
+    border: 2px solid #B4C7D9; /* Blue-gray border */
     border-radius: 5px;
     font-size: 1rem;
-    transition: border-color 0.3s;
+    transition: all 0.3s;
     background: rgba(255, 255, 255, 0.9);
 }
 
@@ -675,24 +638,78 @@ section {
 .form-group textarea:focus,
 .form-group select:focus {
     outline: none;
-    border-color: #1A4D2E;
+    border-color: #C55A11; /* Orange on focus */
+    box-shadow: 0 0 5px rgba(197, 90, 17, 0.3);
 }
 
 /* Footer */
 footer {
-    background-color: #1A4D2E;
+    background-color: #093400; /* Dark green */
     color: white;
     text-align: center;
     padding: 30px 0;
-    border-top: 4px solid #FFD700;
+    border-top: 4px solid #C55A11; /* Orange border */
 }
 
 /* Page Header */
 .page-header {
-    background: linear-gradient(135deg, G#fffcdb 0%, G#fffcdb 0%);
+    background: linear-gradient(135deg, #093400 0%, #586E20 100%);
     color: white;
     padding: 80px 0;
     text-align: center;
+    border-bottom: 4px solid #C55A11; /* Orange border */
+}
+
+/* Filter Buttons (if needed) */
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background: white;
+    color: #093400; /* Dark green */
+    border: 2px solid #B4C7D9; /* Blue-gray */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn.active {
+    background: #8DC63F; /* Light green */
+    color: #093400; /* Dark green */
+    border-color: #8DC63F;
+}
+
+.filter-btn:hover {
+    background: #C55A11; /* Orange */
+    color: white;
+    border-color: #C55A11;
+}
+
+/* Status Badges (if needed) */
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-approved {
+    background-color: #E9F683; /* Light yellow */
+    color: #093400; /* Dark green */
+    border-left: 4px solid #8DC63F; /* Light green */
+}
+
+.status-pending {
+    background-color: #B4C7D9; /* Blue-gray */
+    color: #093400; /* Dark green */
+    border-left: 4px solid #C55A11; /* Orange */
 }
 
 /* Animations */
@@ -705,11 +722,6 @@ footer {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
 
 /* Responsive Design */
@@ -774,7 +786,6 @@ footer {
         font-size: 2rem;
     }
     
-    /* Flag responsive */
     .flag-item {
         min-width: 80px;
         margin: 0 15px;
@@ -785,17 +796,9 @@ footer {
         height: 45px;
     }
     
-    .country-name {
-        font-size: 0.8rem;
-    }
-    
     @keyframes scrollFlags {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(calc(-50% - 15px));
-        }
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-50% - 15px)); }
     }
     
     .flag-container::before,
