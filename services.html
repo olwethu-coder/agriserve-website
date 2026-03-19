@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .pricing-card {
-            background: white;
+            background: var(--card-bg);
             border-radius: 10px;
             padding: 40px 30px;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px var(--shadow-color);
             transition: transform 0.3s;
             border: 2px solid transparent;
             height: 100%;
@@ -27,21 +27,21 @@
         }
         
         .pricing-card h3 {
-            color: #093400;
+            color: var(--text-primary);
             font-size: 1.5rem;
             margin-bottom: 20px;
         }
         
         .price {
             font-size: 2.5rem;
-            color: #093400;
+            color: var(--text-primary);
             font-weight: bold;
             margin-bottom: 20px;
         }
         
         .price small {
             font-size: 1rem;
-            color: #586E20;
+            color: var(--text-secondary);
             font-weight: normal;
         }
         
@@ -53,7 +53,8 @@
         
         .features li {
             padding: 10px 0;
-            border-bottom: 1px solid #B4C7D9;
+            border-bottom: 1px solid var(--border-light);
+            color: var(--text-primary);
         }
         
         .features li:before {
@@ -78,9 +79,10 @@
         
         .dossiers-list li {
             padding: 12px 20px;
-            background: white;
+            background: var(--bg-card);
+            color: var(--text-primary);
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 5px var(--shadow-color);
             border-left: 4px solid #C55A11;
         }
         
@@ -143,9 +145,24 @@
         </div>
     </section>
 
-    <!-- Hero Image for Services -->
+    <!-- Full Width Animated Image Slider - ABOVE the content -->
     <div class="container">
-        <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="South African agriculture research" class="section-image" style="height: 300px;" loading="lazy">
+        <div class="full-width-image-container">
+            <div class="image-slider-container">
+                <div class="image-slide">
+                    <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Agricultural research" loading="lazy">
+                </div>
+                <div class="image-slide">
+                    <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Crop fields" loading="lazy">
+                </div>
+                <div class="image-slide">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Farm landscape" loading="lazy">
+                </div>
+                <div class="image-slide">
+                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Plant seedlings" loading="lazy">
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Main Services -->
@@ -201,7 +218,7 @@
         </div>
     </section>
 
-    <!-- Image Divider -->
+    <!-- Image Divider / Gallery -->
     <div class="container">
         <div class="image-grid">
             <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Crop fields" class="image-grid-item" loading="lazy">
@@ -219,8 +236,8 @@
             </div>
             
             <!-- Retainer Contracts -->
-            <h3 style="margin: 60px 0 20px; color: #093400; text-align: center;">1. RETAINER CONTRACTS</h3>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">Ideal for clients who require ongoing regulatory support and strategic guidance. Fixed monthly fee with priority access to our expertise.</p>
+            <h3 style="margin: 60px 0 20px; color: var(--text-primary); text-align: center;">1. RETAINER CONTRACTS</h3>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: var(--text-primary);">Ideal for clients who require ongoing regulatory support and strategic guidance. Fixed monthly fee with priority access to our expertise.</p>
             
             <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
                 <div class="pricing-card">
@@ -267,8 +284,8 @@
 
             <!-- Ad Hoc Services -->
             <div style="margin-top: 80px;">
-                <h3 style="margin: 40px 0 20px; color: #093400; text-align: center;">2. AD HOC PROJECT-BASED BILLING</h3>
-                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">For clients who need regulatory support on a case-by-case basis. Flexible engagement with transparent pricing.</p>
+                <h3 style="margin: 40px 0 20px; color: var(--text-primary); text-align: center;">2. AD HOC PROJECT-BASED BILLING</h3>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: var(--text-primary);">For clients who need regulatory support on a case-by-case basis. Flexible engagement with transparent pricing.</p>
                 
                 <div class="service-grid" style="grid-template-columns: repeat(3, 1fr);">
                     <div class="service-card">
@@ -290,9 +307,9 @@
             </div>
 
             <!-- Important Note -->
-            <div style="background: #F3DECF; padding: 30px; border-radius: 10px; margin-top: 60px; text-align: center; border-left: 4px solid #C55A11;">
-                <p style="font-size: 1.1rem;"><strong>Note:</strong> Our minimum retainer fee starts at R40,000 irrespective of the desired Tier. Ad hoc Billing will be subject to the scoping of required services.</p>
-                <p style="margin-top: 15px;">Our team will provide a detailed project proposal outlining scope, timelines, and costs before commencing any work, ensuring full transparency in pricing.</p>
+            <div style="background: var(--bg-section-light); padding: 30px; border-radius: 10px; margin-top: 60px; text-align: center; border-left: 4px solid #C55A11;">
+                <p style="font-size: 1.1rem; color: var(--text-primary);"><strong>Note:</strong> Our minimum retainer fee starts at R40,000 irrespective of the desired Tier. Ad hoc Billing will be subject to the scoping of required services.</p>
+                <p style="margin-top: 15px; color: var(--text-primary);">Our team will provide a detailed project proposal outlining scope, timelines, and costs before commencing any work, ensuring full transparency in pricing.</p>
             </div>
         </div>
     </section>
@@ -368,6 +385,16 @@
             <p style="margin-top: 10px; font-size: 0.9rem;">info@agri-serve.co.za | Pretoria, Gauteng</p>
         </div>
     </footer>
+
+    <!-- Theme Toggle Button - Icon only -->
+    <div class="theme-toggle">
+        <button class="theme-toggle-btn" id="themeToggle">
+            <span class="toggle-icon" id="themeIcon">🌙</span>
+        </button>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
     <script src="script.js"></script>
 </body>
