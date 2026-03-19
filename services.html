@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>AgriServe Consulting - Regulatory Services</title>
     <link rel="stylesheet" href="style.css">
     <style>
@@ -14,6 +14,7 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s;
             border: 2px solid transparent;
+            height: 100%;
         }
         
         .pricing-card:hover {
@@ -91,6 +92,24 @@
         @media (max-width: 768px) {
             .pricing-card.featured {
                 transform: none;
+                margin: 15px 0;
+            }
+            
+            .pricing-card {
+                padding: 30px 20px;
+                margin-bottom: 15px;
+            }
+            
+            .price {
+                font-size: 2rem;
+            }
+            
+            .dossiers-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .dossiers-list li {
+                padding: 15px;
             }
         }
     </style>
@@ -124,7 +143,7 @@
         </div>
     </section>
 
-    <!-- Hero Image for Services - REPLACED with working image -->
+    <!-- Hero Image for Services -->
     <div class="container">
         <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="South African agriculture research" class="section-image" style="height: 300px;" loading="lazy">
     </div>
@@ -182,7 +201,7 @@
         </div>
     </section>
 
-    <!-- Image Divider - REPLACED with working images -->
+    <!-- Image Divider -->
     <div class="container">
         <div class="image-grid">
             <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Crop fields" class="image-grid-item" loading="lazy">
