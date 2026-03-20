@@ -131,7 +131,7 @@ body {
 
 /* ===== INCREASED SECTION SPACING ===== */
 section {
-    margin: 60px 0 !important; /* Increased from 20px to 60px */
+    margin: 60px 0 !important;
     padding: 80px 0 !important;
 }
 
@@ -577,26 +577,30 @@ section:last-of-type {
     animation-play-state: paused;
 }
 
-/* ===== FULL WIDTH IMAGE SLIDER (Reusable) ===== */
-.full-width-image-container {
-    width: 100%;
-    height: 400px;
+/* ===== TWITTER-STYLE PROFILE OVERLAP ===== */
+.profile-header-section {
     position: relative;
-    overflow: hidden;
-    border-radius: 20px;
-    margin: 40px 0 60px 0; /* Increased bottom margin for spacing */
-    box-shadow: 0 15px 30px var(--shadow-color);
-    border: 4px solid white;
+    margin: 0 0 80px 0;
+    width: 100%;
 }
 
-.image-slider-container {
+/* Header Image - Full width, no margins */
+.profile-header-image {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    background: #1a1a1a;
+}
+
+.header-slider-container {
     position: relative;
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 
-.image-slide {
+.header-slide {
     position: absolute;
     top: 0;
     left: 0;
@@ -607,27 +611,69 @@ section:last-of-type {
     overflow: hidden;
 }
 
-.image-slide:nth-child(1) { animation-delay: 0s; }
-.image-slide:nth-child(2) { animation-delay: 5s; }
-.image-slide:nth-child(3) { animation-delay: 10s; }
-.image-slide:nth-child(4) { animation-delay: 15s; }
+.header-slide:nth-child(1) { animation-delay: 0s; }
+.header-slide:nth-child(2) { animation-delay: 5s; }
+.header-slide:nth-child(3) { animation-delay: 10s; }
+.header-slide:nth-child(4) { animation-delay: 15s; }
 
-.image-slide img {
+.header-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     animation: kenBurnsZoom 20s infinite alternate;
 }
 
-.image-slide::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(9, 52, 0, 0.2), rgba(88, 110, 32, 0.2));
-    pointer-events: none;
+/* Profile Logo Container - Overlaps the header image */
+.profile-logo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: -60px;
+    position: relative;
+    z-index: 10;
+}
+
+.profile-logo-wrapper {
+    background: var(--bg-card);
+    border-radius: 50%;
+    padding: 6px;
+    box-shadow: 0 10px 25px var(--shadow-color);
+    border: 3px solid var(--border-accent);
+}
+
+/* Profile logo - MATCHES SECTION LOGO SIZE */
+.profile-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: white;
+    padding: 12px;
+    transition: transform 0.3s ease;
+}
+
+.profile-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Content below the overlapping logo */
+.profile-content {
+    background: transparent;
+    padding: 20px 0 60px 0;
+    margin-top: 20px;
+}
+
+.profile-content .section-title-wrapper {
+    margin-bottom: 30px;
+}
+
+.profile-content .section-title-wrapper h2 {
+    margin-top: 20px;
+}
+
+/* Remove default section styling for these custom sections */
+.profile-header-section + section,
+.profile-content + section {
+    margin-top: 0;
 }
 
 /* ===== 3D FLIP CARD ===== */
@@ -793,11 +839,11 @@ section:last-of-type {
 .team-card:nth-child(5) { animation-delay: 0.5s; }
 .team-card:nth-child(6) { animation-delay: 0.6s; }
 
-/* ===== NAVBAR ===== */
+/* ===== NAVBAR - FIXED FOR MOBILE ===== */
 .navbar {
     background: #093400;
     color: white;
-    padding: 1rem 0;
+    padding: 0.8rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -810,7 +856,7 @@ section:last-of-type {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 90px;
+    min-height: 80px;
 }
 
 .navbar.scrolled {
@@ -821,13 +867,13 @@ section:last-of-type {
 }
 
 .navbar.scrolled .container {
-    min-height: 80px;
+    min-height: 70px;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    height: 80px;
+    height: 70px;
     position: relative;
     max-width: 400px;
 }
@@ -839,9 +885,9 @@ section:last-of-type {
 }
 
 .logo-full img {
-    height: 75px;
+    height: 65px;
     width: auto;
-    max-width: 350px;
+    max-width: 300px;
     object-fit: contain;
 }
 
@@ -852,7 +898,7 @@ section:last-of-type {
 
 .logo-condensed .logo-text {
     color: white;
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1px;
     white-space: nowrap;
@@ -866,10 +912,11 @@ section:last-of-type {
     display: block;
 }
 
+/* Navigation links - FIXED for mobile */
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 0.8rem;
+    gap: 0.5rem;
     margin: 0;
     padding: 0;
     transition: all 0.3s ease;
@@ -878,24 +925,25 @@ section:last-of-type {
 .nav-links a {
     color: white;
     text-decoration: none;
-    padding: 0.6rem 1.2rem;
+    padding: 0.5rem 0.8rem;
     border-radius: 30px;
     transition: all 0.3s;
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 1rem;
     white-space: nowrap;
     border: 2px solid transparent;
     animation: borderGlow 8s infinite;
+    display: inline-block;
 }
 
 .navbar.scrolled .nav-links a {
-    padding: 0.4rem 1rem;
-    font-size: 1rem;
+    padding: 0.4rem 0.7rem;
+    font-size: 0.9rem;
 }
 
 .nav-links a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
     background-color: rgba(141, 198, 63, 0.2);
 }
 
@@ -904,6 +952,72 @@ section:last-of-type {
     color: white;
     border-color: #C55A11;
     animation: borderGlow 4s infinite;
+}
+
+/* Mobile specific navbar styles - NO OVERLAPPING */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        gap: 12px;
+        padding: 10px 15px;
+        min-height: auto;
+    }
+    
+    .navbar {
+        padding: 0.5rem 0;
+    }
+    
+    .logo-container {
+        height: 55px;
+        margin-bottom: 0;
+    }
+    
+    .logo-full img {
+        height: 50px;
+        max-width: 220px;
+    }
+    
+    .logo-condensed .logo-text {
+        font-size: 1.6rem;
+    }
+    
+    /* Navigation links - WRAP to prevent overlap */
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+    }
+    
+    .nav-links a {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+        margin: 0;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+    
+    .navbar.scrolled .nav-links a {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+    
+    /* Adjust scrolled navbar for mobile */
+    .navbar.scrolled .container {
+        gap: 8px;
+    }
+    
+    .navbar.scrolled .logo-container {
+        height: 45px;
+    }
+    
+    .navbar.scrolled .logo-full img {
+        height: 40px;
+    }
+    
+    .navbar.scrolled .logo-condensed .logo-text {
+        font-size: 1.4rem;
+    }
 }
 
 /* ===== SECTION TITLE ===== */
@@ -1606,7 +1720,7 @@ footer {
 section:not(:last-child)::after {
     content: '';
     position: absolute;
-    bottom: -30px; /* Adjusted for increased spacing */
+    bottom: -30px;
     left: 50%;
     transform: translateX(-50%);
     width: 100px;
@@ -1614,15 +1728,15 @@ section:not(:last-child)::after {
     background: linear-gradient(90deg, transparent, #C55A11, transparent);
 }
 
-/* ===== MOBILE RESPONSIVE ===== */
+/* ===== MOBILE RESPONSIVE (Additional) ===== */
 @media (max-width: 768px) {
     .container {
         padding: 0 15px;
     }
     
     section {
-        padding: 40px 0 !important;
         margin: 30px 0 !important;
+        padding: 40px 0 !important;
     }
     
     .section-title-wrapper {
@@ -1639,49 +1753,31 @@ section:not(:last-child)::after {
         padding: 8px;
     }
     
-    /* Full width image mobile */
-    .full-width-image-container {
-        height: 250px;
-        margin: 20px 0 40px 0;
+    /* Twitter-style overlap mobile */
+    .profile-header-image {
+        height: 200px;
     }
     
-    /* Navbar Mobile */
-    .navbar .container {
-        flex-direction: column;
-        gap: 8px;
-        padding: 10px 0;
-        min-height: auto;
+    .profile-logo-container {
+        margin-top: -50px;
     }
     
-    .navbar {
-        padding: 0.5rem 0;
+    .profile-logo {
+        width: 70px;
+        height: 70px;
+        padding: 8px;
     }
     
-    .logo-container {
-        height: 50px;
-        margin-bottom: 5px;
+    .profile-logo-wrapper {
+        padding: 4px;
     }
     
-    .logo-full img {
-        height: 45px;
-        max-width: 220px;
+    .profile-content {
+        padding: 20px 0 40px 0;
     }
     
-    .logo-condensed .logo-text {
-        font-size: 1.5rem;
-    }
-    
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 5px;
-    }
-    
-    .nav-links a {
-        font-size: 0.85rem;
-        padding: 8px 12px;
-        margin: 2px;
-        border-radius: 25px;
+    .profile-content .section-title-wrapper {
+        margin-bottom: 25px;
     }
     
     /* Hero Mobile */
@@ -1984,5 +2080,20 @@ section:not(:last-child)::after {
     
     .about-text {
         padding: 30px;
+    }
+    
+    /* Twitter-style overlap tablet */
+    .profile-header-image {
+        height: 280px;
+    }
+    
+    .profile-logo-container {
+        margin-top: -55px;
+    }
+    
+    .profile-logo {
+        width: 90px;
+        height: 90px;
+        padding: 10px;
     }
 }
