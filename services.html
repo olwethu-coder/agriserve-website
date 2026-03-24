@@ -8,33 +8,52 @@
     <style>
         .pricing-card {
             background: var(--card-bg);
-            border-radius: 10px;
-            padding: 40px 30px;
+            border-radius: 15px;
+            padding: 35px 25px;
             text-align: center;
-            box-shadow: 0 5px 20px var(--shadow-color);
-            transition: transform 0.3s;
-            border: 2px solid transparent;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-light);
             height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #C55A11, #8DC63F, #586E20);
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
         }
         
         .pricing-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .pricing-card:hover::before {
+            transform: scaleX(1);
         }
         
         .pricing-card.featured {
-            border-color: #C55A11;
-            transform: scale(1.05);
+            border: 2px solid #C55A11;
+            transform: scale(1.02);
         }
         
         .pricing-card h3 {
             color: var(--text-primary);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
         }
         
         .price {
             font-size: 2.5rem;
-            color: var(--text-primary);
+            color: #C55A11;
             font-weight: bold;
             margin-bottom: 20px;
         }
@@ -47,7 +66,7 @@
         
         .features {
             list-style: none;
-            margin: 30px 0;
+            margin: 25px 0;
             text-align: left;
         }
         
@@ -78,12 +97,18 @@
         }
         
         .dossiers-list li {
-            padding: 12px 20px;
+            padding: 15px 20px;
             background: var(--bg-card);
             color: var(--text-primary);
-            border-radius: 5px;
-            box-shadow: 0 2px 5px var(--shadow-color);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow-color);
             border-left: 4px solid #C55A11;
+            transition: all 0.3s ease;
+        }
+        
+        .dossiers-list li:hover {
+            transform: translateX(5px);
+            border-left-width: 6px;
         }
         
         .dossiers-list li:before {
@@ -98,7 +123,7 @@
             }
             
             .pricing-card {
-                padding: 30px 20px;
+                padding: 25px 20px;
                 margin-bottom: 15px;
             }
             
@@ -111,7 +136,7 @@
             }
             
             .dossiers-list li {
-                padding: 15px;
+                padding: 12px 15px;
             }
         }
     </style>
@@ -145,9 +170,9 @@
         </div>
     </section>
 
-    <!-- Services Section with Twitter-style Overlap -->
+    <!-- OUR CORE SERVICES Section - Twitter-style Overlap with About Us Styling -->
     <div class="profile-header-section">
-        <!-- Full Width Image - Acts like Twitter header -->
+        <!-- Full Width Image -->
         <div class="profile-header-image">
             <div class="header-slider-container">
                 <div class="header-slide">
@@ -165,34 +190,38 @@
             </div>
         </div>
         
-        <!-- Logo that overlaps the header image (same size as before - 100px) -->
+        <!-- Logo that overlaps the header image -->
         <div class="profile-logo-container">
             <div class="profile-logo-wrapper">
                 <img src="logo.png" alt="AgriServe Logo" class="profile-logo">
             </div>
         </div>
         
-        <!-- Section content below the overlapping logo -->
+        <!-- Section content - About Us Styling -->
         <div class="profile-content">
             <div class="container">
                 <div class="section-title-wrapper">
                     <h2>OUR CORE SERVICES</h2>
                 </div>
-                <div class="service-grid">
-                    <div class="service-card">
-                        <h3>📋 Product Registration</h3>
+                <div class="about-style-grid">
+                    <div class="about-style-card">
+                        <div class="card-icon">📋</div>
+                        <h3>Product Registration</h3>
                         <p>Complete management of new registrations, label extensions, re-instatements, and parallel registrations for agricultural remedies and household products.</p>
                     </div>
-                    <div class="service-card">
-                        <h3>🏷️ Product Label & SDS Compilation</h3>
+                    <div class="about-style-card">
+                        <div class="card-icon">🏷️</div>
+                        <h3>Product Label & SDS Compilation</h3>
                         <p>Crafting accurate and compliant product labels and Safety Data Sheets (SDS) ensuring regulatory adherence and product safety.</p>
                     </div>
-                    <div class="service-card">
-                        <h3>📚 Regulatory Policy Training</h3>
+                    <div class="about-style-card">
+                        <div class="card-icon">📚</div>
+                        <h3>Regulatory Policy Training</h3>
                         <p>Customized training programs designed to educate your team on the latest regulatory policies and compliance requirements.</p>
                     </div>
-                    <div class="service-card">
-                        <h3>⚖️ GHS Compliance</h3>
+                    <div class="about-style-card">
+                        <div class="card-icon">⚖️</div>
+                        <h3>GHS Compliance</h3>
                         <p>Full GHS services including SDS, labels, classification, rationales, and application forms (LIST I & LIST III).</p>
                     </div>
                 </div>
@@ -225,101 +254,122 @@
         </div>
     </section>
 
-    <!-- Image Divider / Gallery -->
-    <div class="container">
-        <div class="image-grid">
-            <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Crop fields" class="image-grid-item" loading="lazy">
-            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Farm landscape" class="image-grid-item" loading="lazy">
-            <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Plant seedlings" class="image-grid-item" loading="lazy">
+    <!-- ENGAGEMENT MODELS Section - Twitter-style Overlap with Animated Background -->
+    <div class="profile-header-section">
+        <!-- Full Width Image with Animation (Twitter-style) -->
+        <div class="profile-header-image">
+            <div class="header-slider-container">
+                <div class="header-slide">
+                    <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Business meeting" loading="lazy">
+                </div>
+                <div class="header-slide">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Team collaboration" loading="lazy">
+                </div>
+                <div class="header-slide">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Business strategy" loading="lazy">
+                </div>
+                <div class="header-slide">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Financial planning" loading="lazy">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Logo that overlaps the header image -->
+        <div class="profile-logo-container">
+            <div class="profile-logo-wrapper">
+                <img src="logo.png" alt="AgriServe Logo" class="profile-logo">
+            </div>
+        </div>
+        
+        <!-- Section content - Pricing Cards -->
+        <div class="profile-content">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <h2>ENGAGEMENT MODELS</h2>
+                </div>
+                
+                <!-- Retainer Contracts -->
+                <h3 style="margin: 60px 0 20px; color: var(--text-primary); text-align: center; font-size: 1.8rem;">1. RETAINER CONTRACTS</h3>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: var(--text-primary);">Ideal for clients who require ongoing regulatory support and strategic guidance. Fixed monthly fee with priority access to our expertise.</p>
+                
+                <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
+                    <div class="pricing-card">
+                        <h3>Tier I Package</h3>
+                        <div class="price">R40,000 <small>/month</small></div>
+                        <ul class="features">
+                            <li>Periodic compliance reviews</li>
+                            <li>General advisory services</li>
+                            <li>Limited regulatory filings</li>
+                            <li>Email support</li>
+                            <li>Basic regulatory oversight</li>
+                        </ul>
+                        <a href="index.html#contact" class="btn btn-primary">Enquire Now</a>
+                    </div>
+
+                    <div class="pricing-card featured">
+                        <h3>Tier II Package</h3>
+                        <div class="price">R55,000 <small>/month</small></div>
+                        <ul class="features">
+                            <li>All Tier I services</li>
+                            <li>All regulatory submissions</li>
+                            <li>Staff training sessions</li>
+                            <li>Policy development support</li>
+                            <li>Priority response</li>
+                            <li>Dedicated consultant</li>
+                        </ul>
+                        <a href="index.html#contact" class="btn btn-primary">Enquire Now</a>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3>Tier III Package</h3>
+                        <div class="price">R75,000 <small>/month</small></div>
+                        <ul class="features">
+                            <li>All Tier II services</li>
+                            <li>Comprehensive regulatory oversight</li>
+                            <li>Real-time compliance monitoring</li>
+                            <li>Strategic regulatory planning</li>
+                            <li>Representation in regulatory discussions</li>
+                            <li>24/7 priority support</li>
+                        </ul>
+                        <a href="index.html#contact" class="btn btn-primary">Enquire Now</a>
+                    </div>
+                </div>
+
+                <!-- Ad Hoc Services -->
+                <div style="margin-top: 80px;">
+                    <h3 style="margin: 40px 0 20px; color: var(--text-primary); text-align: center; font-size: 1.8rem;">2. AD HOC PROJECT-BASED BILLING</h3>
+                    <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: var(--text-primary);">For clients who need regulatory support on a case-by-case basis. Flexible engagement with transparent pricing.</p>
+                    
+                    <div class="about-style-grid" style="grid-template-columns: repeat(3, 1fr);">
+                        <div class="about-style-card">
+                            <div class="card-icon">⏱️</div>
+                            <h4 style="font-size: 1.3rem;">Hourly Rate</h4>
+                            <p class="price" style="font-size: 1.8rem;">R1,500 <small>/hour</small></p>
+                            <p>For consultations, quick advisory services, and specific regulatory questions</p>
+                        </div>
+                        <div class="about-style-card">
+                            <div class="card-icon">📄</div>
+                            <h4 style="font-size: 1.3rem;">Fixed Fee</h4>
+                            <p class="price" style="font-size: 1.8rem;">Quote Based</p>
+                            <p>For well-defined projects such as regulatory submissions, licensing applications, or policy drafting</p>
+                        </div>
+                        <div class="about-style-card">
+                            <div class="card-icon">🎯</div>
+                            <h4 style="font-size: 1.3rem;">Milestone-Based</h4>
+                            <p class="price" style="font-size: 1.8rem;">Structured</p>
+                            <p>Payments structured around key project deliverables for larger regulatory projects</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Important Note -->
+                <div style="background: var(--bg-section-light); padding: 30px; border-radius: 15px; margin-top: 60px; text-align: center; border-left: 4px solid #C55A11;">
+                    <p style="font-size: 1.1rem; color: var(--text-primary);"><strong>Note:</strong> Our minimum retainer fee starts at R40,000 irrespective of the desired Tier. Ad hoc Billing will be subject to the scoping of required services.</p>
+                    <p style="margin-top: 15px; color: var(--text-primary);">Our team will provide a detailed project proposal outlining scope, timelines, and costs before commencing any work, ensuring full transparency in pricing.</p>
+                </div>
+            </div>
         </div>
     </div>
-
-    <!-- Pricing Models -->
-    <section class="pricing-table" style="padding: 60px 0;">
-        <div class="container">
-            <div class="section-title-wrapper">
-                <img src="logo.png" alt="AgriServe Logo" class="section-logo">
-                <h2>ENGAGEMENT MODELS</h2>
-            </div>
-            
-            <!-- Retainer Contracts -->
-            <h3 style="margin: 60px 0 20px; color: var(--text-primary); text-align: center;">1. RETAINER CONTRACTS</h3>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: var(--text-primary);">Ideal for clients who require ongoing regulatory support and strategic guidance. Fixed monthly fee with priority access to our expertise.</p>
-            
-            <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
-                <div class="pricing-card">
-                    <h3>Tier I Package</h3>
-                    <div class="price">R40,000 <small>/month</small></div>
-                    <ul class="features">
-                        <li>Periodic compliance reviews</li>
-                        <li>General advisory services</li>
-                        <li>Limited regulatory filings</li>
-                        <li>Email support</li>
-                        <li>Basic regulatory oversight</li>
-                    </ul>
-                    <a href="index.html#contact" class="btn btn-primary">Enquire Now</a>
-                </div>
-
-                <div class="pricing-card featured">
-                    <h3>Tier II Package</h3>
-                    <div class="price">R55,000 <small>/month</small></div>
-                    <ul class="features">
-                        <li>All Tier I services</li>
-                        <li>All regulatory submissions</li>
-                        <li>Staff training sessions</li>
-                        <li>Policy development support</li>
-                        <li>Priority response</li>
-                        <li>Dedicated consultant</li>
-                    </ul>
-                    <a href="index.html#contact" class="btn btn-primary">Enquire Now</a>
-                </div>
-
-                <div class="pricing-card">
-                    <h3>Tier III Package</h3>
-                    <div class="price">R75,000 <small>/month</small></div>
-                    <ul class="features">
-                        <li>All Tier II services</li>
-                        <li>Comprehensive regulatory oversight</li>
-                        <li>Real-time compliance monitoring</li>
-                        <li>Strategic regulatory planning</li>
-                        <li>Representation in regulatory discussions</li>
-                        <li>24/7 priority support</li>
-                    </ul>
-                    <a href="index.html#contact" class="btn btn-primary">Enquire Now</a>
-                </div>
-            </div>
-
-            <!-- Ad Hoc Services -->
-            <div style="margin-top: 80px;">
-                <h3 style="margin: 40px 0 20px; color: var(--text-primary); text-align: center;">2. AD HOC PROJECT-BASED BILLING</h3>
-                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: var(--text-primary);">For clients who need regulatory support on a case-by-case basis. Flexible engagement with transparent pricing.</p>
-                
-                <div class="service-grid" style="grid-template-columns: repeat(3, 1fr);">
-                    <div class="service-card">
-                        <h4>Hourly Rate</h4>
-                        <p class="price" style="font-size: 1.8rem;">R1,500 <small>/hour</small></p>
-                        <p>For consultations, quick advisory services, and specific regulatory questions</p>
-                    </div>
-                    <div class="service-card">
-                        <h4>Fixed Fee</h4>
-                        <p class="price" style="font-size: 1.8rem;">Quote Based</p>
-                        <p>For well-defined projects such as regulatory submissions, licensing applications, or policy drafting</p>
-                    </div>
-                    <div class="service-card">
-                        <h4>Milestone-Based</h4>
-                        <p class="price" style="font-size: 1.8rem;">Structured</p>
-                        <p>Payments structured around key project deliverables for larger regulatory projects</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Important Note -->
-            <div style="background: var(--bg-section-light); padding: 30px; border-radius: 10px; margin-top: 60px; text-align: center; border-left: 4px solid #C55A11;">
-                <p style="font-size: 1.1rem; color: var(--text-primary);"><strong>Note:</strong> Our minimum retainer fee starts at R40,000 irrespective of the desired Tier. Ad hoc Billing will be subject to the scoping of required services.</p>
-                <p style="margin-top: 15px; color: var(--text-primary);">Our team will provide a detailed project proposal outlining scope, timelines, and costs before commencing any work, ensuring full transparency in pricing.</p>
-            </div>
-        </div>
-    </section>
 
     <!-- Countries Serviced -->
     <section class="authorities" style="background: #093400; color: white;">
