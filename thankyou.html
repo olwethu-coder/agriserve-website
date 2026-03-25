@@ -276,6 +276,25 @@
             transform: translateY(-3px);
         }
 
+        /* Empty State */
+        .empty-state {
+            background: #FFF3CD;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .empty-state a {
+            color: #C55A11;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .empty-state a:hover {
+            text-decoration: underline;
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             body {
@@ -343,127 +362,126 @@
             </div>
 
             <!-- Content Section -->
-            <div class="content-section">
-                <!-- Confirmation Message -->
-                <div class="confirmation-message">
-                    <p><strong>✅ Your submission has been successfully received.</strong></p>
-                    <p>Below is a copy of the information you submitted for your records.</p>
-                </div>
-
-                <!-- Submitted Information Section -->
-                <div class="info-section">
-                    <h3>📋 Your Submission Details</h3>
-                    <div class="info-grid" id="submittedInfo">
-                        <div class="info-label">Full Name:</div>
-                        <div class="info-value" id="displayName">-</div>
-                        
-                        <div class="info-label">Email Address:</div>
-                        <div class="info-value" id="displayEmail">-</div>
-                        
-                        <div class="info-label">Company:</div>
-                        <div class="info-value" id="displayCompany">-</div>
-                        
-                        <div class="info-label">Service Interest:</div>
-                        <div class="info-value highlight" id="displayService">-</div>
-                        
-                        <div class="info-label">Your Message:</div>
-                        <div class="info-value" id="displayMessage">-</div>
-                        
-                        <div class="info-label">Submission Time:</div>
-                        <div class="info-value" id="displayTime">-</div>
-                    </div>
-                </div>
-
-                <!-- Company Confirmation Message -->
-                <div class="company-message">
-                    <h4>📧 Good day,</h4>
-                    <p>This email serves to confirm receipt of your business inquiry. A member of our team will be in contact with you within the next 24 hours to arrange a time to discuss the requested services.</p>
-                    <div class="company-signature">
-                        <p><strong>Kind Regards,</strong></p>
-                        <p><strong>AGRISERVE CONSULTING TEAM</strong></p>
-                        <p>Email: info@agri-serve.co.za</p>
-                        <p>Address: Pretoria | Gauteng</p>
-                        <p>Website: www.agri-serve.co.za</p>
-                    </div>
-                </div>
-
-                <!-- Contact Footer -->
-                <div class="contact-footer">
-                    <p>📧 <strong>Email:</strong> <a href="mailto:info@agri-serve.co.za">info@agri-serve.co.za</a></p>
-                    <p>📍 <strong>Location:</strong> Pretoria, Gauteng, South Africa</p>
-                    <p>🌐 <strong>Website:</strong> <a href="https://olwethu-coder.github.io/agriserve-website/">www.agri-serve.co.za</a></p>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="button-group">
-                    <a href="index.html" class="btn btn-primary">🏠 Return to Homepage</a>
-                    <a href="services.html" class="btn btn-secondary">📋 View Our Services</a>
-                    <a href="index.html#contact" class="btn btn-secondary">✉️ Contact Us Again</a>
-                </div>
+            <div class="content-section" id="contentSection">
+                <!-- This will be populated by JavaScript -->
             </div>
         </div>
     </div>
 
     <script>
-        // Parse URL parameters to get form data
-        function getUrlParams() {
-            const params = new URLSearchParams(window.location.search);
-            return {
-                name: params.get('name') || 'Not provided',
-                email: params.get('email') || 'Not provided',
-                company: params.get('company') || 'Not provided',
-                service: params.get('service') || 'Not selected',
-                message: params.get('message') || 'Not provided'
-            };
-        }
-
-        // Display the submitted information
+        // Display submitted information from localStorage
         function displaySubmittedInfo() {
-            const data = getUrlParams();
+            const savedData = localStorage.getItem('submittedFormData');
+            const contentSection = document.getElementById('contentSection');
             
-            // Update the DOM with the submitted data
-            document.getElementById('displayName').textContent = data.name;
-            document.getElementById('displayEmail').textContent = data.email;
-            document.getElementById('displayCompany').textContent = data.company;
-            document.getElementById('displayService').textContent = data.service;
-            document.getElementById('displayMessage').textContent = data.message;
-            
-            // Add submission timestamp
-            const now = new Date();
-            const formattedTime = now.toLocaleString('en-ZA', {
-                dateStyle: 'full',
-                timeStyle: 'medium'
-            });
-            document.getElementById('displayTime').textContent = formattedTime;
-        }
-
-        // If no data in URL (direct access), show sample or redirect
-        function checkData() {
-            const data = getUrlParams();
-            if (data.name === 'Not provided' && data.email === 'Not provided') {
-                // If someone accesses the thank you page directly without form submission
-                document.getElementById('displayName').textContent = 'No data submitted';
-                document.getElementById('displayEmail').textContent = 'Please use the contact form';
-                document.getElementById('displayCompany').textContent = '-';
-                document.getElementById('displayService').textContent = '-';
-                document.getElementById('displayMessage').textContent = '-';
+            if (savedData) {
+                const data = JSON.parse(savedData);
                 
-                // Add a note
-                const infoSection = document.querySelector('.info-section');
-                const note = document.createElement('div');
-                note.style.background = '#FFF3CD';
-                note.style.padding = '15px';
-                note.style.borderRadius = '10px';
-                note.style.marginTop = '15px';
-                note.innerHTML = '<strong>⚠️ Note:</strong> This page was accessed directly. Please use the <a href="index.html#contact" style="color: #C55A11;">contact form</a> to submit an inquiry.';
-                infoSection.appendChild(note);
+                // Build the HTML with the submitted data
+                contentSection.innerHTML = `
+                    <!-- Confirmation Message -->
+                    <div class="confirmation-message">
+                        <p><strong>✅ Your submission has been successfully received.</strong></p>
+                        <p>Below is a copy of the information you submitted for your records.</p>
+                    </div>
+
+                    <!-- Submitted Information Section -->
+                    <div class="info-section">
+                        <h3>📋 Your Submission Details</h3>
+                        <div class="info-grid">
+                            <div class="info-label">Full Name:</div>
+                            <div class="info-value">${escapeHtml(data.name) || 'Not provided'}</div>
+                            
+                            <div class="info-label">Email Address:</div>
+                            <div class="info-value">${escapeHtml(data.email) || 'Not provided'}</div>
+                            
+                            <div class="info-label">Company:</div>
+                            <div class="info-value">${escapeHtml(data.company) || 'Not provided'}</div>
+                            
+                            <div class="info-label">Service Interest:</div>
+                            <div class="info-value highlight">${escapeHtml(data.service) || 'Not selected'}</div>
+                            
+                            <div class="info-label">Your Message:</div>
+                            <div class="info-value">${escapeHtml(data.message) || 'Not provided'}</div>
+                            
+                            <div class="info-label">Submission Time:</div>
+                            <div class="info-value">${escapeHtml(data.timestamp) || new Date().toLocaleString()}</div>
+                        </div>
+                    </div>
+
+                    <!-- Company Confirmation Message -->
+                    <div class="company-message">
+                        <h4>📧 Good day,</h4>
+                        <p>This email serves to confirm receipt of your business inquiry. A member of our team will be in contact with you within the next 24 hours to arrange a time to discuss the requested services.</p>
+                        <div class="company-signature">
+                            <p><strong>Kind Regards,</strong></p>
+                            <p><strong>AGRISERVE CONSULTING TEAM</strong></p>
+                            <p>Email: info@agri-serve.co.za</p>
+                            <p>Address: Pretoria | Gauteng</p>
+                            <p>Website: www.agri-serve.co.za</p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Footer -->
+                    <div class="contact-footer">
+                        <p>📧 <strong>Email:</strong> <a href="mailto:info@agri-serve.co.za">info@agri-serve.co.za</a></p>
+                        <p>📍 <strong>Location:</strong> Pretoria, Gauteng, South Africa</p>
+                        <p>🌐 <strong>Website:</strong> <a href="https://olwethu-coder.github.io/agriserve-website/">www.agri-serve.co.za</a></p>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="button-group">
+                        <a href="index.html" class="btn btn-primary">🏠 Return to Homepage</a>
+                        <a href="services.html" class="btn btn-secondary">📋 View Our Services</a>
+                        <a href="index.html#contact" class="btn btn-secondary">✉️ Contact Us Again</a>
+                    </div>
+                `;
+                
+                // Clear localStorage after displaying
+                localStorage.removeItem('submittedFormData');
+            } else {
+                // If someone accesses the thank you page directly without form submission
+                contentSection.innerHTML = `
+                    <div class="confirmation-message">
+                        <p><strong>⚠️ No submission data found.</strong></p>
+                        <p>This page is meant to be accessed after submitting the contact form.</p>
+                    </div>
+                    
+                    <div class="empty-state">
+                        <p>Please use the <a href="index.html#contact">contact form</a> to submit an inquiry.</p>
+                    </div>
+                    
+                    <div class="company-message">
+                        <h4>📧 Good day,</h4>
+                        <p>Thank you for your interest in AgriServe Consulting. Please fill out our contact form to submit an inquiry, and a member of our team will respond within 24 hours.</p>
+                        <div class="company-signature">
+                            <p><strong>Kind Regards,</strong></p>
+                            <p><strong>AGRISERVE CONSULTING TEAM</strong></p>
+                            <p>Email: info@agri-serve.co.za</p>
+                            <p>Address: Pretoria | Gauteng</p>
+                            <p>Website: www.agri-serve.co.za</p>
+                        </div>
+                    </div>
+                    
+                    <div class="button-group">
+                        <a href="index.html" class="btn btn-primary">🏠 Return to Homepage</a>
+                        <a href="index.html#contact" class="btn btn-secondary">✉️ Go to Contact Form</a>
+                    </div>
+                `;
             }
         }
-
+        
+        // Helper function to escape HTML special characters
+        function escapeHtml(text) {
+            if (!text) return text;
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
         // Run on page load
         document.addEventListener('DOMContentLoaded', function() {
             displaySubmittedInfo();
-            checkData();
         });
     </script>
 </body>

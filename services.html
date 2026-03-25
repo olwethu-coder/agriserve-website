@@ -162,7 +162,7 @@
         </div>
     </nav>
 
-    <!-- Page Header - Restored to original styling -->
+    <!-- Page Header -->
     <section class="page-header">
         <div class="container">
             <h1>COMPANY SERVICE OFFERINGS</h1>
@@ -380,7 +380,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section - WITH FORM DATA STORAGE -->
     <section class="contact-section" id="contact">
         <div class="container">
             <div class="section-title-wrapper">
@@ -396,22 +396,23 @@
                     <p><strong>Response time:</strong> Within 24 hours</p>
                     <p><strong>Founded:</strong> 2021</p>
                 </div>
-                <form class="contact-form" action="https://formsubmit.co/info@agri-serve.co.za" method="POST">
+                <!-- FORM WITH DATA STORAGE -->
+                <form class="contact-form" id="contactForm" action="https://formsubmit.co/info@agri-serve.co.za" method="POST">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://olwethu-coder.github.io/agriserve-website/thankyou.html">
                     <input type="hidden" name="_subject" value="New Consultation Request from AgriServe Website">
                     
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="Full Name" required>
+                        <input type="text" name="name" id="formName" placeholder="Full Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Email Address" required>
+                        <input type="email" name="email" id="formEmail" placeholder="Email Address" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="company" placeholder="Company">
+                        <input type="text" name="company" id="formCompany" placeholder="Company">
                     </div>
                     <div class="form-group">
-                        <select name="service">
+                        <select name="service" id="formService">
                             <option>Select Service Interest</option>
                             <option>Tier I Retainer (R40,000/month)</option>
                             <option>Tier II Retainer (R55,000/month)</option>
@@ -424,7 +425,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" placeholder="Tell us about your regulatory needs" rows="4" required></textarea>
+                        <textarea name="message" id="formMessage" placeholder="Tell us about your regulatory needs" rows="4" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Request Consultation</button>
                 </form>
@@ -452,5 +453,25 @@
     <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
     <script src="script.js"></script>
+    <script>
+        // Save form data to localStorage before submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                const formData = {
+                    name: document.getElementById('formName')?.value || '',
+                    email: document.getElementById('formEmail')?.value || '',
+                    company: document.getElementById('formCompany')?.value || '',
+                    service: document.getElementById('formService')?.value || '',
+                    message: document.getElementById('formMessage')?.value || '',
+                    timestamp: new Date().toLocaleString('en-ZA', {
+                        dateStyle: 'full',
+                        timeStyle: 'medium'
+                    })
+                };
+                localStorage.setItem('submittedFormData', JSON.stringify(formData));
+            });
+        }
+    </script>
 </body>
 </html>

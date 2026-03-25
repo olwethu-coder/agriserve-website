@@ -425,7 +425,7 @@
         </div>
     </section>
 
-    <!-- Contact Section - WORKING FORM WITH YOUR DETAILS -->
+    <!-- Contact Section - WITH FORM DATA STORAGE -->
     <section class="contact-section" id="contact">
         <div class="container">
             <div class="section-title-wrapper">
@@ -440,23 +440,23 @@
                     <p><strong>Business Hours:</strong> Mon-Fri, 8:00 - 17:00</p>
                     <p><strong>Minimum Retainer:</strong> R40,000/month</p>
                 </div>
-                <!-- WORKING CONTACT FORM - Configured for info@agri-serve.co.za -->
-                <form class="contact-form" action="https://formsubmit.co/info@agri-serve.co.za" method="POST">
+                <!-- FORM WITH DATA STORAGE -->
+                <form class="contact-form" id="contactForm" action="https://formsubmit.co/info@agri-serve.co.za" method="POST">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://olwethu-coder.github.io/agriserve-website/thankyou.html">
                     <input type="hidden" name="_subject" value="New Inquiry from AgriServe Website">
                     
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="text" name="name" id="formName" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Email Address" required>
+                        <input type="email" name="email" id="formEmail" placeholder="Email Address" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="company" placeholder="Company Name">
+                        <input type="text" name="company" id="formCompany" placeholder="Company Name">
                     </div>
                     <div class="form-group">
-                        <select name="service">
+                        <select name="service" id="formService">
                             <option>Select Service Interest</option>
                             <option>Product Registration</option>
                             <option>Label & SDS Compilation</option>
@@ -466,7 +466,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                        <textarea name="message" id="formMessage" placeholder="Your Message" rows="4" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
@@ -494,5 +494,25 @@
     <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
     <script src="script.js"></script>
+    <script>
+        // Save form data to localStorage before submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                const formData = {
+                    name: document.getElementById('formName')?.value || '',
+                    email: document.getElementById('formEmail')?.value || '',
+                    company: document.getElementById('formCompany')?.value || '',
+                    service: document.getElementById('formService')?.value || '',
+                    message: document.getElementById('formMessage')?.value || '',
+                    timestamp: new Date().toLocaleString('en-ZA', {
+                        dateStyle: 'full',
+                        timeStyle: 'medium'
+                    })
+                };
+                localStorage.setItem('submittedFormData', JSON.stringify(formData));
+            });
+        }
+    </script>
 </body>
 </html>
