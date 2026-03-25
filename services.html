@@ -170,9 +170,8 @@
         </div>
     </section>
 
-    <!-- OUR CORE SERVICES Section - Twitter-style Overlap with About Us Styling -->
+    <!-- OUR CORE SERVICES Section - Twitter-style Overlap -->
     <div class="profile-header-section">
-        <!-- Full Width Image -->
         <div class="profile-header-image">
             <div class="header-slider-container">
                 <div class="header-slide">
@@ -190,14 +189,12 @@
             </div>
         </div>
         
-        <!-- Logo that overlaps the header image -->
         <div class="profile-logo-container">
             <div class="profile-logo-wrapper">
                 <img src="logo.png" alt="AgriServe Logo" class="profile-logo">
             </div>
         </div>
         
-        <!-- Section content - About Us Styling -->
         <div class="profile-content">
             <div class="container">
                 <div class="section-title-wrapper">
@@ -254,9 +251,8 @@
         </div>
     </section>
 
-    <!-- ENGAGEMENT MODELS Section - Twitter-style Overlap with Animated Background -->
+    <!-- ENGAGEMENT MODELS Section -->
     <div class="profile-header-section">
-        <!-- Full Width Image with Animation (Twitter-style) -->
         <div class="profile-header-image">
             <div class="header-slider-container">
                 <div class="header-slide">
@@ -274,14 +270,12 @@
             </div>
         </div>
         
-        <!-- Logo that overlaps the header image -->
         <div class="profile-logo-container">
             <div class="profile-logo-wrapper">
                 <img src="logo.png" alt="AgriServe Logo" class="profile-logo">
             </div>
         </div>
         
-        <!-- Section content - Pricing Cards -->
         <div class="profile-content">
             <div class="container">
                 <div class="section-title-wrapper">
@@ -386,7 +380,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section - WORKING FORM WITH YOUR DETAILS -->
     <section class="contact-section" id="contact">
         <div class="container">
             <div class="section-title-wrapper">
@@ -402,18 +396,23 @@
                     <p><strong>Response time:</strong> Within 24 hours</p>
                     <p><strong>Founded:</strong> 2021</p>
                 </div>
-                <form class="contact-form" id="contactForm">
+                <!-- WORKING CONTACT FORM - Configured for info@agri-serve.co.za -->
+                <form class="contact-form" action="https://formsubmit.co/info@agri-serve.co.za" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://olwethu-coder.github.io/agriserve-website/thankyou.html">
+                    <input type="hidden" name="_subject" value="New Consultation Request from AgriServe Website">
+                    
                     <div class="form-group">
-                        <input type="text" placeholder="Full Name" required>
+                        <input type="text" name="name" placeholder="Full Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Email Address" required>
+                        <input type="email" name="email" placeholder="Email Address" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Company">
+                        <input type="text" name="company" placeholder="Company">
                     </div>
                     <div class="form-group">
-                        <select>
+                        <select name="service">
                             <option>Select Service Interest</option>
                             <option>Tier I Retainer (R40,000/month)</option>
                             <option>Tier II Retainer (R55,000/month)</option>
@@ -426,7 +425,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Tell us about your regulatory needs" rows="4" required></textarea>
+                        <textarea name="message" placeholder="Tell us about your regulatory needs" rows="4" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Request Consultation</button>
                 </form>

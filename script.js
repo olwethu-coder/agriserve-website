@@ -1,4 +1,4 @@
-// Mobile-optimized JavaScript
+// Main JavaScript - Stable Version
 document.addEventListener('DOMContentLoaded', function() {
     
     // Check if mobile device

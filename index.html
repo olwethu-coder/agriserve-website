@@ -81,9 +81,8 @@
         </div>
     </section>
 
-    <!-- MEMBERSHIP Section - Twitter-style Overlap with About Us Styling -->
+    <!-- MEMBERSHIP Section - Twitter-style Overlap -->
     <div class="profile-header-section">
-        <!-- Full Width Image -->
         <div class="profile-header-image">
             <div class="header-slider-container">
                 <div class="header-slide">
@@ -101,14 +100,12 @@
             </div>
         </div>
         
-        <!-- Logo that overlaps the header image -->
         <div class="profile-logo-container">
             <div class="profile-logo-wrapper">
                 <img src="logo.png" alt="AgriServe Logo" class="profile-logo">
             </div>
         </div>
         
-        <!-- Section content - About Us Styling -->
         <div class="profile-content">
             <div class="container">
                 <div class="section-title-wrapper">
@@ -135,9 +132,8 @@
         </div>
     </div>
 
-    <!-- COMPANY SERVICE OFFERINGS Section - Twitter-style Overlap with About Us Styling -->
+    <!-- COMPANY SERVICE OFFERINGS Section - Twitter-style Overlap -->
     <div class="profile-header-section">
-        <!-- Full Width Image -->
         <div class="profile-header-image">
             <div class="header-slider-container">
                 <div class="header-slide">
@@ -155,14 +151,12 @@
             </div>
         </div>
         
-        <!-- Logo that overlaps the header image -->
         <div class="profile-logo-container">
             <div class="profile-logo-wrapper">
                 <img src="logo.png" alt="AgriServe Logo" class="profile-logo">
             </div>
         </div>
         
-        <!-- Section content - About Us Styling -->
         <div class="profile-content">
             <div class="container">
                 <div class="section-title-wrapper">
@@ -194,7 +188,7 @@
         </div>
     </div>
 
-    <!-- OUR LEADERSHIP TEAM Section - About Us Styling -->
+    <!-- OUR LEADERSHIP TEAM Section -->
     <section class="team" id="team">
         <div class="container">
             <div class="section-title-wrapper">
@@ -243,7 +237,7 @@
         </div>
     </section>
 
-    <!-- REGULATORY AUTHORITIES Section - About Us Styling -->
+    <!-- REGULATORY AUTHORITIES Section -->
     <section class="authorities">
         <div class="container">
             <div class="section-title-wrapper">
@@ -279,7 +273,7 @@
         </div>
     </section>
 
-    <!-- COUNTRIES SERVICED Section - About Us Styling -->
+    <!-- COUNTRIES SERVICED Section -->
     <section class="countries-section">
         <div class="container">
             <div class="section-title-wrapper">
@@ -431,7 +425,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section - WORKING FORM WITH YOUR DETAILS -->
     <section class="contact-section" id="contact">
         <div class="container">
             <div class="section-title-wrapper">
@@ -446,18 +440,23 @@
                     <p><strong>Business Hours:</strong> Mon-Fri, 8:00 - 17:00</p>
                     <p><strong>Minimum Retainer:</strong> R40,000/month</p>
                 </div>
-                <form class="contact-form" id="contactForm">
+                <!-- WORKING CONTACT FORM - Configured for info@agri-serve.co.za -->
+                <form class="contact-form" action="https://formsubmit.co/info@agri-serve.co.za" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://olwethu-coder.github.io/agriserve-website/thankyou.html">
+                    <input type="hidden" name="_subject" value="New Inquiry from AgriServe Website">
+                    
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Email Address" required>
+                        <input type="email" name="email" placeholder="Email Address" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Company Name">
+                        <input type="text" name="company" placeholder="Company Name">
                     </div>
                     <div class="form-group">
-                        <select>
+                        <select name="service">
                             <option>Select Service Interest</option>
                             <option>Product Registration</option>
                             <option>Label & SDS Compilation</option>
@@ -467,7 +466,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" rows="4" required></textarea>
+                        <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
