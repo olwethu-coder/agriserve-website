@@ -39,21 +39,6 @@ html {
     }
 }
 
-@keyframes floatIconSlow {
-    0% {
-        transform: translateY(0) translateX(0) rotate(0deg);
-        opacity: 0.1;
-    }
-    50% {
-        transform: translateY(-50px) translateX(25px) rotate(15deg);
-        opacity: 0.2;
-    }
-    100% {
-        transform: translateY(0) translateX(0) rotate(0deg);
-        opacity: 0.1;
-    }
-}
-
 .floating-icon-item {
     position: absolute;
     font-size: 2.5rem;
@@ -78,8 +63,9 @@ html {
 .floating-icon-item:nth-child(14) { top: 75%; left: 50%; animation-duration: 17.5s; animation-delay: 2s; }
 .floating-icon-item:nth-child(15) { top: 12%; left: 70%; animation-duration: 19.5s; animation-delay: 3s; }
 
-/* Different icons for variety */
-.floating-icon-item:nth-child(1)::before { content: "🌿"; }
+.floating-icon-item::before {
+    content: "🌿";
+}
 .floating-icon-item:nth-child(2)::before { content: "🌾"; }
 .floating-icon-item:nth-child(3)::before { content: "🍃"; }
 .floating-icon-item:nth-child(4)::before { content: "🌱"; }
@@ -100,8 +86,8 @@ html {
     --bg-primary: #FFF8F0;
     --bg-secondary: #FFFFFF;
     --bg-card: #FFFFFF;
-    --bg-section-light: rgba(255, 255, 255, 0.9);
-    --bg-section-medium: rgba(245, 245, 245, 0.9);
+    --bg-section-light: rgba(255, 255, 255, 0.95);
+    --bg-section-medium: rgba(245, 245, 245, 0.95);
     --text-primary: #093400;
     --text-secondary: #586E20;
     --text-light: #666666;
@@ -212,6 +198,138 @@ body {
     padding: 0 20px;
     position: relative;
     z-index: 2;
+}
+
+/* ===== ALL SECTIONS HAVE BACKGROUNDS ===== */
+section, .profile-header-section, .profile-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(9, 52, 0, 0.85), rgba(88, 110, 32, 0.85)), url('https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 120px 0;
+    position: relative;
+    border-bottom: 4px solid #C55A11;
+    margin-bottom: 0 !important;
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+/* About Section */
+.about {
+    padding: 80px 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 245, 0.95));
+    border-radius: 20px;
+    margin: 20px 0;
+    box-shadow: 0 5px 20px var(--shadow-color);
+}
+
+/* Why Choose / Membership Section */
+.why-choose {
+    padding: 80px 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    margin: 20px 0;
+    box-shadow: 0 5px 20px var(--shadow-color);
+}
+
+/* Services Section */
+.services {
+    padding: 80px 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    margin: 20px 0;
+    box-shadow: 0 5px 20px var(--shadow-color);
+}
+
+/* Team Section */
+.team {
+    padding: 80px 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    margin: 20px 0;
+    box-shadow: 0 5px 20px var(--shadow-color);
+}
+
+/* Authorities Section */
+.authorities {
+    padding: 60px 0;
+    background: #093400;
+    color: white;
+    position: relative;
+    z-index: 1;
+    border-top: 4px solid #C55A11;
+    border-bottom: 4px solid #C55A11;
+    border-radius: 20px;
+    margin: 20px 0;
+}
+
+/* Countries Section */
+.countries-section {
+    padding: 60px 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    margin: 20px 0;
+    box-shadow: 0 5px 20px var(--shadow-color);
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 80px 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    margin: 20px 0 40px;
+    box-shadow: 0 5px 20px var(--shadow-color);
+}
+
+/* Profile Header Section (Twitter-style overlap) */
+.profile-header-section {
+    position: relative;
+    margin: 0 0 80px 0;
+    width: 100%;
+    background: transparent;
+}
+
+.profile-header-image {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    background: #1a1a1a;
+    border-radius: 20px 20px 0 0;
+}
+
+.profile-content {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 20px 0 60px 0;
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+/* Dossiers Container */
+.dossiers-container {
+    background: #F3DECF;
+    padding: 60px 0;
+    margin: 20px 0;
+    border-radius: 20px;
+}
+
+/* Pricing Table */
+.pricing-table {
+    background: transparent;
 }
 
 /* ===== THEME TOGGLE BUTTON ===== */
@@ -577,6 +695,7 @@ body {
     position: relative;
     overflow: hidden;
     background: #1a1a1a;
+    border-radius: 20px 20px 0 0;
 }
 
 .header-slider-container {
@@ -641,9 +760,11 @@ body {
 }
 
 .profile-content {
-    background: transparent;
-    padding: 20px 0 60px 0;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
     margin-top: 20px;
+    padding: 20px 0 60px 0;
+    box-shadow: 0 10px 30px var(--shadow-color);
 }
 
 .profile-content .section-title-wrapper {
@@ -752,7 +873,8 @@ body {
 .about-mission,
 .contact-wrapper,
 .section-image,
-.flip-card {
+.flip-card,
+.about-style-card {
     opacity: 0;
     animation: slideInOnScroll 0.8s ease forwards;
 }
@@ -915,6 +1037,9 @@ body {
     min-height: 500px;
     display: flex;
     align-items: center;
+    background: linear-gradient(rgba(9, 52, 0, 0.85), rgba(88, 110, 32, 0.85)), url('https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
 }
 
 .hero .container {
@@ -987,8 +1112,9 @@ body {
 /* ===== ABOUT SECTION ===== */
 .about {
     padding: 80px 0;
-    background: linear-gradient(135deg, var(--bg-section-light), var(--bg-section-medium));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 245, 0.95));
     border-radius: 20px;
+    margin: 20px 0;
     box-shadow: 0 5px 20px var(--shadow-color);
 }
 
@@ -1152,6 +1278,7 @@ body {
     border-top: 4px solid #C55A11;
     border-bottom: 4px solid #C55A11;
     border-radius: 20px;
+    margin: 20px 0;
 }
 
 .authorities .section-title-wrapper h2 {
@@ -1186,6 +1313,9 @@ body {
 
 .categories-serviced {
     text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid #8DC63F;
 }
 
 .categories-serviced h3 {
@@ -1219,8 +1349,9 @@ body {
 /* ===== COUNTRIES SECTION ===== */
 .countries-section {
     padding: 60px 0;
-    background: var(--bg-section-light);
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
+    margin: 20px 0;
     box-shadow: 0 5px 20px var(--shadow-color);
     text-align: center;
     overflow: hidden;
@@ -1318,9 +1449,9 @@ body {
 /* ===== CONTACT SECTION ===== */
 .contact-section {
     padding: 80px 0;
-    background: var(--bg-section-light);
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
-    margin-bottom: 40px !important;
+    margin: 20px 0 40px;
     box-shadow: 0 5px 20px var(--shadow-color);
 }
 
@@ -1419,7 +1550,7 @@ footer {
     }
     
     section {
-        margin: 30px 0 !important;
+        margin: 20px 0 !important;
         padding: 40px 0 !important;
     }
     
@@ -1437,7 +1568,7 @@ footer {
         padding: 8px;
     }
     
-    /* Floating icons mobile - smaller and fewer */
+    /* Floating icons mobile */
     .floating-icon-item {
         font-size: 1.5rem;
     }
