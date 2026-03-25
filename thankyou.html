@@ -4,73 +4,467 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Thank You - AgriServe Consulting</title>
-    <link rel="stylesheet" href="style.css">
     <style>
-        .thankyou-container {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #FFF8F0 0%, #F5EDE0 100%);
             min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Thank You Card */
+        .thankyou-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid #F0E5D8;
+        }
+
+        /* Header with Logo */
+        .thankyou-header {
+            background: linear-gradient(135deg, #093400 0%, #1a5a2e 100%);
+            padding: 40px 30px;
+            text-align: center;
+            border-bottom: 4px solid #C55A11;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            background: white;
+            border-radius: 50%;
+            padding: 12px;
+            border: 3px solid #C55A11;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .thankyou-header h1 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .thankyou-header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+
+        /* Success Icon */
+        .success-icon {
+            text-align: center;
+            margin: -30px auto 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .success-icon span {
+            display: inline-block;
+            background: #8DC63F;
+            color: white;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            font-size: 40px;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(141, 198, 63, 0.3);
+            border: 4px solid white;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 30px;
+        }
+
+        .confirmation-message {
+            background: #F8F9FA;
+            border-left: 4px solid #8DC63F;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .confirmation-message p {
+            color: #093400;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .confirmation-message p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Submitted Info Section */
+        .info-section {
+            background: #F5F5F5;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .info-section h3 {
+            color: #C55A11;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #E0E0E0;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 100px 20px;
+            gap: 10px;
         }
-        .thankyou-card {
-            background: var(--bg-card);
-            border-radius: 20px;
-            padding: 60px 40px;
-            box-shadow: 0 20px 40px var(--shadow-color);
-            max-width: 600px;
-            margin: 0 auto;
-            border-left: 5px solid #8DC63F;
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 12px;
         }
-        .thankyou-icon {
-            font-size: 5rem;
-            margin-bottom: 20px;
+
+        .info-label {
+            font-weight: 600;
+            color: #093400;
+            padding: 8px 0;
         }
-        .thankyou-card h1 {
-            color: var(--text-primary);
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+
+        .info-value {
+            color: #586E20;
+            padding: 8px 0;
+            word-break: break-word;
         }
-        .thankyou-card p {
-            color: var(--text-primary);
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            line-height: 1.6;
+
+        .info-value.highlight {
+            color: #C55A11;
+            font-weight: 500;
         }
-        .btn-home {
-            background: linear-gradient(135deg, #C55A11, #8DC63F);
+
+        /* Company Message */
+        .company-message {
+            background: #093400;
             color: white;
-            padding: 12px 30px;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .company-message::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(141, 198, 63, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .company-message h4 {
+            color: #FFD700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .company-message p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .company-signature {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .company-signature p {
+            margin-bottom: 5px;
+        }
+
+        .company-signature strong {
+            color: #FFD700;
+        }
+
+        /* Contact Info Footer */
+        .contact-footer {
+            background: #F5F5F5;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-footer p {
+            color: #093400;
+            margin-bottom: 8px;
+        }
+
+        .contact-footer a {
+            color: #C55A11;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Buttons */
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s ease;
-            display: inline-block;
+            cursor: pointer;
         }
-        .btn-home:hover {
+
+        .btn-primary {
+            background: linear-gradient(135deg, #C55A11, #8DC63F);
+            color: white;
+        }
+
+        .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(197, 90, 17, 0.3);
         }
+
+        .btn-secondary {
+            background: transparent;
+            color: #093400;
+            border: 2px solid #8DC63F;
+        }
+
+        .btn-secondary:hover {
+            background: #8DC63F;
+            color: #093400;
+            transform: translateY(-3px);
+        }
+
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .thankyou-card {
-                padding: 40px 25px;
+            body {
+                padding: 20px 15px;
             }
-            .thankyou-card h1 {
-                font-size: 1.8rem;
+
+            .thankyou-header {
+                padding: 30px 20px;
+            }
+
+            .logo {
+                width: 60px;
+                height: 60px;
+                padding: 10px;
+            }
+
+            .thankyou-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+
+            .info-label {
+                padding-bottom: 0;
+            }
+
+            .info-value {
+                padding-top: 0;
+                margin-bottom: 10px;
+            }
+
+            .button-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn {
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
-    <div class="thankyou-container">
+    <div class="container">
         <div class="thankyou-card">
-            <div class="thankyou-icon">✅</div>
-            <h1>Thank You!</h1>
-            <p>Your message has been successfully sent to AgriServe Consulting.</p>
-            <p>We will review your inquiry and get back to you within 24 hours.</p>
-            <a href="index.html" class="btn-home">Return to Homepage</a>
+            <!-- Header with Logo -->
+            <div class="thankyou-header">
+                <div class="logo-container">
+                    <img src="Screenshot 2026-03-10 100855.png" alt="AgriServe Consulting Logo" class="logo">
+                </div>
+                <h1>Thank You for Contacting Us!</h1>
+                <p>Your inquiry has been received and is being processed</p>
+            </div>
+
+            <!-- Success Icon -->
+            <div class="success-icon">
+                <span>✓</span>
+            </div>
+
+            <!-- Content Section -->
+            <div class="content-section">
+                <!-- Confirmation Message -->
+                <div class="confirmation-message">
+                    <p><strong>✅ Your submission has been successfully received.</strong></p>
+                    <p>Below is a copy of the information you submitted for your records.</p>
+                </div>
+
+                <!-- Submitted Information Section -->
+                <div class="info-section">
+                    <h3>📋 Your Submission Details</h3>
+                    <div class="info-grid" id="submittedInfo">
+                        <div class="info-label">Full Name:</div>
+                        <div class="info-value" id="displayName">-</div>
+                        
+                        <div class="info-label">Email Address:</div>
+                        <div class="info-value" id="displayEmail">-</div>
+                        
+                        <div class="info-label">Company:</div>
+                        <div class="info-value" id="displayCompany">-</div>
+                        
+                        <div class="info-label">Service Interest:</div>
+                        <div class="info-value highlight" id="displayService">-</div>
+                        
+                        <div class="info-label">Your Message:</div>
+                        <div class="info-value" id="displayMessage">-</div>
+                        
+                        <div class="info-label">Submission Time:</div>
+                        <div class="info-value" id="displayTime">-</div>
+                    </div>
+                </div>
+
+                <!-- Company Confirmation Message -->
+                <div class="company-message">
+                    <h4>📧 Good day,</h4>
+                    <p>This email serves to confirm receipt of your business inquiry. A member of our team will be in contact with you within the next 24 hours to arrange a time to discuss the requested services.</p>
+                    <div class="company-signature">
+                        <p><strong>Kind Regards,</strong></p>
+                        <p><strong>AGRISERVE CONSULTING TEAM</strong></p>
+                        <p>Email: info@agri-serve.co.za</p>
+                        <p>Address: Pretoria | Gauteng</p>
+                        <p>Website: www.agri-serve.co.za</p>
+                    </div>
+                </div>
+
+                <!-- Contact Footer -->
+                <div class="contact-footer">
+                    <p>📧 <strong>Email:</strong> <a href="mailto:info@agri-serve.co.za">info@agri-serve.co.za</a></p>
+                    <p>📍 <strong>Location:</strong> Pretoria, Gauteng, South Africa</p>
+                    <p>🌐 <strong>Website:</strong> <a href="https://olwethu-coder.github.io/agriserve-website/">www.agri-serve.co.za</a></p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="button-group">
+                    <a href="index.html" class="btn btn-primary">🏠 Return to Homepage</a>
+                    <a href="services.html" class="btn btn-secondary">📋 View Our Services</a>
+                    <a href="index.html#contact" class="btn btn-secondary">✉️ Contact Us Again</a>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script>
+        // Parse URL parameters to get form data
+        function getUrlParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                name: params.get('name') || 'Not provided',
+                email: params.get('email') || 'Not provided',
+                company: params.get('company') || 'Not provided',
+                service: params.get('service') || 'Not selected',
+                message: params.get('message') || 'Not provided'
+            };
+        }
+
+        // Display the submitted information
+        function displaySubmittedInfo() {
+            const data = getUrlParams();
+            
+            // Update the DOM with the submitted data
+            document.getElementById('displayName').textContent = data.name;
+            document.getElementById('displayEmail').textContent = data.email;
+            document.getElementById('displayCompany').textContent = data.company;
+            document.getElementById('displayService').textContent = data.service;
+            document.getElementById('displayMessage').textContent = data.message;
+            
+            // Add submission timestamp
+            const now = new Date();
+            const formattedTime = now.toLocaleString('en-ZA', {
+                dateStyle: 'full',
+                timeStyle: 'medium'
+            });
+            document.getElementById('displayTime').textContent = formattedTime;
+        }
+
+        // If no data in URL (direct access), show sample or redirect
+        function checkData() {
+            const data = getUrlParams();
+            if (data.name === 'Not provided' && data.email === 'Not provided') {
+                // If someone accesses the thank you page directly without form submission
+                document.getElementById('displayName').textContent = 'No data submitted';
+                document.getElementById('displayEmail').textContent = 'Please use the contact form';
+                document.getElementById('displayCompany').textContent = '-';
+                document.getElementById('displayService').textContent = '-';
+                document.getElementById('displayMessage').textContent = '-';
+                
+                // Add a note
+                const infoSection = document.querySelector('.info-section');
+                const note = document.createElement('div');
+                note.style.background = '#FFF3CD';
+                note.style.padding = '15px';
+                note.style.borderRadius = '10px';
+                note.style.marginTop = '15px';
+                note.innerHTML = '<strong>⚠️ Note:</strong> This page was accessed directly. Please use the <a href="index.html#contact" style="color: #C55A11;">contact form</a> to submit an inquiry.';
+                infoSection.appendChild(note);
+            }
+        }
+
+        // Run on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            displaySubmittedInfo();
+            checkData();
+        });
+    </script>
 </body>
 </html>
