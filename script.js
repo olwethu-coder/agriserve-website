@@ -1,4 +1,4 @@
-// Main JavaScript - Stable Version
+// Main JavaScript
 document.addEventListener('DOMContentLoaded', function() {
     
     // Check if mobile device
@@ -13,58 +13,58 @@ document.addEventListener('DOMContentLoaded', function() {
     document.documentElement.setAttribute('data-theme', savedTheme);
     updateThemeIcon(savedTheme);
     
-    themeToggle.addEventListener('click', function() {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
-    });
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+    }
     
     function updateThemeIcon(theme) {
-        if (theme === 'dark') {
-            themeIcon.textContent = '☀️';
-        } else {
-            themeIcon.textContent = '🌙';
+        if (themeIcon) {
+            themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
         }
     }
     
     // ===== BACK TO TOP BUTTON =====
     const backToTop = document.getElementById('backToTop');
-    
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            backToTop.classList.add('show');
-        } else {
-            backToTop.classList.remove('show');
-        }
-    }, { passive: true });
-    
-    backToTop.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    if (backToTop) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
         });
-    });
+        
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
     
     // ===== NAVBAR SCROLL EFFECT =====
-    window.addEventListener('scroll', function() {
-        const navbar = document.getElementById('mainNavbar');
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    }, { passive: true });
+    const navbar = document.getElementById('mainNavbar');
+    if (navbar) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    }
     
     // ===== CONTACT FORM HANDLING =====
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
+        // FormSubmit handles the submission, we just show a success message
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for contacting AgriServe Consulting. We will respond within 24 hours.');
-            this.reset();
+            // The actual submission is handled by FormSubmit
+            // This just ensures the form doesn't double-submit
         });
     }
     
@@ -88,21 +88,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (target) {
                     target.scrollIntoView({ behavior: 'auto' });
                 }
-            });
-        });
-    }
-    
-    // ===== TOUCH-FRIENDLY FLIP CARD FOR MOBILE =====
-    if (isMobile) {
-        const flipCards = document.querySelectorAll('.flip-card');
-        flipCards.forEach(card => {
-            card.addEventListener('touchstart', function() {
-                this.querySelector('.flip-card-inner').style.transform = 'rotateY(180deg) rotateX(5deg)';
-            });
-            card.addEventListener('touchend', function() {
-                setTimeout(() => {
-                    this.querySelector('.flip-card-inner').style.transform = '';
-                }, 1000);
             });
         });
     }
