@@ -12,6 +12,89 @@ html {
     scroll-behavior: smooth;
 }
 
+/* ===== FLOATING ICONS BACKGROUND ===== */
+.floating-icon-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+@keyframes floatIcon {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0.15;
+    }
+    50% {
+        transform: translateY(-30px) translateX(15px) rotate(10deg);
+        opacity: 0.25;
+    }
+    100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0.15;
+    }
+}
+
+@keyframes floatIconSlow {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0.1;
+    }
+    50% {
+        transform: translateY(-50px) translateX(25px) rotate(15deg);
+        opacity: 0.2;
+    }
+    100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0.1;
+    }
+}
+
+.floating-icon-item {
+    position: absolute;
+    font-size: 2.5rem;
+    opacity: 0.15;
+    pointer-events: none;
+    animation: floatIcon 12s ease-in-out infinite;
+}
+
+.floating-icon-item:nth-child(1) { top: 10%; left: 5%; animation-duration: 14s; animation-delay: 0s; }
+.floating-icon-item:nth-child(2) { top: 20%; left: 85%; animation-duration: 16s; animation-delay: 2s; }
+.floating-icon-item:nth-child(3) { top: 35%; left: 15%; animation-duration: 18s; animation-delay: 4s; }
+.floating-icon-item:nth-child(4) { top: 50%; left: 75%; animation-duration: 15s; animation-delay: 1s; }
+.floating-icon-item:nth-child(5) { top: 65%; left: 25%; animation-duration: 20s; animation-delay: 3s; }
+.floating-icon-item:nth-child(6) { top: 80%; left: 90%; animation-duration: 13s; animation-delay: 5s; }
+.floating-icon-item:nth-child(7) { top: 15%; left: 45%; animation-duration: 17s; animation-delay: 2.5s; }
+.floating-icon-item:nth-child(8) { top: 45%; left: 55%; animation-duration: 19s; animation-delay: 4.5s; }
+.floating-icon-item:nth-child(9) { top: 70%; left: 35%; animation-duration: 14.5s; animation-delay: 1.5s; }
+.floating-icon-item:nth-child(10) { top: 85%; left: 10%; animation-duration: 16.5s; animation-delay: 3.5s; }
+.floating-icon-item:nth-child(11) { top: 5%; left: 60%; animation-duration: 18.5s; animation-delay: 5.5s; }
+.floating-icon-item:nth-child(12) { top: 55%; left: 95%; animation-duration: 15.5s; animation-delay: 0.5s; }
+.floating-icon-item:nth-child(13) { top: 30%; left: 40%; animation-duration: 12.5s; animation-delay: 4s; }
+.floating-icon-item:nth-child(14) { top: 75%; left: 50%; animation-duration: 17.5s; animation-delay: 2s; }
+.floating-icon-item:nth-child(15) { top: 12%; left: 70%; animation-duration: 19.5s; animation-delay: 3s; }
+
+/* Different icons for variety */
+.floating-icon-item:nth-child(1)::before { content: "🌿"; }
+.floating-icon-item:nth-child(2)::before { content: "🌾"; }
+.floating-icon-item:nth-child(3)::before { content: "🍃"; }
+.floating-icon-item:nth-child(4)::before { content: "🌱"; }
+.floating-icon-item:nth-child(5)::before { content: "🌿"; }
+.floating-icon-item:nth-child(6)::before { content: "🌾"; }
+.floating-icon-item:nth-child(7)::before { content: "🍃"; }
+.floating-icon-item:nth-child(8)::before { content: "🌱"; }
+.floating-icon-item:nth-child(9)::before { content: "🌿"; }
+.floating-icon-item:nth-child(10)::before { content: "🌾"; }
+.floating-icon-item:nth-child(11)::before { content: "🍃"; }
+.floating-icon-item:nth-child(12)::before { content: "🌱"; }
+.floating-icon-item:nth-child(13)::before { content: "🌿"; }
+.floating-icon-item:nth-child(14)::before { content: "🌾"; }
+.floating-icon-item:nth-child(15)::before { content: "🍃"; }
+
 /* ===== LIGHT MODE (DEFAULT) ===== */
 :root {
     --bg-primary: #FFF8F0;
@@ -127,20 +210,8 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-}
-
-/* ===== INCREASED SECTION SPACING ===== */
-section {
-    margin: 60px 0 !important;
-    padding: 80px 0 !important;
-}
-
-section:first-of-type {
-    margin-top: 0 !important;
-}
-
-section:last-of-type {
-    margin-bottom: 0 !important;
+    position: relative;
+    z-index: 2;
 }
 
 /* ===== THEME TOGGLE BUTTON ===== */
@@ -223,31 +294,6 @@ section:last-of-type {
     transform: translateY(0) scale(0.95);
 }
 
-/* Mobile adjustment for buttons */
-@media (max-width: 768px) {
-    .theme-toggle {
-        bottom: 90px;
-        right: 15px;
-    }
-    
-    .back-to-top {
-        bottom: 20px;
-        right: 15px;
-        width: 45px;
-        height: 45px;
-        font-size: 20px;
-    }
-    
-    .theme-toggle-btn {
-        padding: 10px 14px;
-    }
-    
-    section {
-        margin: 40px 0 !important;
-        padding: 40px 0 !important;
-    }
-}
-
 /* ===== ANIMATIONS ===== */
 @keyframes pageLoad {
     0% {
@@ -287,54 +333,7 @@ section:last-of-type {
     animation: none;
 }
 
-/* ===== BUTTON STYLES - FIXED ===== */
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
-    cursor: pointer;
-    border: none;
-    transition: all 0.3s ease;
-    margin: 5px;
-    position: relative;
-    overflow: hidden;
-    -webkit-tap-highlight-color: transparent;
-}
-
-/* Primary button - orange gradient */
-.btn-primary {
-    background: linear-gradient(135deg, #C55A11, #8DC63F);
-    color: white;
-    border: none;
-    animation: pulse 2s infinite;
-}
-
-.btn-primary:hover {
-    background: linear-gradient(135deg, #8DC63F, #C55A11);
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 10px 20px rgba(197, 90, 17, 0.3);
-    animation: none;
-}
-
-/* Secondary button - transparent with animated border */
-.btn-secondary {
-    background-color: transparent;
-    color: white;
-    border: 2px solid #8DC63F;
-    animation: borderGlow 6s infinite;
-}
-
-.btn-secondary:hover {
-    background-color: #8DC63F;
-    color: #093400;
-    transform: translateY(-3px) scale(1.05);
-    animation: none;
-    border-color: #8DC63F;
-}
-
-/* Gradient Border Animation */
+/* ===== GRADIENT BORDER ===== */
 @keyframes borderGlow {
     0% {
         border-color: #C55A11;
@@ -356,6 +355,104 @@ section:last-of-type {
         border-color: #C55A11;
         box-shadow: 0 0 5px rgba(197, 90, 17, 0.3);
     }
+}
+
+.authority-item {
+    animation: borderGlow 8s infinite;
+}
+
+.nav-links a {
+    animation: borderGlow 8s infinite;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    padding: 0.6rem 1.2rem;
+    margin: 0 2px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a.active {
+    background-color: #C55A11;
+    color: white;
+    border-color: #C55A11;
+    animation: borderGlow 4s infinite;
+}
+
+.nav-links a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-secondary {
+    animation: borderGlow 6s infinite;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #8DC63F;
+    background-color: transparent;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #8DC63F;
+    color: #093400;
+    transform: translateY(-3px) scale(1.05);
+    animation: none;
+    border-color: #8DC63F;
+}
+
+.btn-primary {
+    animation: pulse 2s infinite, borderGlow 6s infinite;
+    border: 2px solid transparent;
+}
+
+.btn-primary:hover {
+    animation: none;
+}
+
+/* ===== BUTTON STYLES ===== */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Primary button */
+.btn-primary {
+    background: linear-gradient(135deg, #C55A11, #8DC63F);
+    color: white;
+    animation: pulse 2s infinite;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #8DC63F, #C55A11);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(197, 90, 17, 0.3);
+    animation: none;
+}
+
+/* Secondary button */
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid #8DC63F;
+    animation: borderGlow 6s infinite;
+}
+
+.btn-secondary:hover {
+    background-color: #8DC63F;
+    color: #093400;
+    transform: translateY(-3px) scale(1.05);
+    animation: none;
+    border-color: #8DC63F;
 }
 
 /* ===== HERO SLIDER ===== */
@@ -1279,7 +1376,7 @@ footer {
     border-radius: 20px 20px 0 0;
 }
 
-/* ===== AD HOC GRID - DESKTOP (3 columns) ===== */
+/* ===== AD HOC GRID ===== */
 .ad-hoc-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1287,7 +1384,6 @@ footer {
     margin-top: 40px;
 }
 
-/* ===== AD HOC CARD STYLING ===== */
 .ad-hoc-card {
     text-align: center;
     padding: 35px 25px !important;
@@ -1341,6 +1437,11 @@ footer {
         padding: 8px;
     }
     
+    /* Floating icons mobile - smaller and fewer */
+    .floating-icon-item {
+        font-size: 1.5rem;
+    }
+    
     /* Page Header Mobile */
     .page-header {
         padding: 50px 0;
@@ -1355,7 +1456,7 @@ footer {
         padding: 0 15px;
     }
     
-    /* AD HOC - Mobile */
+    /* AD HOC Mobile */
     .ad-hoc-grid {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -1364,27 +1465,6 @@ footer {
     
     .ad-hoc-card {
         padding: 30px 25px !important;
-    }
-    
-    .ad-hoc-card .card-icon {
-        font-size: 2.2rem !important;
-        margin-bottom: 12px !important;
-    }
-    
-    .ad-hoc-card h4 {
-        font-size: 1.3rem !important;
-        margin-bottom: 10px !important;
-    }
-    
-    .ad-hoc-card .price {
-        font-size: 1.6rem !important;
-        margin: 12px 0 !important;
-    }
-    
-    .ad-hoc-card p {
-        font-size: 0.9rem !important;
-        line-height: 1.5 !important;
-        padding: 0 10px !important;
     }
     
     /* Hero Mobile */
@@ -1462,101 +1542,12 @@ footer {
         padding: 25px 20px;
     }
     
-    .about-style-card .card-icon {
-        font-size: 2rem;
-    }
-    
-    .about-style-card h3 {
-        font-size: 1.2rem;
-    }
-    
-    .about-style-card p {
-        font-size: 0.9rem;
-        line-height: 1.5;
-    }
-    
     /* Team Cards Mobile */
     .team-card-about .team-photo {
         width: 80px;
         height: 80px;
         font-size: 2.5rem;
         line-height: 80px;
-    }
-    
-    .team-card-about h3 {
-        font-size: 1.2rem;
-    }
-    
-    .team-card-about .team-title {
-        font-size: 0.9rem;
-    }
-    
-    .team-card-about .team-bio {
-        font-size: 0.85rem;
-        line-height: 1.4;
-    }
-    
-    /* Authority Cards Mobile */
-    .authority-card .card-icon {
-        font-size: 2rem;
-    }
-    
-    .authority-card h3 {
-        font-size: 1.2rem;
-    }
-    
-    .authority-card p {
-        font-size: 0.85rem;
-    }
-    
-    /* Country Cards Mobile */
-    .country-card .card-icon {
-        font-size: 2rem;
-    }
-    
-    .country-card h3 {
-        font-size: 1.2rem;
-    }
-    
-    .country-card p {
-        font-size: 0.85rem;
-    }
-    
-    /* Category Tags Mobile */
-    .category-tags {
-        gap: 10px;
-    }
-    
-    .category-tag {
-        padding: 6px 15px;
-        font-size: 0.8rem;
-    }
-    
-    /* Pricing Cards Mobile */
-    .pricing-grid {
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
-    }
-    
-    .pricing-card {
-        padding: 25px 20px !important;
-    }
-    
-    .pricing-card.featured {
-        transform: none !important;
-    }
-    
-    .pricing-card h3 {
-        font-size: 1.3rem !important;
-    }
-    
-    .pricing-card .price {
-        font-size: 2rem !important;
-    }
-    
-    .pricing-card .features li {
-        padding: 8px 0 !important;
-        font-size: 0.85rem !important;
     }
     
     /* Navbar Mobile */
@@ -1615,15 +1606,6 @@ footer {
         padding: 20px;
     }
     
-    .flip-card-back h3 {
-        font-size: 1.3rem;
-        margin-bottom: 10px;
-    }
-    
-    .flip-card-back p {
-        font-size: 0.85rem;
-    }
-    
     /* Contact Mobile */
     .contact-wrapper {
         grid-template-columns: 1fr;
@@ -1634,25 +1616,8 @@ footer {
         padding: 25px 20px;
     }
     
-    .contact-info h3 {
-        font-size: 1.4rem;
-        margin-bottom: 20px;
-    }
-    
-    .contact-info p {
-        font-size: 0.9rem;
-        margin-bottom: 12px;
-    }
-    
     .contact-form {
         padding: 25px 20px;
-    }
-    
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-        padding: 12px 12px;
-        font-size: 0.9rem;
     }
     
     /* Flags Mobile */
@@ -1674,10 +1639,6 @@ footer {
     footer {
         padding: 20px 15px;
     }
-    
-    footer p {
-        font-size: 0.8rem;
-    }
 }
 
 /* ===== TABLET OPTIMIZATION ===== */
@@ -1690,22 +1651,6 @@ footer {
     .ad-hoc-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
-    }
-    
-    .ad-hoc-card {
-        padding: 25px 15px !important;
-    }
-    
-    .ad-hoc-card .card-icon {
-        font-size: 2rem !important;
-    }
-    
-    .ad-hoc-card h4 {
-        font-size: 1.2rem !important;
-    }
-    
-    .ad-hoc-card .price {
-        font-size: 1.4rem !important;
     }
     
     .hero h1 {
