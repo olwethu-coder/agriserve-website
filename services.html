@@ -399,7 +399,7 @@
         </div>
     </section>
 
-    <!-- Contact Section - CORRECTED FORM WITH POST METHOD -->
+    <!-- Contact Section -->
     <section class="contact-section" id="contact">
         <div class="container">
             <div class="section-title-wrapper">
@@ -416,12 +416,11 @@
                     <p><strong>Founded:</strong> 2021</p>
                 </div>
                 <form class="contact-form" id="contactForm" action="https://formsubmit.co/info@agri-serve.co.za" method="POST">
-                    <!-- FormSubmit Configuration -->
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://olwethu-coder.github.io/agriserve-website/thankyou.html">
                     <input type="hidden" name="_subject" value="New Consultation Request from AgriServe Website">
                     
-                    <!-- AUTO-REPLY EMAIL - Exact format from your screenshot -->
+                    <!-- AUTO-REPLY EMAIL - SENT IMMEDIATELY AFTER SUBMIT -->
                     <input type="hidden" name="_autoresponse" value="Good day,
 
 This email serves to confirm receipt of your business inquiry. A member of our team will be in contact with you within the next 24 hours to arrange a time to discuss the requested services.
@@ -435,7 +434,6 @@ Website: www.agri-serve.co.za
 AgriServe
 CONSULTING">
                     
-                    <!-- Form Fields -->
                     <div class="form-group">
                         <input type="text" name="name" id="formName" placeholder="Full Name" required>
                     </div>
@@ -488,7 +486,7 @@ CONSULTING">
 
     <script src="script.js"></script>
     <script>
-        // Save form data to localStorage before submission
+        // Save form data to localStorage for thank you page display
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
             contactForm.addEventListener('submit', function(e) {
@@ -504,6 +502,7 @@ CONSULTING">
                     })
                 };
                 localStorage.setItem('submittedFormData', JSON.stringify(formData));
+                // Form will now submit to FormSubmit which sends auto-reply email
             });
         }
     </script>
