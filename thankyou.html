@@ -20,7 +20,6 @@
             overflow-x: hidden;
         }
 
-        /* ===== ANIMATED BACKGROUND ===== */
         @keyframes gradientShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -40,7 +39,6 @@
             z-index: -2;
         }
 
-        /* ===== PARTICLE BACKGROUND ===== */
         @keyframes floatParticle {
             0% {
                 transform: translateY(0) translateX(0);
@@ -87,7 +85,6 @@
             z-index: 1;
         }
 
-        /* ===== BOUNCE IN ANIMATION ===== */
         @keyframes bounceIn {
             0% {
                 opacity: 0;
@@ -115,7 +112,6 @@
             animation: bounceIn 0.8s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
         }
 
-        /* Header with Logo - MATCHES NAVBAR STYLE */
         .thankyou-header {
             background: linear-gradient(135deg, #093400 0%, #1a5a2e 100%);
             padding: 30px 30px;
@@ -125,7 +121,6 @@
             overflow: hidden;
         }
 
-        /* ===== FLOATING ELEMENTS IN HEADER ===== */
         @keyframes floatIcon {
             0% { transform: translateY(0) rotate(0deg); }
             50% { transform: translateY(-10px) rotate(5deg); }
@@ -145,7 +140,6 @@
         .floating-icon:nth-child(3) { top: 50%; left: 10px; animation-delay: 2s; }
         .floating-icon:nth-child(4) { bottom: 20%; right: 15px; animation-delay: 3s; }
 
-        /* Logo Container - RECTANGULAR like navbar */
         .logo-container {
             display: flex;
             justify-content: center;
@@ -155,7 +149,6 @@
             z-index: 1;
         }
 
-        /* Logo styling - MATCHES NAVBAR LOGO (rectangular, no circle) */
         .thankyou-logo {
             height: 65px;
             width: auto;
@@ -183,7 +176,6 @@
             z-index: 1;
         }
 
-        /* ===== SUCCESS ICON WITH ANIMATIONS ===== */
         @keyframes pulseGlow {
             0% {
                 box-shadow: 0 0 0 0 rgba(141, 198, 63, 0.4);
@@ -241,12 +233,10 @@
             animation: drawCheck 0.8s ease-out forwards;
         }
 
-        /* Content Sections */
         .content-section {
             padding: 30px;
         }
 
-        /* ===== SLIDE-IN ANIMATIONS ===== */
         @keyframes slideInUp {
             from {
                 opacity: 0;
@@ -258,37 +248,13 @@
             }
         }
 
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
         .confirmation-message {
             background: #F8F9FA;
             border-left: 4px solid #8DC63F;
             padding: 20px;
             border-radius: 10px;
             margin-bottom: 30px;
-            animation: slideInLeft 0.6s ease forwards;
-            opacity: 0;
-            animation-fill-mode: forwards;
+            animation: slideInUp 0.6s ease forwards;
         }
 
         .info-section {
@@ -296,23 +262,9 @@
             border-radius: 15px;
             padding: 25px;
             margin-bottom: 30px;
-            animation: slideInRight 0.6s ease forwards;
-            opacity: 0;
+            animation: slideInUp 0.6s ease forwards;
             animation-delay: 0.2s;
-            animation-fill-mode: forwards;
-        }
-
-        .company-message {
-            background: #093400;
-            color: white;
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            position: relative;
-            overflow: hidden;
-            animation: slideInLeft 0.6s ease forwards;
             opacity: 0;
-            animation-delay: 0.4s;
             animation-fill-mode: forwards;
         }
 
@@ -322,9 +274,9 @@
             border-radius: 10px;
             text-align: center;
             margin-bottom: 20px;
-            animation: slideInRight 0.6s ease forwards;
+            animation: slideInUp 0.6s ease forwards;
+            animation-delay: 0.4s;
             opacity: 0;
-            animation-delay: 0.6s;
             animation-fill-mode: forwards;
         }
 
@@ -335,31 +287,11 @@
             flex-wrap: wrap;
             margin-top: 20px;
             animation: slideInUp 0.6s ease forwards;
+            animation-delay: 0.6s;
             opacity: 0;
-            animation-delay: 0.8s;
             animation-fill-mode: forwards;
         }
 
-        /* ===== TYPEWRITER EFFECT ===== */
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-
-        @keyframes blinkCursor {
-            50% { border-color: transparent; }
-        }
-
-        .typewriter-text {
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 2px solid #8DC63F;
-            animation: typing 2s steps(40, end), blinkCursor 0.75s step-end 4;
-            width: fit-content;
-            margin-bottom: 15px;
-        }
-
-        /* Info Grid */
         .info-section h3 {
             color: #C55A11;
             font-size: 1.3rem;
@@ -394,53 +326,6 @@
             font-weight: 500;
         }
 
-        /* Company Message Animation */
-        .company-message::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(141, 198, 63, 0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .company-message h4 {
-            color: #FFD700;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .company-message p {
-            line-height: 1.6;
-            margin-bottom: 15px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .company-signature {
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .company-signature p {
-            margin-bottom: 5px;
-        }
-
-        .company-signature strong {
-            color: #FFD700;
-        }
-
-        /* Contact Footer */
         .contact-footer p {
             color: #093400;
             margin-bottom: 8px;
@@ -458,7 +343,6 @@
             color: #8DC63F;
         }
 
-        /* Buttons */
         .btn {
             display: inline-block;
             padding: 12px 25px;
@@ -491,14 +375,12 @@
             transform: translateY(-3px);
         }
 
-        /* Empty State */
         .empty-state {
             background: #FFF3CD;
             padding: 15px;
             border-radius: 10px;
-            margin-top: 15px;
+            margin-bottom: 20px;
             text-align: center;
-            animation: slideInUp 0.6s ease forwards;
         }
 
         .empty-state a {
@@ -511,7 +393,6 @@
             text-decoration: underline;
         }
 
-        /* Confetti Canvas */
         #confetti-canvas {
             position: fixed;
             top: 0;
@@ -522,7 +403,6 @@
             z-index: 1000;
         }
 
-        /* Mobile Responsive */
         @media (max-width: 768px) {
             body {
                 padding: 20px 15px;
@@ -567,17 +447,10 @@
             .btn {
                 text-align: center;
             }
-
-            .typewriter-text {
-                white-space: normal;
-                border-right: none;
-                animation: none;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Floating Particles -->
     <div class="particle"></div>
     <div class="particle"></div>
     <div class="particle"></div>
@@ -589,12 +462,10 @@
     <div class="particle"></div>
     <div class="particle"></div>
 
-    <!-- Confetti Canvas -->
     <canvas id="confetti-canvas"></canvas>
 
     <div class="container">
         <div class="thankyou-card">
-            <!-- Header with Logo - RECTANGULAR like navbar -->
             <div class="thankyou-header">
                 <div class="floating-icon">🌿</div>
                 <div class="floating-icon">🌾</div>
@@ -607,7 +478,6 @@
                 <p>Your inquiry has been received and is being processed</p>
             </div>
 
-            <!-- Animated Success Icon -->
             <div class="success-icon">
                 <svg viewBox="0 0 100 100">
                     <circle cx="50" cy="50" r="45" fill="#8DC63F" stroke="white" stroke-width="3"/>
@@ -615,15 +485,11 @@
                 </svg>
             </div>
 
-            <!-- Content Section -->
-            <div class="content-section" id="contentSection">
-                <!-- This will be populated by JavaScript -->
-            </div>
+            <div class="content-section" id="contentSection"></div>
         </div>
     </div>
 
     <script>
-        // ===== CONFETTI ANIMATION =====
         function startConfetti() {
             const canvas = document.getElementById('confetti-canvas');
             const ctx = canvas.getContext('2d');
@@ -672,13 +538,18 @@
             
             animate();
             
-            // Stop confetti after 4 seconds
             setTimeout(() => {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
             }, 4000);
         }
 
-        // ===== DISPLAY SUBMITTED INFO =====
+        function escapeHtml(text) {
+            if (!text) return text;
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
         function displaySubmittedInfo() {
             const savedData = localStorage.getItem('submittedFormData');
             const contentSection = document.getElementById('contentSection');
@@ -687,15 +558,11 @@
                 const data = JSON.parse(savedData);
                 
                 contentSection.innerHTML = `
-                    <!-- Confirmation Message with Typewriter Effect -->
                     <div class="confirmation-message">
-                        <div class="typewriter-text">
-                            <p><strong>✅ Your submission has been successfully received.</strong></p>
-                        </div>
+                        <p><strong>✅ Your submission has been successfully received.</strong></p>
                         <p>Below is a copy of the information you submitted for your records.</p>
                     </div>
 
-                    <!-- Submitted Information Section -->
                     <div class="info-section">
                         <h3>📋 Your Submission Details</h3>
                         <div class="info-grid">
@@ -719,27 +586,12 @@
                         </div>
                     </div>
 
-                    <!-- Company Confirmation Message -->
-                    <div class="company-message">
-                        <h4>📧 Good day,</h4>
-                        <p>This email serves to confirm receipt of your business inquiry. A member of our team will be in contact with you within the next 24 hours to arrange a time to discuss the requested services.</p>
-                        <div class="company-signature">
-                            <p><strong>Kind Regards,</strong></p>
-                            <p><strong>AGRISERVE CONSULTING TEAM</strong></p>
-                            <p>Email: info@agri-serve.co.za</p>
-                            <p>Address: Pretoria | Gauteng</p>
-                            <p>Website: www.agri-serve.co.za</p>
-                        </div>
-                    </div>
-
-                    <!-- Contact Footer -->
                     <div class="contact-footer">
                         <p>📧 <strong>Email:</strong> <a href="mailto:info@agri-serve.co.za">info@agri-serve.co.za</a></p>
                         <p>📍 <strong>Location:</strong> Pretoria, Gauteng, South Africa</p>
                         <p>🌐 <strong>Website:</strong> <a href="https://olwethu-coder.github.io/agriserve-website/">www.agri-serve.co.za</a></p>
                     </div>
 
-                    <!-- Action Buttons -->
                     <div class="button-group">
                         <a href="index.html" class="btn btn-primary">🏠 Return to Homepage</a>
                         <a href="services.html" class="btn btn-secondary">📋 View Our Services</a>
@@ -747,10 +599,7 @@
                     </div>
                 `;
                 
-                // Start confetti animation
                 startConfetti();
-                
-                // Clear localStorage after displaying
                 localStorage.removeItem('submittedFormData');
             } else {
                 contentSection.innerHTML = `
@@ -763,18 +612,6 @@
                         <p>Please use the <a href="index.html#contact">contact form</a> to submit an inquiry.</p>
                     </div>
                     
-                    <div class="company-message">
-                        <h4>📧 Good day,</h4>
-                        <p>Thank you for your interest in AgriServe Consulting. Please fill out our contact form to submit an inquiry, and a member of our team will respond within 24 hours.</p>
-                        <div class="company-signature">
-                            <p><strong>Kind Regards,</strong></p>
-                            <p><strong>AGRISERVE CONSULTING TEAM</strong></p>
-                            <p>Email: info@agri-serve.co.za</p>
-                            <p>Address: Pretoria | Gauteng</p>
-                            <p>Website: www.agri-serve.co.za</p>
-                        </div>
-                    </div>
-                    
                     <div class="button-group">
                         <a href="index.html" class="btn btn-primary">🏠 Return to Homepage</a>
                         <a href="index.html#contact" class="btn btn-secondary">✉️ Go to Contact Form</a>
@@ -783,15 +620,6 @@
             }
         }
         
-        // Helper function to escape HTML special characters
-        function escapeHtml(text) {
-            if (!text) return text;
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
-        }
-        
-        // Handle window resize for confetti canvas
         window.addEventListener('resize', () => {
             const canvas = document.getElementById('confetti-canvas');
             if (canvas) {
@@ -800,7 +628,6 @@
             }
         });
         
-        // Run on page load
         document.addEventListener('DOMContentLoaded', function() {
             displaySubmittedInfo();
         });
