@@ -326,7 +326,7 @@ section, .profile-header-section, .profile-content {
     justify-content: center;
     position: relative;
     z-index: 15;
-    margin-top: -60px;  /* Pull logo up into the image */
+    margin-top: -60px;
 }
 
 .profile-logo-wrapper {
@@ -358,17 +358,16 @@ section, .profile-header-section, .profile-content {
     background: rgba(255, 255, 255, 0.95);
     padding: 30px 0 60px 0;
     box-shadow: 0 10px 30px var(--shadow-color);
-    margin-top: -50px;  /* Move content up to eliminate any gap */
+    margin-top: -50px;
     position: relative;
     z-index: 10;
     border: none;
     border-radius: 0;
 }
 
-/* Ensure title doesn't get hidden behind the logo */
 .profile-content .section-title-wrapper {
     margin-bottom: 30px;
-    padding-top: 60px;  /* Creates space for the logo to sit on top */
+    padding-top: 60px;
 }
 
 .profile-content .section-title-wrapper h2 {
@@ -980,7 +979,7 @@ section, .profile-header-section, .profile-content {
     transition: width 0.3s ease;
 }
 
-/* ===== HERO SECTION (duplicate? already above) ===== */
+/* ===== HERO SECTION ===== */
 .hero {
     color: white;
     text-align: center;
@@ -1522,17 +1521,15 @@ footer {
         padding: 40px 0 !important;
     }
     
-    /* Remove gap between navbar and first section */
     .navbar {
-        margin-bottom: 0;
+        margin-bottom: 0 !important;
     }
     
     .hero {
-        margin-top: 0;
+        margin-top: 0 !important;
         padding: 60px 0;
     }
     
-    /* Profile header section on mobile - reduce top spacing */
     .profile-header-section {
         margin-top: 0;
         margin-bottom: 30px;
@@ -1651,19 +1648,11 @@ footer {
     }
     
     /* Team photo circles on mobile */
-    .team-card-about .team-photo {
-        width: 80px;
-        height: 80px;
-        font-size: 2.5rem;
-        line-height: 80px;
-    }
-    
     .team-card-about .team-photo-img {
         width: 80px;
         height: 80px;
     }
     
-    /* Profile Header Mobile - Adjust overlap */
     .profile-header-image {
         height: 200px;
     }
