@@ -1268,6 +1268,27 @@ section, .profile-header-section, .profile-content {
     line-height: 1.5;
 }
 
+/* ===== TEAM PHOTO CIRCLE FIX ===== */
+.team-card-about .team-photo-img {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #586E20, #8DC63F);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #C55A11;
+}
+
+.team-card-about .team-photo-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 /* ===== AUTHORITIES SECTION ===== */
 .authorities {
     padding: 60px 0;
@@ -1679,6 +1700,12 @@ footer {
         height: 80px;
         font-size: 2.5rem;
         line-height: 80px;
+    }
+    
+    /* Team Photo Circle Mobile */
+    .team-card-about .team-photo-img {
+        width: 80px;
+        height: 80px;
     }
     
     /* Navbar Mobile */
