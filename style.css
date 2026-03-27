@@ -136,7 +136,6 @@ body {
     animation: pageLoad 0.5s ease;
     transition: background-color 0.3s ease, color 0.3s ease;
     
-    /* Subtle Geometric Pattern Overlay */
     background-image: 
         linear-gradient(135deg, transparent 45%, #586E20 45%, #586E20 55%, transparent 55%),
         linear-gradient(125deg, transparent 47%, #586E20 47%, #586E20 49%, transparent 49%),
@@ -170,7 +169,6 @@ body {
         0 0;
 }
 
-/* Dark mode background adjustment */
 [data-theme="dark"] body {
     background-image: 
         linear-gradient(135deg, transparent 45%, #8DC63F 45%, #8DC63F 55%, transparent 55%),
@@ -206,7 +204,7 @@ section, .profile-header-section, .profile-content {
     z-index: 2;
 }
 
-/* Hero Section */
+/* Hero Section - NO BORDER */
 .hero {
     background: linear-gradient(rgba(9, 52, 0, 0.85), rgba(88, 110, 32, 0.85)), url('https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
     background-size: cover;
@@ -215,89 +213,68 @@ section, .profile-header-section, .profile-content {
     text-align: center;
     padding: 120px 0;
     position: relative;
-    border-bottom: 4px solid #C55A11;
-    margin-bottom: 0 !important;
-    border-radius: 0 0 20px 20px;
+    margin-bottom: 0;
     overflow: hidden;
     min-height: 500px;
     display: flex;
     align-items: center;
     z-index: 2;
+    border: none;
 }
 
-/* About Section */
+/* About Section - NO BORDER */
 .about {
     padding: 80px 0;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 245, 0.95));
-    border-radius: 20px;
     margin: 20px 0;
     box-shadow: 0 5px 20px var(--shadow-color);
+    border: none;
 }
 
-/* Why Choose / Membership Section */
-.why-choose {
-    padding: 80px 0;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 20px;
-    margin: 20px 0;
-    box-shadow: 0 5px 20px var(--shadow-color);
-}
-
-/* Services Section */
-.services {
-    padding: 80px 0;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 20px;
-    margin: 20px 0;
-    box-shadow: 0 5px 20px var(--shadow-color);
-}
-
-/* Team Section */
+/* Team Section - Consistent Spacing */
 .team {
     padding: 80px 0;
     background: rgba(255, 255, 255, 0.9);
-    border-radius: 20px;
     margin: 20px 0;
     box-shadow: 0 5px 20px var(--shadow-color);
+    border: none;
 }
 
-/* Authorities Section */
+/* Authorities Section - Consistent Spacing */
 .authorities {
     padding: 60px 0;
     background: #093400;
     color: white;
     position: relative;
     z-index: 1;
-    border-top: 4px solid #C55A11;
-    border-bottom: 4px solid #C55A11;
-    border-radius: 20px;
     margin: 20px 0;
+    border: none;
 }
 
-/* Countries Section */
+/* Countries Section - Consistent Spacing */
 .countries-section {
     padding: 60px 0;
     background: rgba(255, 255, 255, 0.9);
-    border-radius: 20px;
     margin: 20px 0;
     box-shadow: 0 5px 20px var(--shadow-color);
     text-align: center;
     overflow: hidden;
+    border: none;
 }
 
-/* Contact Section */
+/* Contact Section - Consistent Spacing */
 .contact-section {
     padding: 80px 0;
     background: rgba(255, 255, 255, 0.9);
-    border-radius: 20px;
     margin: 20px 0 40px;
     box-shadow: 0 5px 20px var(--shadow-color);
+    border: none;
 }
 
-/* Profile Header Section (Twitter-style overlap) */
+/* Profile Header Section - No Gap Between Image and Content */
 .profile-header-section {
     position: relative;
-    margin: 0 0 80px 0;
+    margin: 0 0 40px 0;
     width: 100%;
     background: transparent;
 }
@@ -308,15 +285,93 @@ section, .profile-header-section, .profile-content {
     position: relative;
     overflow: hidden;
     background: #1a1a1a;
-    border-radius: 20px 20px 0 0;
+    border: none;
+    border-radius: 0;
+    margin: 0;
 }
 
+.header-slider-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.header-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: seamlessDissolve 20s infinite;
+    overflow: hidden;
+}
+
+.header-slide:nth-child(1) { animation-delay: 0s; }
+.header-slide:nth-child(2) { animation-delay: 5s; }
+.header-slide:nth-child(3) { animation-delay: 10s; }
+.header-slide:nth-child(4) { animation-delay: 15s; }
+
+.header-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Logo Container - Overlays Both Image and Content */
+.profile-logo-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 15;
+    margin-top: -60px;  /* Pull logo up into the image */
+}
+
+.profile-logo-wrapper {
+    background: var(--bg-card);
+    border-radius: 50%;
+    padding: 0;
+    box-shadow: 0 5px 20px var(--shadow-color);
+    border: 3px solid var(--border-accent);
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.profile-logo-wrapper:hover {
+    transform: scale(1.05);
+}
+
+.profile-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: white;
+    padding: 12px;
+    display: block;
+}
+
+/* Content Card - Brought Up to Touch the Image */
 .profile-content {
     background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    margin-top: 20px;
-    padding: 20px 0 60px 0;
+    padding: 30px 0 60px 0;
     box-shadow: 0 10px 30px var(--shadow-color);
+    margin-top: -50px;  /* Move content up to eliminate any gap */
+    position: relative;
+    z-index: 10;
+    border: none;
+    border-radius: 0;
+}
+
+/* Ensure title doesn't get hidden behind the logo */
+.profile-content .section-title-wrapper {
+    margin-bottom: 30px;
+    padding-top: 60px;  /* Creates space for the logo to sit on top */
+}
+
+.profile-content .section-title-wrapper h2 {
+    margin-top: 0;
 }
 
 /* Dossiers Container */
@@ -324,12 +379,6 @@ section, .profile-header-section, .profile-content {
     background: #F3DECF;
     padding: 60px 0;
     margin: 20px 0;
-    border-radius: 20px;
-}
-
-/* Pricing Table */
-.pricing-table {
-    background: transparent;
 }
 
 /* ===== THEME TOGGLE BUTTON ===== */
@@ -543,7 +592,6 @@ section, .profile-header-section, .profile-content {
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Primary button */
 .btn-primary {
     background: linear-gradient(135deg, #C55A11, #8DC63F);
     color: white;
@@ -557,7 +605,6 @@ section, .profile-header-section, .profile-content {
     animation: none;
 }
 
-/* Secondary button */
 .btn-secondary {
     background-color: transparent;
     color: white;
@@ -682,99 +729,6 @@ section, .profile-header-section, .profile-content {
     animation-play-state: paused;
 }
 
-/* ===== TWITTER-STYLE PROFILE OVERLAP ===== */
-.profile-header-section {
-    position: relative;
-    margin: 0 0 80px 0;
-    width: 100%;
-}
-
-.profile-header-image {
-    width: 100%;
-    height: 350px;
-    position: relative;
-    overflow: hidden;
-    background: #1a1a1a;
-    border-radius: 20px 20px 0 0;
-}
-
-.header-slider-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.header-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    animation: seamlessDissolve 20s infinite;
-    overflow: hidden;
-}
-
-.header-slide:nth-child(1) { animation-delay: 0s; }
-.header-slide:nth-child(2) { animation-delay: 5s; }
-.header-slide:nth-child(3) { animation-delay: 10s; }
-.header-slide:nth-child(4) { animation-delay: 15s; }
-
-.header-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.profile-logo-container {
-    display: flex;
-    justify-content: center;
-    margin-top: -60px;
-    position: relative;
-    z-index: 10;
-}
-
-.profile-logo-wrapper {
-    background: var(--bg-card);
-    border-radius: 50%;
-    padding: 0;
-    box-shadow: 0 5px 20px var(--shadow-color);
-    border: 3px solid var(--border-accent);
-    display: inline-block;
-}
-
-.profile-logo {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    border-radius: 50%;
-    background: white;
-    padding: 12px;
-    transition: transform 0.3s ease;
-    display: block;
-}
-
-.profile-logo:hover {
-    transform: scale(1.05);
-}
-
-.profile-content {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    margin-top: 20px;
-    padding: 20px 0 60px 0;
-    box-shadow: 0 10px 30px var(--shadow-color);
-}
-
-.profile-content .section-title-wrapper {
-    margin-bottom: 30px;
-}
-
-.profile-content .section-title-wrapper h2 {
-    margin-top: 20px;
-}
-
 /* ===== 3D FLIP CARD ===== */
 .flip-card {
     background-color: transparent;
@@ -888,8 +842,8 @@ section, .profile-header-section, .profile-content {
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    border-bottom: 3px solid #C55A11;
     transition: all 0.3s ease;
+    border: none;
 }
 
 .navbar .container {
@@ -1024,15 +978,13 @@ section, .profile-header-section, .profile-content {
     transition: width 0.3s ease;
 }
 
-/* ===== HERO SECTION ===== */
+/* ===== HERO SECTION (duplicate? already above) ===== */
 .hero {
     color: white;
     text-align: center;
     padding: 120px 0;
     position: relative;
-    border-bottom: 4px solid #C55A11;
-    margin-bottom: 0 !important;
-    border-radius: 0 0 20px 20px;
+    margin-bottom: 0;
     overflow: hidden;
     min-height: 500px;
     display: flex;
@@ -1113,7 +1065,6 @@ section, .profile-header-section, .profile-content {
 .about {
     padding: 80px 0;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 245, 0.95));
-    border-radius: 20px;
     margin: 20px 0;
     box-shadow: 0 5px 20px var(--shadow-color);
 }
@@ -1296,9 +1247,6 @@ section, .profile-header-section, .profile-content {
     color: white;
     position: relative;
     z-index: 1;
-    border-top: 4px solid #C55A11;
-    border-bottom: 4px solid #C55A11;
-    border-radius: 20px;
     margin: 20px 0;
 }
 
@@ -1371,7 +1319,6 @@ section, .profile-header-section, .profile-content {
 .countries-section {
     padding: 60px 0;
     background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
     margin: 20px 0;
     box-shadow: 0 5px 20px var(--shadow-color);
     text-align: center;
@@ -1450,9 +1397,8 @@ section, .profile-header-section, .profile-content {
     color: white;
     padding: 80px 0;
     text-align: center;
-    border-bottom: 4px solid #C55A11;
-    border-radius: 0 0 20px 20px;
     margin-bottom: 60px;
+    border: none;
 }
 
 .page-header h1 {
@@ -1471,7 +1417,6 @@ section, .profile-header-section, .profile-content {
 .contact-section {
     padding: 80px 0;
     background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
     margin: 20px 0 40px;
     box-shadow: 0 5px 20px var(--shadow-color);
 }
@@ -1524,8 +1469,7 @@ footer {
     color: white;
     text-align: center;
     padding: 30px 0;
-    border-top: 4px solid #C55A11;
-    border-radius: 20px 20px 0 0;
+    border: none;
 }
 
 /* ===== AD HOC GRID ===== */
@@ -1589,12 +1533,10 @@ footer {
         padding: 8px;
     }
     
-    /* Floating icons mobile */
     .floating-icon-item {
         font-size: 1.5rem;
     }
     
-    /* Page Header Mobile */
     .page-header {
         padding: 50px 0;
     }
@@ -1608,7 +1550,6 @@ footer {
         padding: 0 15px;
     }
     
-    /* AD HOC Mobile */
     .ad-hoc-grid {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -1619,7 +1560,6 @@ footer {
         padding: 30px 25px !important;
     }
     
-    /* Hero Mobile */
     .hero {
         padding: 60px 0;
         min-height: 400px;
@@ -1660,7 +1600,6 @@ footer {
         font-size: 0.95rem;
     }
     
-    /* About Mobile */
     .about-content {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -1684,7 +1623,6 @@ footer {
         padding: 25px;
     }
     
-    /* About Style Grid Mobile */
     .about-style-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -1694,7 +1632,6 @@ footer {
         padding: 25px 20px;
     }
     
-    /* Team Cards Mobile */
     .team-card-about .team-photo {
         width: 80px;
         height: 80px;
@@ -1702,13 +1639,35 @@ footer {
         line-height: 80px;
     }
     
-    /* Team Photo Circle Mobile */
     .team-card-about .team-photo-img {
         width: 80px;
         height: 80px;
     }
     
-    /* Navbar Mobile */
+    /* Profile Header Mobile */
+    .profile-header-image {
+        height: 200px;
+    }
+    
+    .profile-logo-container {
+        margin-top: -50px;
+    }
+    
+    .profile-logo {
+        width: 70px;
+        height: 70px;
+        padding: 8px;
+    }
+    
+    .profile-content {
+        margin-top: -40px;
+        padding: 20px 0 40px 0;
+    }
+    
+    .profile-content .section-title-wrapper {
+        padding-top: 50px;
+    }
+    
     .navbar .container {
         flex-direction: column;
         gap: 12px;
@@ -1735,26 +1694,6 @@ footer {
         padding: 6px 12px;
     }
     
-    /* Profile Header Mobile */
-    .profile-header-image {
-        height: 200px;
-    }
-    
-    .profile-logo-container {
-        margin-top: -50px;
-    }
-    
-    .profile-logo {
-        width: 70px;
-        height: 70px;
-        padding: 8px;
-    }
-    
-    .profile-content {
-        padding: 20px 0 40px 0;
-    }
-    
-    /* Flip Card Mobile */
     .flip-card {
         height: 250px;
         margin: 15px 0;
@@ -1764,7 +1703,6 @@ footer {
         padding: 20px;
     }
     
-    /* Contact Mobile */
     .contact-wrapper {
         grid-template-columns: 1fr;
         gap: 0;
@@ -1778,7 +1716,6 @@ footer {
         padding: 25px 20px;
     }
     
-    /* Flags Mobile */
     .flag-item {
         min-width: 80px;
         margin: 0 10px;
@@ -1793,7 +1730,6 @@ footer {
         font-size: 0.7rem;
     }
     
-    /* Footer Mobile */
     footer {
         padding: 20px 15px;
     }
