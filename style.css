@@ -340,7 +340,7 @@ section, .profile-header-section, .profile-content {
     margin-top: -60px;
 }
 
-/* Decorative lines - extended to reach the curves by adding the green underline length (80px) */
+/* Decorative lines - extended to reach the curves */
 .profile-logo-container::before,
 .profile-logo-container::after {
     content: '';
@@ -352,22 +352,26 @@ section, .profile-header-section, .profile-content {
     transform: translateY(-50%);
 }
 
-/* Left line - starts from logo border, extended by 80px to reach curves */
+/* Left line - starts from logo border, extended to reach curves */
 .profile-logo-container::before {
     left: calc(50% - 60px);
     right: auto;
     width: calc(50% - 70px + 80px);
 }
 
-/* Right line - starts from logo border, extended by 80px to reach curves */
+/* Right line - starts from logo border, extended to reach curves */
 .profile-logo-container::after {
     right: calc(50% - 60px);
     left: auto;
     width: calc(50% - 70px + 80px);
 }
 
-/* Responsive adjustments - extended proportionally */
+/* Responsive adjustments */
 @media (max-width: 768px) {
+    .profile-header-image {
+        border-bottom-width: 5px;
+    }
+    
     .profile-logo-container::before {
         left: calc(50% - 45px);
         width: calc(50% - 45px + 40px);
@@ -1621,7 +1625,7 @@ footer {
     
     .profile-header-image {
         border-radius: 20px;
-        border-bottom-width: 4px;
+        border-bottom-width: 5px;
     }
     
     .header-slider-container {
@@ -1866,6 +1870,7 @@ footer {
     .profile-header-image {
         height: 280px;
         border-radius: 25px;
+        border-bottom-width: 5px;
     }
     
     .header-slider-container {
