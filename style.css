@@ -224,8 +224,6 @@ section, .profile-header-section, .profile-content {
     /* Add bottom corner curves */
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    /* Add orangish border below hero */
-    border-bottom: 5px solid #C55A11;
 }
 
 /* About Section - NO BORDER */
@@ -294,8 +292,7 @@ section, .profile-header-section, .profile-content {
     border: none;
     border-radius: 30px;
     margin: 0;
-    /* Add orangish border below Twitter-style images */
-    border-bottom: 5px solid #C55A11;
+    /* NO BORDER - removed */
 }
 
 .header-slider-container {
@@ -368,10 +365,6 @@ section, .profile-header-section, .profile-content {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .profile-header-image {
-        border-bottom-width: 5px;
-    }
-    
     .profile-logo-container::before {
         left: calc(50% - 45px);
         width: calc(50% - 45px + 40px);
@@ -1077,7 +1070,6 @@ section, .profile-header-section, .profile-content {
     background-position: center;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    border-bottom: 5px solid #C55A11;
 }
 
 .hero .container {
@@ -1615,7 +1607,6 @@ footer {
         padding: 60px 0;
         border-bottom-left-radius: 30px;
         border-bottom-right-radius: 30px;
-        border-bottom-width: 4px;
     }
     
     .profile-header-section {
@@ -1625,7 +1616,6 @@ footer {
     
     .profile-header-image {
         border-radius: 20px;
-        border-bottom-width: 5px;
     }
     
     .header-slider-container {
@@ -1870,7 +1860,6 @@ footer {
     .profile-header-image {
         height: 280px;
         border-radius: 25px;
-        border-bottom-width: 5px;
     }
     
     .header-slider-container {
