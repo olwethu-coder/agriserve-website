@@ -362,7 +362,7 @@ section, .profile-header-section, .profile-content {
     width: calc(50% - 70px + 80px);
 }
 
-/* Responsive adjustments - consistent across all devices */
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .profile-header-image {
         border-radius: 20px;
@@ -1661,12 +1661,13 @@ footer {
         border-radius: 20px;
     }
     
+    /* Increased negative margin on mobile to pull content higher */
     .profile-content {
-        margin-top: -40px;
+        margin-top: -55px;
     }
     
     .profile-content .section-title-wrapper {
-        padding-top: 50px;
+        padding-top: 45px;
     }
     
     .section-title-wrapper {
