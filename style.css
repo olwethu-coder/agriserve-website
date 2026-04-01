@@ -221,6 +221,11 @@ section, .profile-header-section, .profile-content {
     align-items: center;
     z-index: 2;
     border: none;
+    /* Add bottom corner curves */
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    /* Add orangish border below hero */
+    border-bottom: 5px solid #C55A11;
 }
 
 /* About Section - NO BORDER */
@@ -287,8 +292,10 @@ section, .profile-header-section, .profile-content {
     overflow: hidden;
     background: #1a1a1a;
     border: none;
-    border-radius: 0;
+    border-radius: 30px;
     margin: 0;
+    /* Add orangish border below Twitter-style images */
+    border-bottom: 5px solid #C55A11;
 }
 
 .header-slider-container {
@@ -296,6 +303,7 @@ section, .profile-header-section, .profile-content {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    border-radius: 30px;
 }
 
 .header-slide {
@@ -307,6 +315,7 @@ section, .profile-header-section, .profile-content {
     opacity: 0;
     animation: seamlessDissolve 20s infinite;
     overflow: hidden;
+    border-radius: 30px;
 }
 
 .header-slide:nth-child(1) { animation-delay: 0s; }
@@ -318,15 +327,80 @@ section, .profile-header-section, .profile-content {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 30px;
 }
 
-/* Logo Container - Overlays Both Image and Content */
+/* Logo Container - Overlays Both Image and Content with decorative lines */
 .profile-logo-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     position: relative;
     z-index: 15;
     margin-top: -60px;
+}
+
+/* Decorative lines - extended to reach the curves by adding the green underline length (80px) */
+.profile-logo-container::before,
+.profile-logo-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    height: 3px;
+    background: #C55A11;
+    border-radius: 3px;
+    transform: translateY(-50%);
+}
+
+/* Left line - starts from logo border, extended by 80px to reach curves */
+.profile-logo-container::before {
+    left: calc(50% - 60px);
+    right: auto;
+    width: calc(50% - 70px + 80px);
+}
+
+/* Right line - starts from logo border, extended by 80px to reach curves */
+.profile-logo-container::after {
+    right: calc(50% - 60px);
+    left: auto;
+    width: calc(50% - 70px + 80px);
+}
+
+/* Responsive adjustments - extended proportionally */
+@media (max-width: 768px) {
+    .profile-logo-container::before {
+        left: calc(50% - 45px);
+        width: calc(50% - 45px + 40px);
+    }
+    
+    .profile-logo-container::after {
+        right: calc(50% - 45px);
+        width: calc(50% - 45px + 40px);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .profile-logo-container::before {
+        left: calc(50% - 52px);
+        width: calc(50% - 55px + 60px);
+    }
+    
+    .profile-logo-container::after {
+        right: calc(50% - 52px);
+        width: calc(50% - 55px + 60px);
+    }
+}
+
+@media (min-width: 1200px) {
+    .profile-logo-container::before {
+        left: calc(50% - 60px);
+        width: calc(50% - 70px + 80px);
+    }
+    
+    .profile-logo-container::after {
+        right: calc(50% - 60px);
+        width: calc(50% - 70px + 80px);
+    }
 }
 
 .profile-logo-wrapper {
@@ -337,6 +411,14 @@ section, .profile-header-section, .profile-content {
     border: 3px solid var(--border-accent);
     display: inline-block;
     transition: transform 0.3s ease;
+    position: relative;
+    z-index: 2;
+    background: white;
+    width: 106px;
+    height: 106px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .profile-logo-wrapper:hover {
@@ -353,7 +435,7 @@ section, .profile-header-section, .profile-content {
     display: block;
 }
 
-/* Content Card - Brought Up to Touch the Image */
+/* Content Card - ORIGINAL overlapping design */
 .profile-content {
     background: rgba(255, 255, 255, 0.95);
     padding: 30px 0 60px 0;
@@ -724,11 +806,6 @@ section, .profile-header-section, .profile-content {
     background: linear-gradient(to left, var(--gradient-start), transparent);
 }
 
-.hero:hover .hero-slide,
-.hero:hover .hero-slide img {
-    animation-play-state: paused;
-}
-
 /* ===== 3D FLIP CARD ===== */
 .flip-card {
     background-color: transparent;
@@ -994,6 +1071,9 @@ section, .profile-header-section, .profile-content {
     background: linear-gradient(rgba(9, 52, 0, 0.85), rgba(88, 110, 32, 0.85)), url('https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
     background-size: cover;
     background-position: center;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-bottom: 5px solid #C55A11;
 }
 
 .hero .container {
@@ -1399,7 +1479,7 @@ section, .profile-header-section, .profile-content {
     color: white;
     padding: 80px 0;
     text-align: center;
-    margin-top: 0;          /* <-- FIX: remove top margin */
+    margin-top: 0;
     margin-bottom: 60px;
     border: none;
 }
@@ -1529,11 +1609,39 @@ footer {
     .hero {
         margin-top: 0 !important;
         padding: 60px 0;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border-bottom-width: 4px;
     }
     
     .profile-header-section {
         margin-top: 0;
         margin-bottom: 30px;
+    }
+    
+    .profile-header-image {
+        border-radius: 20px;
+        border-bottom-width: 4px;
+    }
+    
+    .header-slider-container {
+        border-radius: 20px;
+    }
+    
+    .header-slide {
+        border-radius: 20px;
+    }
+    
+    .header-slide img {
+        border-radius: 20px;
+    }
+    
+    .profile-content {
+        margin-top: -40px;
+    }
+    
+    .profile-content .section-title-wrapper {
+        padding-top: 50px;
     }
     
     .section-title-wrapper {
@@ -1668,15 +1776,6 @@ footer {
         padding: 8px;
     }
     
-    .profile-content {
-        margin-top: -40px;
-        padding: 20px 0 40px 0;
-    }
-    
-    .profile-content .section-title-wrapper {
-        padding-top: 50px;
-    }
-    
     .navbar .container {
         flex-direction: column;
         gap: 12px;
@@ -1766,6 +1865,27 @@ footer {
     
     .profile-header-image {
         height: 280px;
+        border-radius: 25px;
+    }
+    
+    .header-slider-container {
+        border-radius: 25px;
+    }
+    
+    .header-slide {
+        border-radius: 25px;
+    }
+    
+    .header-slide img {
+        border-radius: 25px;
+    }
+    
+    .profile-content {
+        margin-top: -45px;
+    }
+    
+    .profile-content .section-title-wrapper {
+        padding-top: 55px;
     }
     
     .profile-logo {

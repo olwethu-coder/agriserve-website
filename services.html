@@ -116,6 +116,18 @@
             margin-right: 10px;
         }
         
+        /* Greenish overlay for profile header sections on services page */
+        .profile-header-image .header-slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(9, 52, 0, 0.6), rgba(88, 110, 32, 0.6));
+            pointer-events: none;
+        }
+        
         @media (max-width: 768px) {
             .pricing-card.featured {
                 transform: none;
@@ -189,7 +201,7 @@
         </div>
     </section>
 
-    <!-- OUR CORE SERVICES Section - Twitter style logo via profile-logo-container (NO duplicate section-logo) -->
+    <!-- OUR CORE SERVICES Section - Twitter style photo background WITH greenish overlay -->
     <div class="profile-header-section">
         <div class="profile-header-image">
             <div class="header-slider-container">
@@ -269,7 +281,7 @@
         </div>
     </section>
 
-    <!-- ENGAGEMENT MODELS Section - Twitter style logo via profile-logo-container (NO duplicate section-logo) -->
+    <!-- ENGAGEMENT MODELS Section - Twitter style photo background WITH greenish overlay -->
     <div class="profile-header-section">
         <div class="profile-header-image">
             <div class="header-slider-container">

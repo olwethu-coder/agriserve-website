@@ -5,6 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>AgriServe Consulting - Regulatory Compliance & IPM Solutions</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* About Us Slider Styles */
+        .about-slider-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px var(--shadow-color);
+        }
+        
+        .about-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            animation: aboutDissolve 20s infinite;
+            overflow: hidden;
+        }
+        
+        .about-slide:nth-child(1) { animation-delay: 0s; }
+        .about-slide:nth-child(2) { animation-delay: 5s; }
+        .about-slide:nth-child(3) { animation-delay: 10s; }
+        .about-slide:nth-child(4) { animation-delay: 15s; }
+        
+        .about-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Greenish overlay for about slider (same as hero) */
+        .about-slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(9, 52, 0, 0.6), rgba(88, 110, 32, 0.6));
+            pointer-events: none;
+        }
+        
+        @keyframes aboutDissolve {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            20% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            25% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            45% {
+                opacity: 0;
+                transform: scale(1.08);
+            }
+            50% {
+                opacity: 0;
+                transform: scale(1.08);
+            }
+            55% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            75% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            80% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        /* Greenish overlay for profile header sections */
+        .profile-header-image .header-slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(9, 52, 0, 0.6), rgba(88, 110, 32, 0.6));
+            pointer-events: none;
+        }
+        
+        @media (max-width: 768px) {
+            .about-slider-container {
+                height: 280px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- FLOATING ICONS BACKGROUND -->
@@ -76,7 +178,7 @@
         </div>
     </section>
 
-    <!-- About Us Section - NO LOGO -->
+    <!-- About Us Section - WITH ANIMATED SLIDER AND GREENISH OVERLAY -->
     <section class="about">
         <div class="container">
             <div class="section-title-wrapper">
@@ -89,7 +191,20 @@
                     <p class="highlight">With over 15 years of experience in regulatory affairs, government, and stakeholder management, we enjoy a clear understanding of the regulatory environment.</p>
                 </div>
                 <div class="about-image-container">
-                    <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="South African agricultural research" class="about-image" loading="lazy">
+                    <div class="about-slider-container">
+                        <div class="about-slide">
+                            <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Agricultural research" loading="lazy">
+                        </div>
+                        <div class="about-slide">
+                            <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Crop fields" loading="lazy">
+                        </div>
+                        <div class="about-slide">
+                            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Farm landscape" loading="lazy">
+                        </div>
+                        <div class="about-slide">
+                            <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Plant seedlings" loading="lazy">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="about-mission">
@@ -99,7 +214,7 @@
         </div>
     </section>
 
-    <!-- MEMBERSHIP Section - Twitter style photo background -->
+    <!-- MEMBERSHIP Section - Twitter style photo background WITH greenish overlay -->
     <div class="profile-header-section">
         <div class="profile-header-image">
             <div class="header-slider-container">
@@ -148,7 +263,7 @@
         </div>
     </div>
 
-    <!-- COMPANY SERVICE OFFERINGS Section - Twitter style photo background -->
+    <!-- COMPANY SERVICE OFFERINGS Section - Twitter style photo background WITH greenish overlay -->
     <div class="profile-header-section">
         <div class="profile-header-image">
             <div class="header-slider-container">
@@ -202,7 +317,7 @@
         </div>
     </div>
 
-    <!-- OUR LEADERSHIP TEAM Section - WITH Twitter style photo background (NEW) -->
+    <!-- OUR LEADERSHIP TEAM Section - Twitter style photo background WITH greenish overlay -->
     <div class="profile-header-section">
         <div class="profile-header-image">
             <div class="header-slider-container">
@@ -360,7 +475,7 @@
         </div>
     </section>
 
-    <!-- COUNTRIES SERVICED Section - WITH Twitter style photo background (NEW) -->
+    <!-- COUNTRIES SERVICED Section - Twitter style photo background WITH greenish overlay -->
     <div class="profile-header-section">
         <div class="profile-header-image">
             <div class="header-slider-container">
