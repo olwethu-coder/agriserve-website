@@ -223,7 +223,6 @@ section, .profile-header-section, .profile-content {
     align-items: center;
     z-index: 2;
     border: none;
-    /* Add bottom corner curves */
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
 }
@@ -750,31 +749,31 @@ section, .profile-header-section, .profile-content {
         opacity: 1;
         transform: scale(1);
     }
+    16.66% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
     20% {
         opacity: 1;
         transform: scale(1.05);
     }
-    25% {
-        opacity: 1;
-        transform: scale(1.05);
-    }
-    45% {
+    36.66% {
         opacity: 0;
         transform: scale(1.08);
     }
-    50% {
+    40% {
         opacity: 0;
         transform: scale(1.08);
     }
-    55% {
+    43.33% {
         opacity: 1;
         transform: scale(1.05);
     }
-    75% {
+    60% {
         opacity: 1;
         transform: scale(1.05);
     }
-    80% {
+    63.33% {
         opacity: 1;
         transform: scale(1);
     }
@@ -801,14 +800,16 @@ section, .profile-header-section, .profile-content {
     width: 100%;
     height: 100%;
     opacity: 0;
-    animation: seamlessDissolve 20s infinite;
+    animation: seamlessDissolve 24s infinite;
     overflow: hidden;
 }
 
 .hero-slide:nth-child(1) { animation-delay: 0s; }
-.hero-slide:nth-child(2) { animation-delay: 5s; }
-.hero-slide:nth-child(3) { animation-delay: 10s; }
-.hero-slide:nth-child(4) { animation-delay: 15s; }
+.hero-slide:nth-child(2) { animation-delay: 4s; }
+.hero-slide:nth-child(3) { animation-delay: 8s; }
+.hero-slide:nth-child(4) { animation-delay: 12s; }
+.hero-slide:nth-child(5) { animation-delay: 16s; }
+.hero-slide:nth-child(6) { animation-delay: 20s; }
 
 .hero-slide img {
     width: 100%;
@@ -1007,8 +1008,7 @@ section, .profile-header-section, .profile-content {
 }
 
 .logo-condensed .logo-text {
-    color: white;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: 1px;
     white-space: nowrap;
@@ -1381,30 +1381,21 @@ section, .profile-header-section, .profile-content {
     color: white;
 }
 
+/* Regulatory authorities cards - light green border */
+.authorities .about-style-card {
+    border-left-color: #8DC63F;
+}
+
+.authorities .about-style-card:hover {
+    border-left-color: #C55A11;
+}
+
 .authorities-grid {
     display: flex;
     justify-content: center;
     gap: 50px;
     flex-wrap: wrap;
     margin: 40px 0;
-}
-
-.authority-item {
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 15px 30px;
-    background: rgba(141, 198, 63, 0.2);
-    border-radius: 50px;
-    border: 2px solid #8DC63F;
-    color: white;
-    transition: all 0.3s ease;
-    animation: borderGlow 8s infinite;
-}
-
-.authority-item:hover {
-    transform: translateY(-5px) scale(1.05);
-    background: rgba(141, 198, 63, 0.3);
-    border-color: #C55A11;
 }
 
 .categories-serviced {
@@ -1558,6 +1549,7 @@ section, .profile-header-section, .profile-content {
     overflow: hidden;
     box-shadow: 0 10px 30px var(--shadow-color);
     border: 1px solid var(--border-light);
+    border-left: 5px solid #C55A11;
 }
 
 .contact-info {
@@ -1727,6 +1719,10 @@ footer {
     
     .ad-hoc-card {
         padding: 30px 25px !important;
+    }
+    
+    .logo-condensed .logo-text {
+        font-size: 1.2rem;
     }
     
     .hero {
