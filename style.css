@@ -292,7 +292,6 @@ section, .profile-header-section, .profile-content {
     border: none;
     border-radius: 30px;
     margin: 0;
-    /* NO BORDER - removed */
 }
 
 .header-slider-container {
@@ -363,8 +362,24 @@ section, .profile-header-section, .profile-content {
     width: calc(50% - 70px + 80px);
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments - consistent across all devices */
 @media (max-width: 768px) {
+    .profile-header-image {
+        border-radius: 20px;
+    }
+    
+    .header-slider-container {
+        border-radius: 20px;
+    }
+    
+    .header-slide {
+        border-radius: 20px;
+    }
+    
+    .header-slide img {
+        border-radius: 20px;
+    }
+    
     .profile-logo-container::before {
         left: calc(50% - 45px);
         width: calc(50% - 45px + 40px);
@@ -377,6 +392,22 @@ section, .profile-header-section, .profile-content {
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
+    .profile-header-image {
+        border-radius: 25px;
+    }
+    
+    .header-slider-container {
+        border-radius: 25px;
+    }
+    
+    .header-slide {
+        border-radius: 25px;
+    }
+    
+    .header-slide img {
+        border-radius: 25px;
+    }
+    
     .profile-logo-container::before {
         left: calc(50% - 52px);
         width: calc(50% - 55px + 60px);
