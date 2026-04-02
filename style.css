@@ -342,6 +342,19 @@ section, .profile-header-section, .profile-content {
     border: none;
 }
 
+/* Download link styling */
+.download-link {
+    color: #8DC63F;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.download-link:hover {
+    color: #C55A11;
+    text-decoration: underline;
+}
+
 /* Profile Header Section - No Gap Between Image and Content */
 .profile-header-section {
     position: relative;
