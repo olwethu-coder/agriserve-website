@@ -310,7 +310,7 @@ section, .profile-header-section, .profile-content {
     width: 100%;
     height: 100%;
     opacity: 0;
-    animation: seamlessDissolve 20s infinite;
+    animation: headerSlideShow 20s infinite;
     overflow: hidden;
     border-radius: 30px;
 }
@@ -337,6 +337,14 @@ section, .profile-header-section, .profile-content {
     height: 100%;
     background: linear-gradient(rgba(9, 52, 0, 0.6), rgba(88, 110, 32, 0.6));
     pointer-events: none;
+}
+
+@keyframes headerSlideShow {
+    0% { opacity: 1; }
+    20% { opacity: 1; }
+    25% { opacity: 0; }
+    95% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 /* Logo Container - Overlays Both Image and Content with decorative lines */
@@ -690,15 +698,6 @@ section, .profile-header-section, .profile-content {
     border-color: #8DC63F;
 }
 
-.btn-primary {
-    animation: pulse 2s infinite, borderGlow 6s infinite;
-    border: 2px solid transparent;
-}
-
-.btn-primary:hover {
-    animation: none;
-}
-
 /* ===== BUTTON STYLES ===== */
 .btn {
     display: inline-block;
@@ -743,46 +742,7 @@ section, .profile-header-section, .profile-content {
     border-color: #8DC63F;
 }
 
-/* ===== HERO SLIDER ===== */
-@keyframes seamlessDissolve {
-    0% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    16.66% {
-        opacity: 1;
-        transform: scale(1.05);
-    }
-    20% {
-        opacity: 1;
-        transform: scale(1.05);
-    }
-    36.66% {
-        opacity: 0;
-        transform: scale(1.08);
-    }
-    40% {
-        opacity: 0;
-        transform: scale(1.08);
-    }
-    43.33% {
-        opacity: 1;
-        transform: scale(1.05);
-    }
-    60% {
-        opacity: 1;
-        transform: scale(1.05);
-    }
-    63.33% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
+/* ===== HERO SLIDER - 6 IMAGES ===== */
 .hero-slider-container {
     position: absolute;
     top: 0;
@@ -800,16 +760,16 @@ section, .profile-header-section, .profile-content {
     width: 100%;
     height: 100%;
     opacity: 0;
-    animation: seamlessDissolve 24s infinite;
+    animation: heroSlideShow 30s infinite;
     overflow: hidden;
 }
 
 .hero-slide:nth-child(1) { animation-delay: 0s; }
-.hero-slide:nth-child(2) { animation-delay: 4s; }
-.hero-slide:nth-child(3) { animation-delay: 8s; }
-.hero-slide:nth-child(4) { animation-delay: 12s; }
-.hero-slide:nth-child(5) { animation-delay: 16s; }
-.hero-slide:nth-child(6) { animation-delay: 20s; }
+.hero-slide:nth-child(2) { animation-delay: 5s; }
+.hero-slide:nth-child(3) { animation-delay: 10s; }
+.hero-slide:nth-child(4) { animation-delay: 15s; }
+.hero-slide:nth-child(5) { animation-delay: 20s; }
+.hero-slide:nth-child(6) { animation-delay: 25s; }
 
 .hero-slide img {
     width: 100%;
@@ -848,6 +808,51 @@ section, .profile-header-section, .profile-content {
     right: 0;
     background: linear-gradient(to left, var(--gradient-start), transparent);
 }
+
+@keyframes heroSlideShow {
+    0% { opacity: 1; }
+    14% { opacity: 1; }
+    16.66% { opacity: 0; }
+    96.66% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* ===== TEAM PHOTO CIRCLE FIX ===== */
+.team-card-about .team-photo-img {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #093400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #093400;
+}
+
+.team-card-about .team-photo-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.team-card-about .team-photo {
+    background: #093400;
+    width: 130px;
+    height: 130px;
+    line-height: 130px;
+    font-size: 3rem;
+    margin: 0 auto 20px;
+    border: 4px solid #093400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* No hover animation for team photos */
 
 /* ===== 3D FLIP CARD ===== */
 .flip-card {
@@ -1310,22 +1315,17 @@ section, .profile-header-section, .profile-content {
 }
 
 .team-card-about .team-photo {
-    background: linear-gradient(135deg, #586E20, #8DC63F);
-    width: 100px;
-    height: 100px;
-    line-height: 100px;
+    background: #093400;
+    width: 130px;
+    height: 130px;
+    line-height: 130px;
     font-size: 3rem;
     margin: 0 auto 20px;
-    border: 3px solid #C55A11;
-    transition: all 0.3s ease;
+    border: 4px solid #093400;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-}
-
-.team-card-about:hover .team-photo {
-    transform: rotate(5deg) scale(1.05);
 }
 
 .team-card-about .team-title {
@@ -1346,27 +1346,6 @@ section, .profile-header-section, .profile-content {
     line-height: 1.5;
 }
 
-/* ===== TEAM PHOTO CIRCLE FIX ===== */
-.team-card-about .team-photo-img {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 20px;
-    border-radius: 50%;
-    overflow: hidden;
-    background: linear-gradient(135deg, #586E20, #8DC63F);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 3px solid #C55A11;
-}
-
-.team-card-about .team-photo-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
 /* ===== AUTHORITIES SECTION ===== */
 .authorities {
     padding: 60px 0;
@@ -1381,13 +1360,13 @@ section, .profile-header-section, .profile-content {
     color: white;
 }
 
-/* Regulatory authorities cards - light green border */
+/* Regulatory authorities cards - orangish border, changes to green on hover */
 .authorities .about-style-card {
-    border-left-color: #8DC63F;
+    border-left-color: #C55A11;
 }
 
 .authorities .about-style-card:hover {
-    border-left-color: #C55A11;
+    border-left-color: #8DC63F;
 }
 
 .authorities-grid {
@@ -1721,6 +1700,17 @@ footer {
         padding: 30px 25px !important;
     }
     
+    .team-card-about .team-photo-img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .team-card-about .team-photo {
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+    }
+    
     .logo-condensed .logo-text {
         font-size: 1.2rem;
     }
@@ -1794,11 +1784,6 @@ footer {
     
     .about-style-card {
         padding: 25px 20px;
-    }
-    
-    .team-card-about .team-photo-img {
-        width: 80px;
-        height: 80px;
     }
     
     .profile-header-image {
@@ -1935,6 +1920,17 @@ footer {
     
     .profile-logo-container {
         margin-top: -55px;
+    }
+    
+    .team-card-about .team-photo-img {
+        width: 115px;
+        height: 115px;
+    }
+    
+    .team-card-about .team-photo {
+        width: 115px;
+        height: 115px;
+        line-height: 115px;
     }
 }
 
