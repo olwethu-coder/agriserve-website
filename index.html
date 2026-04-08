@@ -62,6 +62,30 @@
                 height: 280px;
             }
         }
+
+        /* Read more button style */
+        .read-more-btn {
+            background: none;
+            border: none;
+            color: #C55A11;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 10px;
+            padding: 0;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        .read-more-btn:hover {
+            color: #8DC63F;
+            text-decoration: underline;
+        }
+        .service-full-text {
+            display: none;
+            margin-top: 10px;
+        }
+        .service-full-text.show {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -140,7 +164,7 @@
         </div>
     </section>
 
-    <!-- About Us Section - WITH LOGO -->
+    <!-- About Us Section -->
     <section class="about">
         <div class="container">
             <div class="section-title-wrapper">
@@ -177,234 +201,267 @@
         </div>
     </section>
 
-    <!-- MEMBERSHIP Section - Twitter style photo background -->
-    <div class="profile-header-section">
-        <div class="profile-header-image">
-            <div class="header-slider-container">
-                <div class="header-slide">
-                    <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Agricultural fields" loading="lazy">
-                </div>
-                <div class="header-slide">
-                    <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Agricultural research" loading="lazy">
-                </div>
-                <div class="header-slide">
-                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Farm landscape" loading="lazy">
-                </div>
-                <div class="header-slide">
-                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Plant seedlings" loading="lazy">
-                </div>
-            </div>
-        </div>
-        <div class="profile-logo-container">
-            <div class="profile-logo-wrapper">
-                <img src="logo.png" alt="AgriServe Logo" class="profile-logo">
-            </div>
-        </div>
-        <div class="profile-content">
-            <div class="container">
-                <div class="section-title-wrapper">
-                    <h2>MEMBERSHIP</h2>
-                </div>
-                <div class="about-style-grid">
-                    <div class="about-style-card">
-                        <div class="card-icon">🇿🇦</div>
-                        <h3>Local Insight</h3>
-                        <p>Our team possesses in-depth knowledge of South Africa's unique regulatory landscape, ensuring tailored solutions for your business.</p>
+    <!-- MEMBERSHIP Section -->
+    <div class="white-card-section">
+        <div class="white-card">
+            <div class="card-top-slider">
+                <div class="header-slider-container">
+                    <div class="header-slide">
+                        <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Agricultural fields" loading="lazy">
                     </div>
-                    <div class="about-style-card">
-                        <div class="card-icon">⭐</div>
-                        <h3>Experience</h3>
-                        <p>Benefit from the expertise of professionals with a proven track record in successfully navigating regulatory challenges in the plant protection industry.</p>
+                    <div class="header-slide">
+                        <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Agricultural research" loading="lazy">
                     </div>
-                    <div class="about-style-card">
-                        <div class="card-icon">🤝</div>
-                        <h3>Client-Centric Approach</h3>
-                        <p>We prioritize your business objectives, offering personalized solutions that align with your goals and regulatory requirements.</p>
+                    <div class="header-slide">
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Farm landscape" loading="lazy">
+                    </div>
+                    <div class="header-slide">
+                        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Plant seedlings" loading="lazy">
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- COMPANY SERVICE OFFERINGS Section - Twitter style photo background -->
-    <div class="profile-header-section">
-        <div class="profile-header-image">
-            <div class="header-slider-container">
-                <div class="header-slide">
-                    <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Agricultural services" loading="lazy">
-                </div>
-                <div class="header-slide">
-                    <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Crop fields" loading="lazy">
-                </div>
-                <div class="header-slide">
-                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Farm landscape" loading="lazy">
-                </div>
-                <div class="header-slide">
-                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Plant seedlings" loading="lazy">
+            <div class="card-logo-center">
+                <div class="card-logo-wrapper">
+                    <img src="logo.png" alt="AgriServe Logo" class="card-logo">
                 </div>
             </div>
-        </div>
-        <div class="profile-logo-container">
-            <div class="profile-logo-wrapper">
-                <img src="logo.png" alt="AgriServe Logo" class="profile-logo">
-            </div>
-        </div>
-        <div class="profile-content">
-            <div class="container">
-                <div class="section-title-wrapper">
-                    <h2>COMPANY SERVICE OFFERINGS</h2>
-                </div>
-                <div class="about-style-grid">
-                    <div class="about-style-card">
-                        <div class="card-icon">📋</div>
-                        <h3>Product Registration</h3>
-                        <p>New registrations, label extensions, re-instatements, and parallel registrations for agricultural remedies and household products.</p>
+            <div class="card-text-content">
+                <div class="container">
+                    <div class="section-title-wrapper">
+                        <h2>MEMBERSHIP</h2>
                     </div>
-                    <div class="about-style-card">
-                        <div class="card-icon">🏷️</div>
-                        <h3>Product Label & SDS Compilation</h3>
-                        <p>Crafting accurate and compliant product labels and Safety Data Sheets (SDS) ensuring regulatory adherence and product safety.</p>
-                    </div>
-                    <div class="about-style-card">
-                        <div class="card-icon">📚</div>
-                        <h3>Regulatory Policy Training</h3>
-                        <p>Customized training programs to educate your team on the latest regulatory policies and compliance requirements.</p>
-                    </div>
-                    <div class="about-style-card">
-                        <div class="card-icon">📋</div>
-                        <h3>Dossier Preparation</h3>
-                        <p>Expert preparation of dossiers for new registrations, label extensions, renewals, and GHS compliance.</p>
+                    <div class="about-style-grid">
+                        <div class="about-style-card">
+                            <div class="card-icon">🇿🇦</div>
+                            <h3>Local Insight</h3>
+                            <p>Our team possesses in-depth knowledge of South Africa's unique regulatory landscape, ensuring tailored solutions for your business.</p>
+                        </div>
+                        <div class="about-style-card">
+                            <div class="card-icon">⭐</div>
+                            <h3>Experience</h3>
+                            <p>Benefit from the expertise of professionals with a proven track record in successfully navigating regulatory challenges in the plant protection industry.</p>
+                        </div>
+                        <div class="about-style-card">
+                            <div class="card-icon">🤝</div>
+                            <h3>Client-Centric Approach</h3>
+                            <p>We prioritize your business objectives, offering personalized solutions that align with your goals and regulatory requirements.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- OUR TEAM Section - Twitter style photo background -->
-    <div class="profile-header-section">
-        <div class="profile-header-image">
-            <div class="header-slider-container">
-                <div class="header-slide">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Team collaboration" loading="lazy">
-                </div>
-                <div class="header-slide">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Business meeting" loading="lazy">
-                </div>
-                <div class="header-slide">
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Team strategy" loading="lazy">
-                </div>
-                <div class="header-slide">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Leadership" loading="lazy">
+    <!-- ========== COMPANY SERVICE OFFERINGS – EXACT WORDING FROM BUSINESS PROFILE PDF ========== -->
+    <div class="white-card-section">
+        <div class="white-card">
+            <div class="card-top-slider">
+                <div class="header-slider-container">
+                    <div class="header-slide">
+                        <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Agricultural services" loading="lazy">
+                    </div>
+                    <div class="header-slide">
+                        <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Crop fields" loading="lazy">
+                    </div>
+                    <div class="header-slide">
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Farm landscape" loading="lazy">
+                    </div>
+                    <div class="header-slide">
+                        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Plant seedlings" loading="lazy">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="profile-logo-container">
-            <div class="profile-logo-wrapper">
-                <img src="logo.png" alt="AgriServe Logo" class="profile-logo">
-            </div>
-        </div>
-        <div class="profile-content">
-            <div class="container">
-                <div class="section-title-wrapper">
-                    <h2>OUR TEAM</h2>
+            <div class="card-logo-center">
+                <div class="card-logo-wrapper">
+                    <img src="logo.png" alt="AgriServe Logo" class="card-logo">
                 </div>
-                <div class="about-style-grid team-grid-about">
-                    <!-- Nomfundo Mfeka - Managing Director -->
-                    <div class="about-style-card team-card-about">
-                        <div class="team-photo team-photo-img">
-                            <img src="team/nomfundo-mfeka.jpg" alt="Nomfundo Mfeka">
-                        </div>
-                        <h3>Nomfundo Mfeka</h3>
-                        <p class="team-title">Managing Director</p>
-                        <p class="team-qual">BSc; MBA</p>
-                        <p class="team-bio">Over 13 years of senior management experience in the Plant Science industry. Specialist in Regulatory Affairs and Stakeholder Management.</p>
+            </div>
+            <div class="card-text-content">
+                <div class="container">
+                    <div class="section-title-wrapper">
+                        <h2>COMPANY SERVICE OFFERINGS</h2>
                     </div>
-
-                    <!-- Londa Mfeka - Operations Manager -->
-                    <div class="about-style-card team-card-about">
-                        <div class="team-photo team-photo-img">
-                            <img src="team/londa-mfeka.jpg" alt="Londa Mfeka">
+                    <div class="about-style-grid" id="services-grid">
+                        <!-- Service 1: Regulatory Advisory Services (word-for-word from PDF page 6) -->
+                        <div class="about-style-card service-card">
+                            <div class="card-icon">📋</div>
+                            <h3>Regulatory Advisory Services</h3>
+                            <div class="service-short">
+                                <p>Specialized guidance and support provided to stakeholders and companies to navigate the complex regulatory landscape.</p>
+                            </div>
+                            <div class="service-full-text">
+                                <p>Specialized guidance and support provided to stakeholders and companies to navigate the complex regulatory landscape. Ensuring compliance with laws, regulations, and standards related to agriculture, forestry and fisheries.</p>
+                            </div>
+                            <button class="read-more-btn" onclick="toggleReadMore(this)">Read more</button>
                         </div>
-                        <h3>Londa Mfeka</h3>
-                        <p class="team-title">Operations Manager</p>
-                        <p class="team-bio">Specialist in project management with strong focus on client experience, overseeing all regulatory consulting projects.</p>
-                    </div>
 
-                    <!-- Zenande Mkhonza - Principal Regulatory Lead -->
-                    <div class="about-style-card team-card-about">
-                        <div class="team-photo team-photo-img">
-                            <img src="team/zenande-mkhonza.jpg" alt="Zenande Mkhonza">
+                        <!-- Service 2: Dossier Compilation for registration (word-for-word from PDF page 6) -->
+                        <div class="about-style-card service-card">
+                            <div class="card-icon">📚</div>
+                            <h3>Dossier Compilation for registration</h3>
+                            <div class="service-short">
+                                <p>Streamline the product registration process with our Dossier Compilation services. Our experienced team ensures that all necessary documentation is meticulously prepared and submitted for regulatory approval.</p>
+                            </div>
+                            <div class="service-full-text">
+                                <p>Streamline the product registration process with our Dossier Compilation services. Our experienced team ensures that all necessary documentation is meticulously prepared and submitted for regulatory approval. From data collation to dossier assembly, we handle the intricacies of registration, enabling your products to enter the market efficiently.</p>
+                            </div>
+                            <button class="read-more-btn" onclick="toggleReadMore(this)">Read more</button>
                         </div>
-                        <h3>Zenande Mkhonza</h3>
-                        <p class="team-title">Principal Regulatory Lead</p>
-                        <p class="team-bio">Expert in agricultural remedies compliance and product registration, guiding teams through approval processes.</p>
-                    </div>
 
-                    <!-- Ndumiso Mkhonza - Technical Assistant -->
-                    <div class="about-style-card team-card-about">
-                        <div class="team-photo team-photo-img">
-                            <img src="team/ndumiso-mkhonza.jpg" alt="Ndumiso Mkhonza">
+                        <!-- Service 3: Trial Management (word-for-word from PDF page 6) -->
+                        <div class="about-style-card service-card">
+                            <div class="card-icon">🌾</div>
+                            <h3>Trial Management</h3>
+                            <div class="service-short">
+                                <p>Ensure the success of your plant protection products through our Trial Management services. We oversee and coordinate field trials, adhering to regulatory protocols and industry best practices.</p>
+                            </div>
+                            <div class="service-full-text">
+                                <p>Ensure the success of your plant protection products through our Trial Management services. We oversee and coordinate field trials, adhering to regulatory protocols and industry best practices. From trial design to data analysis, our team manages the entire process, providing you with valuable insights to support successful product registration and market entry.</p>
+                            </div>
+                            <button class="read-more-btn" onclick="toggleReadMore(this)">Read more</button>
                         </div>
-                        <h3>Ndumiso Mkhonza</h3>
-                        <p class="team-title">Technical Assistant</p>
-                        <p class="team-bio">Supporting regulatory compliance through dossier preparation, data analysis, and regulatory documentation.</p>
-                    </div>
 
-                    <!-- Lindelani Mkhize - Technical Assistant -->
-                    <div class="about-style-card team-card-about">
-                        <div class="team-photo team-photo-img">
-                            <img src="team/lindelani-mkhize.jpg" alt="Lindelani Mkhize">
+                        <!-- Service 4: Product label & SDS Compilation (word-for-word from PDF page 7) -->
+                        <div class="about-style-card service-card">
+                            <div class="card-icon">🏷️</div>
+                            <h3>Product label & SDS Compilation</h3>
+                            <div class="service-short">
+                                <p>Crafting accurate and compliant product labels and Safety Data Sheets (SDS) is essential for regulatory adherence. Our experts specialize in Product Label and SDS Compilation, ensuring that your products meet the necessary regulatory standards.</p>
+                            </div>
+                            <div class="service-full-text">
+                                <p>Crafting accurate and compliant product labels and Safety Data Sheets (SDS) is essential for regulatory adherence. Our experts specialize in Product Label and SDS Compilation, ensuring that your products meet the necessary regulatory standards. Trust us to deliver clear, informative, and compliant documentation that enhances product safety and user understanding.</p>
+                            </div>
+                            <button class="read-more-btn" onclick="toggleReadMore(this)">Read more</button>
                         </div>
-                        <h3>Lindelani Mkhize</h3>
-                        <p class="team-title">Technical Assistant</p>
-                        <p class="team-bio">Supporting regulatory compliance through dossier preparation and regulatory documentation for smooth approvals.</p>
-                    </div>
 
-                    <!-- Nombuso Mkhonza - Office Administrator -->
-                    <div class="about-style-card team-card-about">
-                        <div class="team-photo team-photo-img">
-                            <img src="team/nombuso-mkhonza.jpg" alt="Nombuso Mkhonza">
+                        <!-- Service 5: Regulatory Policy Training (word-for-word from PDF page 7) -->
+                        <div class="about-style-card service-card">
+                            <div class="card-icon">🎓</div>
+                            <h3>Regulatory Policy Training</h3>
+                            <div class="service-short">
+                                <p>Stay informed and empowered with our Regulatory Policy Training services. Our customized training programs are designed to educate your team on the latest regulatory policies and compliance requirements in the plant protection industry.</p>
+                            </div>
+                            <div class="service-full-text">
+                                <p>Stay informed and empowered with our Regulatory Policy Training services. Our customized training programs are designed to educate your team on the latest regulatory policies and compliance requirements in the plant protection industry. Equip your staff with the knowledge and skills needed to navigate regulatory challenges confidently, fostering a culture of compliance within your organization.</p>
+                            </div>
+                            <button class="read-more-btn" onclick="toggleReadMore(this)">Read more</button>
                         </div>
-                        <h3>Nombuso Mkhonza</h3>
-                        <p class="team-title">Office Administrator</p>
-                        <p class="team-bio">Providing essential administrative support, document management, and regulatory compliance coordination.</p>
-                    </div>
-
-                    <!-- Rearabetswe Gabonewe -->
-                    <div class="about-style-card team-card-about">
-                        <div class="team-photo team-photo-img">
-                            <img src="team/rearabetse-gabonewe.jpg" alt="Rearabetswe Gabonewe">
-                        </div>
-                        <h3>Rearabetswe Gabonewe</h3>
-                        <p class="team-title">[Add Title]</p>
-                        <p class="team-bio">[Add bio/description]</p>
-                    </div>
-
-                    <!-- Olwethu Zondi -->
-                    <div class="about-style-card team-card-about">
-                        <div class="team-photo team-photo-img">
-                            <img src="team/olwethu-zondi.jpg" alt="Olwethu Zondi">
-                        </div>
-                        <h3>Olwethu Zondi</h3>
-                        <p class="team-title">[Add Title]</p>
-                        <p class="team-bio">[Add bio/description]</p>
-                    </div>
-
-                    <!-- Siphesihle Mdluli -->
-                    <div class="about-style-card team-card-about">
-                        <div class="team-photo team-photo-img">
-                            <img src="team/siphesihle-mdluli.jpg" alt="Siphesihle Mdluli">
-                        </div>
-                        <h3>Siphesihle Mdluli</h3>
-                        <p class="team-title">[Add Title]</p>
-                        <p class="team-bio">[Add bio/description]</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- REGULATORY AUTHORITIES Section - WITH LOGO -->
+    <!-- OUR TEAM Section (unchanged) -->
+    <div class="white-card-section">
+        <div class="white-card">
+            <div class="card-top-slider">
+                <div class="header-slider-container">
+                    <div class="header-slide">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Team collaboration" loading="lazy">
+                    </div>
+                    <div class="header-slide">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Business meeting" loading="lazy">
+                    </div>
+                    <div class="header-slide">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Team strategy" loading="lazy">
+                    </div>
+                    <div class="header-slide">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Leadership" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <div class="card-logo-center">
+                <div class="card-logo-wrapper">
+                    <img src="logo.png" alt="AgriServe Logo" class="card-logo">
+                </div>
+            </div>
+            <div class="card-text-content">
+                <div class="container">
+                    <div class="section-title-wrapper">
+                        <h2>OUR TEAM</h2>
+                    </div>
+                    <div class="about-style-grid team-grid-about">
+                        <div class="about-style-card team-card-about">
+                            <div class="team-photo team-photo-img">
+                                <img src="team/nomfundo-mfeka.jpg" alt="Nomfundo Mfeka">
+                            </div>
+                            <h3>Nomfundo Mfeka</h3>
+                            <p class="team-title">Managing Director</p>
+                            <p class="team-qual">BSc; MBA</p>
+                            <p class="team-bio">Over 13 years of senior management experience in the Plant Science industry. Specialist in Regulatory Affairs and Stakeholder Management.</p>
+                        </div>
+                        <div class="about-style-card team-card-about">
+                            <div class="team-photo team-photo-img">
+                                <img src="team/londa-mfeka.jpg" alt="Londa Mfeka">
+                            </div>
+                            <h3>Londa Mfeka</h3>
+                            <p class="team-title">Operations Manager</p>
+                            <p class="team-bio">Specialist in project management with strong focus on client experience, overseeing all regulatory consulting projects.</p>
+                        </div>
+                        <div class="about-style-card team-card-about">
+                            <div class="team-photo team-photo-img">
+                                <img src="team/zenande-mkhonza.jpg" alt="Zenande Mkhonza">
+                            </div>
+                            <h3>Zenande Mkhonza</h3>
+                            <p class="team-title">Principal Regulatory Lead</p>
+                            <p class="team-bio">Expert in agricultural remedies compliance and product registration, guiding teams through approval processes.</p>
+                        </div>
+                        <div class="about-style-card team-card-about">
+                            <div class="team-photo team-photo-img">
+                                <img src="team/ndumiso-mkhonza.jpg" alt="Ndumiso Mkhonza">
+                            </div>
+                            <h3>Ndumiso Mkhonza</h3>
+                            <p class="team-title">Technical Assistant</p>
+                            <p class="team-bio">Supporting regulatory compliance through dossier preparation, data analysis, and regulatory documentation.</p>
+                        </div>
+                        <div class="about-style-card team-card-about">
+                            <div class="team-photo team-photo-img">
+                                <img src="team/lindelani-mkhize.jpg" alt="Lindelani Mkhize">
+                            </div>
+                            <h3>Lindelani Mkhize</h3>
+                            <p class="team-title">Technical Assistant</p>
+                            <p class="team-bio">Supporting regulatory compliance through dossier preparation and regulatory documentation for smooth approvals.</p>
+                        </div>
+                        <div class="about-style-card team-card-about">
+                            <div class="team-photo team-photo-img">
+                                <img src="team/nombuso-mkhonza.jpg" alt="Nombuso Mkhonza">
+                            </div>
+                            <h3>Nombuso Mkhonza</h3>
+                            <p class="team-title">Office Administrator</p>
+                            <p class="team-bio">Providing essential administrative support, document management, and regulatory compliance coordination.</p>
+                        </div>
+                        <div class="about-style-card team-card-about">
+                            <div class="team-photo team-photo-img">
+                                <img src="team/rearabetse-gabonewe.jpg" alt="Rearabetswe Gabonewe">
+                            </div>
+                            <h3>Rearabetswe Gabonewe</h3>
+                            <p class="team-title">[Add Title]</p>
+                            <p class="team-bio">[Add bio/description]</p>
+                        </div>
+                        <div class="about-style-card team-card-about">
+                            <div class="team-photo team-photo-img">
+                                <img src="team/olwethu-zondi.jpg" alt="Olwethu Zondi">
+                            </div>
+                            <h3>Olwethu Zondi</h3>
+                            <p class="team-title">[Add Title]</p>
+                            <p class="team-bio">[Add bio/description]</p>
+                        </div>
+                        <div class="about-style-card team-card-about">
+                            <div class="team-photo team-photo-img">
+                                <img src="team/siphesihle-mdluli.jpg" alt="Siphesihle Mdluli">
+                            </div>
+                            <h3>Siphesihle Mdluli</h3>
+                            <p class="team-title">[Add Title]</p>
+                            <p class="team-bio">[Add bio/description]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- REGULATORY AUTHORITIES Section -->
     <section class="authorities">
         <div class="container">
             <div class="section-title-wrapper">
@@ -439,84 +496,86 @@
         </div>
     </section>
 
-    <!-- COUNTRIES SERVICED Section - Twitter style photo background -->
-    <div class="profile-header-section">
-        <div class="profile-header-image">
-            <div class="header-slider-container">
-                <div class="header-slide">
-                    <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="African landscape" loading="lazy">
-                </div>
-                <div class="header-slide">
-                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Savanna" loading="lazy">
-                </div>
-                <div class="header-slide">
-                    <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="African agriculture" loading="lazy">
-                </div>
-                <div class="header-slide">
-                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Plant growth" loading="lazy">
-                </div>
-            </div>
-        </div>
-        <div class="profile-logo-container">
-            <div class="profile-logo-wrapper">
-                <img src="logo.png" alt="AgriServe Logo" class="profile-logo">
-            </div>
-        </div>
-        <div class="profile-content">
-            <div class="container">
-                <div class="section-title-wrapper">
-                    <h2>COUNTRIES SERVICED</h2>
-                </div>
-                <p style="text-align: center; margin-bottom: 40px;">Providing regulatory support across Africa</p>
-                <div class="about-style-grid countries-grid" style="justify-content: center;">
-                    <div class="about-style-card country-card" style="text-align: center; margin: 0 auto;">
-                        <div class="card-icon">🇿🇦</div>
-                        <h3>South Africa</h3>
-                        <p>Headquarters and primary service region</p>
+    <!-- COUNTRIES SERVICED Section -->
+    <div class="white-card-section">
+        <div class="white-card">
+            <div class="card-top-slider">
+                <div class="header-slider-container">
+                    <div class="header-slide">
+                        <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="African landscape" loading="lazy">
                     </div>
-                    <div class="about-style-card country-card" style="text-align: center; margin: 0 auto;">
-                        <div class="card-icon">🌍</div>
-                        <h3>Other African Countries</h3>
-                        <p>Eswatini, Namibia, Botswana, Zimbabwe, Mali, Malawi, Uganda, Kenya</p>
+                    <div class="header-slide">
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Savanna" loading="lazy">
+                    </div>
+                    <div class="header-slide">
+                        <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="African agriculture" loading="lazy">
+                    </div>
+                    <div class="header-slide">
+                        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Plant growth" loading="lazy">
                     </div>
                 </div>
-                <div class="flag-container">
-                    <div class="flag-track">
-                        <div class="flag-item">
-                            <img src="https://flagcdn.com/w320/za.png" alt="South Africa Flag" class="flag" loading="lazy">
-                            <span class="country-name">South Africa</span>
+            </div>
+            <div class="card-logo-center">
+                <div class="card-logo-wrapper">
+                    <img src="logo.png" alt="AgriServe Logo" class="card-logo">
+                </div>
+            </div>
+            <div class="card-text-content">
+                <div class="container">
+                    <div class="section-title-wrapper">
+                        <h2>COUNTRIES SERVICED</h2>
+                    </div>
+                    <p style="text-align: center; margin-bottom: 40px;">Providing regulatory support across Africa</p>
+                    <div class="about-style-grid countries-grid" style="justify-content: center;">
+                        <div class="about-style-card country-card" style="text-align: center; margin: 0 auto;">
+                            <div class="card-icon">🇿🇦</div>
+                            <h3>South Africa</h3>
+                            <p>Headquarters and primary service region</p>
                         </div>
-                        <div class="flag-item">
-                            <img src="https://flagcdn.com/w320/sz.png" alt="Eswatini Flag" class="flag" loading="lazy">
-                            <span class="country-name">Eswatini</span>
+                        <div class="about-style-card country-card" style="text-align: center; margin: 0 auto;">
+                            <div class="card-icon">🌍</div>
+                            <h3>Other African Countries</h3>
+                            <p>Eswatini, Namibia, Botswana, Zimbabwe, Mali, Malawi, Uganda, Kenya</p>
                         </div>
-                        <div class="flag-item">
-                            <img src="https://flagcdn.com/w320/na.png" alt="Namibia Flag" class="flag" loading="lazy">
-                            <span class="country-name">Namibia</span>
-                        </div>
-                        <div class="flag-item">
-                            <img src="https://flagcdn.com/w320/bw.png" alt="Botswana Flag" class="flag" loading="lazy">
-                            <span class="country-name">Botswana</span>
-                        </div>
-                        <div class="flag-item">
-                            <img src="https://flagcdn.com/w320/zw.png" alt="Zimbabwe Flag" class="flag" loading="lazy">
-                            <span class="country-name">Zimbabwe</span>
-                        </div>
-                        <div class="flag-item">
-                            <img src="https://flagcdn.com/w320/ml.png" alt="Mali Flag" class="flag" loading="lazy">
-                            <span class="country-name">Mali</span>
-                        </div>
-                        <div class="flag-item">
-                            <img src="https://flagcdn.com/w320/mw.png" alt="Malawi Flag" class="flag" loading="lazy">
-                            <span class="country-name">Malawi</span>
-                        </div>
-                        <div class="flag-item">
-                            <img src="https://flagcdn.com/w320/ug.png" alt="Uganda Flag" class="flag" loading="lazy">
-                            <span class="country-name">Uganda</span>
-                        </div>
-                        <div class="flag-item">
-                            <img src="https://flagcdn.com/w320/ke.png" alt="Kenya Flag" class="flag" loading="lazy">
-                            <span class="country-name">Kenya</span>
+                    </div>
+                    <div class="flag-container">
+                        <div class="flag-track">
+                            <div class="flag-item">
+                                <img src="https://flagcdn.com/w320/za.png" alt="South Africa Flag" class="flag" loading="lazy">
+                                <span class="country-name">South Africa</span>
+                            </div>
+                            <div class="flag-item">
+                                <img src="https://flagcdn.com/w320/sz.png" alt="Eswatini Flag" class="flag" loading="lazy">
+                                <span class="country-name">Eswatini</span>
+                            </div>
+                            <div class="flag-item">
+                                <img src="https://flagcdn.com/w320/na.png" alt="Namibia Flag" class="flag" loading="lazy">
+                                <span class="country-name">Namibia</span>
+                            </div>
+                            <div class="flag-item">
+                                <img src="https://flagcdn.com/w320/bw.png" alt="Botswana Flag" class="flag" loading="lazy">
+                                <span class="country-name">Botswana</span>
+                            </div>
+                            <div class="flag-item">
+                                <img src="https://flagcdn.com/w320/zw.png" alt="Zimbabwe Flag" class="flag" loading="lazy">
+                                <span class="country-name">Zimbabwe</span>
+                            </div>
+                            <div class="flag-item">
+                                <img src="https://flagcdn.com/w320/ml.png" alt="Mali Flag" class="flag" loading="lazy">
+                                <span class="country-name">Mali</span>
+                            </div>
+                            <div class="flag-item">
+                                <img src="https://flagcdn.com/w320/mw.png" alt="Malawi Flag" class="flag" loading="lazy">
+                                <span class="country-name">Malawi</span>
+                            </div>
+                            <div class="flag-item">
+                                <img src="https://flagcdn.com/w320/ug.png" alt="Uganda Flag" class="flag" loading="lazy">
+                                <span class="country-name">Uganda</span>
+                            </div>
+                            <div class="flag-item">
+                                <img src="https://flagcdn.com/w320/ke.png" alt="Kenya Flag" class="flag" loading="lazy">
+                                <span class="country-name">Kenya</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -524,7 +583,7 @@
         </div>
     </div>
 
-    <!-- Contact Section - WITH LOGO, orangish left border, and download link -->
+    <!-- Contact Section -->
     <section class="contact-section" id="contact">
         <div class="container">
             <div class="section-title-wrapper">
@@ -543,18 +602,7 @@
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://olwethu-coder.github.io/agriserve-website/thankyou.html">
                     <input type="hidden" name="_subject" value="New Inquiry from AgriServe Website">
-                    <input type="hidden" name="_autoresponse" value="Good day,
-
-This email serves to confirm receipt of your business inquiry. A member of our team will be in contact with you within the next 24 hours to arrange a time to discuss the requested services.
-
-Kind Regards
-AGRISERVE CONSULTING TEAM
-Email: info@agri-serve.co.za
-Address: Pretoria | Gauteng
-Website: www.agri-serve.co.za
-
-AgriServe
-CONSULTING">
+                    <input type="hidden" name="_autoresponse" value="Good day,\n\nThis email serves to confirm receipt of your business inquiry. A member of our team will be in contact with you within the next 24 hours to arrange a time to discuss the requested services.\n\nKind Regards\nAGRISERVE CONSULTING TEAM\nEmail: info@agri-serve.co.za\nAddress: Pretoria | Gauteng\nWebsite: www.agri-serve.co.za\n\nAgriServe\nCONSULTING">
                     <div class="form-group">
                         <input type="text" name="name" id="formName" placeholder="Your Name" required>
                     </div>
@@ -601,6 +649,23 @@ CONSULTING">
 
     <script src="script.js"></script>
     <script>
+        // Read more / Read less toggle function
+        function toggleReadMore(btn) {
+            const card = btn.closest('.service-card');
+            const fullTextDiv = card.querySelector('.service-full-text');
+            const shortTextDiv = card.querySelector('.service-short');
+            if (fullTextDiv.classList.contains('show')) {
+                fullTextDiv.classList.remove('show');
+                btn.textContent = 'Read more';
+                shortTextDiv.style.display = 'block';
+            } else {
+                fullTextDiv.classList.add('show');
+                btn.textContent = 'Show less';
+                shortTextDiv.style.display = 'none';
+            }
+        }
+
+        // Contact form data saving (unchanged)
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
             contactForm.addEventListener('submit', function(e) {
@@ -615,6 +680,14 @@ CONSULTING">
                 localStorage.setItem('submittedFormData', JSON.stringify(formData));
             });
         }
+
+        // Ensure that all service cards start with short text visible, full hidden
+        document.querySelectorAll('.service-card').forEach(card => {
+            const fullDiv = card.querySelector('.service-full-text');
+            if (fullDiv) fullDiv.classList.remove('show');
+            const shortDiv = card.querySelector('.service-short');
+            if (shortDiv) shortDiv.style.display = 'block';
+        });
     </script>
 </body>
 </html>
