@@ -89,25 +89,6 @@
     </style>
 </head>
 <body>
-    <!-- FLOATING ICONS BACKGROUND -->
-    <div class="floating-icon-bg">
-        <div class="floating-icon-item"></div>
-        <div class="floating-icon-item"></div>
-        <div class="floating-icon-item"></div>
-        <div class="floating-icon-item"></div>
-        <div class="floating-icon-item"></div>
-        <div class="floating-icon-item"></div>
-        <div class="floating-icon-item"></div>
-        <div class="floating-icon-item"></div>
-        <div class="floating-icon-item"></div>
-        <div class="floating-icon-item"></div>
-        <div class="floating-icon-item"></div>
-        <div class="floating-icon-item"></div>
-        <div class="floating-icon-item"></div>
-        <div class="floating-icon-item"></div>
-        <div class="floating-icon-item"></div>
-    </div>
-
     <!-- Navigation Bar -->
     <nav class="navbar" id="mainNavbar">
         <div class="container">
@@ -128,7 +109,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with local images -->
     <section class="hero">
         <div class="hero-slider-container">
             <div class="hero-slide">
@@ -147,7 +128,7 @@
                 <img src="images/sunset-crop-spraying.jpg" alt="Sunset crop spraying" loading="lazy">
             </div>
             <div class="hero-slide">
-                <img src="https://images.pexels.com/photos/891252/pexels-photo-891252.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Tractor plowing field" loading="lazy">
+                <img src="images/tractor-plowing-field.jpg" alt="Tractor plowing field" loading="lazy">
             </div>
         </div>
         <div class="container">
@@ -252,7 +233,7 @@
         </div>
     </div>
 
-    <!-- ========== COMPANY SERVICE OFFERINGS – EXACT WORDING FROM BUSINESS PROFILE PDF ========== -->
+    <!-- COMPANY SERVICE OFFERINGS Section (exact wording from PDF) -->
     <div class="white-card-section">
         <div class="white-card">
             <div class="card-top-slider">
@@ -282,7 +263,7 @@
                         <h2>COMPANY SERVICE OFFERINGS</h2>
                     </div>
                     <div class="about-style-grid" id="services-grid">
-                        <!-- Service 1: Regulatory Advisory Services (word-for-word from PDF page 6) -->
+                        <!-- Service 1: Regulatory Advisory Services -->
                         <div class="about-style-card service-card">
                             <div class="card-icon">📋</div>
                             <h3>Regulatory Advisory Services</h3>
@@ -295,7 +276,7 @@
                             <button class="read-more-btn" onclick="toggleReadMore(this)">Read more</button>
                         </div>
 
-                        <!-- Service 2: Dossier Compilation for registration (word-for-word from PDF page 6) -->
+                        <!-- Service 2: Dossier Compilation for registration -->
                         <div class="about-style-card service-card">
                             <div class="card-icon">📚</div>
                             <h3>Dossier Compilation for registration</h3>
@@ -308,7 +289,7 @@
                             <button class="read-more-btn" onclick="toggleReadMore(this)">Read more</button>
                         </div>
 
-                        <!-- Service 3: Trial Management (word-for-word from PDF page 6) -->
+                        <!-- Service 3: Trial Management -->
                         <div class="about-style-card service-card">
                             <div class="card-icon">🌾</div>
                             <h3>Trial Management</h3>
@@ -321,7 +302,7 @@
                             <button class="read-more-btn" onclick="toggleReadMore(this)">Read more</button>
                         </div>
 
-                        <!-- Service 4: Product label & SDS Compilation (word-for-word from PDF page 7) -->
+                        <!-- Service 4: Product label & SDS Compilation -->
                         <div class="about-style-card service-card">
                             <div class="card-icon">🏷️</div>
                             <h3>Product label & SDS Compilation</h3>
@@ -334,7 +315,7 @@
                             <button class="read-more-btn" onclick="toggleReadMore(this)">Read more</button>
                         </div>
 
-                        <!-- Service 5: Regulatory Policy Training (word-for-word from PDF page 7) -->
+                        <!-- Service 5: Regulatory Policy Training -->
                         <div class="about-style-card service-card">
                             <div class="card-icon">🎓</div>
                             <h3>Regulatory Policy Training</h3>
@@ -352,8 +333,8 @@
         </div>
     </div>
 
-    <!-- OUR TEAM Section (unchanged) -->
-    <div class="white-card-section">
+    <!-- OUR TEAM Section (id="team" for navigation) -->
+    <div class="white-card-section" id="team">
         <div class="white-card">
             <div class="card-top-slider">
                 <div class="header-slider-container">
@@ -496,7 +477,7 @@
         </div>
     </section>
 
-    <!-- COUNTRIES SERVICED Section -->
+    <!-- ========== COUNTRIES SERVICED – Centered cards & seamless flag wheel ========== -->
     <div class="white-card-section">
         <div class="white-card">
             <div class="card-top-slider">
@@ -526,20 +507,62 @@
                         <h2>COUNTRIES SERVICED</h2>
                     </div>
                     <p style="text-align: center; margin-bottom: 40px;">Providing regulatory support across Africa</p>
-                    <div class="about-style-grid countries-grid" style="justify-content: center;">
-                        <div class="about-style-card country-card" style="text-align: center; margin: 0 auto;">
+                    
+                    <!-- Centered text boxes (flex with justify-content: center) -->
+                    <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 50px;">
+                        <div class="about-style-card country-card" style="flex: 0 1 300px; text-align: center;">
                             <div class="card-icon">🇿🇦</div>
                             <h3>South Africa</h3>
                             <p>Headquarters and primary service region</p>
                         </div>
-                        <div class="about-style-card country-card" style="text-align: center; margin: 0 auto;">
+                        <div class="about-style-card country-card" style="flex: 0 1 300px; text-align: center;">
                             <div class="card-icon">🌍</div>
                             <h3>Other African Countries</h3>
                             <p>Eswatini, Namibia, Botswana, Zimbabwe, Mali, Malawi, Uganda, Kenya</p>
                         </div>
                     </div>
+
+                    <!-- Flag wheel (seamless infinite scroll) -->
                     <div class="flag-container">
                         <div class="flag-track">
+                            <!-- First set -->
+                            <div class="flag-item">
+                                <img src="https://flagcdn.com/w320/za.png" alt="South Africa Flag" class="flag" loading="lazy">
+                                <span class="country-name">South Africa</span>
+                            </div>
+                            <div class="flag-item">
+                                <img src="https://flagcdn.com/w320/sz.png" alt="Eswatini Flag" class="flag" loading="lazy">
+                                <span class="country-name">Eswatini</span>
+                            </div>
+                            <div class="flag-item">
+                                <img src="https://flagcdn.com/w320/na.png" alt="Namibia Flag" class="flag" loading="lazy">
+                                <span class="country-name">Namibia</span>
+                            </div>
+                            <div class="flag-item">
+                                <img src="https://flagcdn.com/w320/bw.png" alt="Botswana Flag" class="flag" loading="lazy">
+                                <span class="country-name">Botswana</span>
+                            </div>
+                            <div class="flag-item">
+                                <img src="https://flagcdn.com/w320/zw.png" alt="Zimbabwe Flag" class="flag" loading="lazy">
+                                <span class="country-name">Zimbabwe</span>
+                            </div>
+                            <div class="flag-item">
+                                <img src="https://flagcdn.com/w320/ml.png" alt="Mali Flag" class="flag" loading="lazy">
+                                <span class="country-name">Mali</span>
+                            </div>
+                            <div class="flag-item">
+                                <img src="https://flagcdn.com/w320/mw.png" alt="Malawi Flag" class="flag" loading="lazy">
+                                <span class="country-name">Malawi</span>
+                            </div>
+                            <div class="flag-item">
+                                <img src="https://flagcdn.com/w320/ug.png" alt="Uganda Flag" class="flag" loading="lazy">
+                                <span class="country-name">Uganda</span>
+                            </div>
+                            <div class="flag-item">
+                                <img src="https://flagcdn.com/w320/ke.png" alt="Kenya Flag" class="flag" loading="lazy">
+                                <span class="country-name">Kenya</span>
+                            </div>
+                            <!-- Duplicate set for seamless loop -->
                             <div class="flag-item">
                                 <img src="https://flagcdn.com/w320/za.png" alt="South Africa Flag" class="flag" loading="lazy">
                                 <span class="country-name">South Africa</span>
@@ -665,7 +688,7 @@
             }
         }
 
-        // Contact form data saving (unchanged)
+        // Contact form data saving
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
             contactForm.addEventListener('submit', function(e) {
@@ -681,7 +704,7 @@
             });
         }
 
-        // Ensure that all service cards start with short text visible, full hidden
+        // Ensure all service cards start with short text visible, full hidden
         document.querySelectorAll('.service-card').forEach(card => {
             const fullDiv = card.querySelector('.service-full-text');
             if (fullDiv) fullDiv.classList.remove('show');
