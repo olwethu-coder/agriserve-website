@@ -1205,11 +1205,11 @@ footer {
     pointer-events: none;
 }
 
-/* Logo container - overlaps image by halfway, sits above the orange line */
+/* Logo container - perfectly circular (fixed oval issue) */
 .card-logo-center {
     display: flex;
     justify-content: center;
-    margin-top: -70px;
+    margin-top: -55px;
     margin-bottom: 20px;
     position: relative;
     z-index: 2;
@@ -1218,16 +1218,21 @@ footer {
 .card-logo-wrapper {
     background: white;
     border-radius: 50%;
-    padding: 10px;
+    padding: 8px;
     border: 3px solid var(--border-accent);
     box-shadow: 0 5px 15px var(--shadow-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .card-logo {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
+    width: 70px;
+    height: 70px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;  /* ensures perfect circle even if image is not square */
     border-radius: 50%;
+    display: block;
 }
 
 .card-text-content {
@@ -1424,11 +1429,14 @@ footer {
         border-radius: 0 0 20px 20px;
     }
     .card-logo-center {
-        margin-top: -50px;
+        margin-top: -40px;
+    }
+    .card-logo-wrapper {
+        padding: 5px;
     }
     .card-logo {
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
     }
     .card-text-content .container {
         padding: 0 15px;
@@ -1470,13 +1478,7 @@ footer {
     .card-top-slider::after {
         border-radius: 0 0 25px 25px;
     }
-    .card-logo-center {
-        margin-top: -60px;
-    }
-    .card-logo {
-        width: 70px;
-        height: 70px;
-    }
+    /* Keep 70px on tablet */
 }
 
 /* ===== LARGE DESKTOP ===== */
